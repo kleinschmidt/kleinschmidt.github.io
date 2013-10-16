@@ -45,11 +45,9 @@
   <div class="boxed"><p> As part of UMD's <a href="http://ling.umd.edu/winterstorm2010/doku.php" title="Winter Storm 2010 Wiki">2010 Winter Storm</a> IGERT workshop, I gave a short tutorial on <strong>ANOVA and Linear Mixed-Effects models for language scientists</strong>.  Slides and some R code for running simple ANOVA/MEM analysis of a repeated-measures design can be found <a href="http://ling.umd.edu/winterstorm2010/doku.php?id=stats#daveanova_and_mixed-effects_models" title="Winter Storm 2010 Stats: ANOVA and Mixed-Effects Models">here</a>.</p></div>
   -->
 
-  <div id="updates" class="boxed"><h3>Updates!</h3>
-    <p>I gave a short tutorial on using <a href="http://plyr.had.co.nz/">plyr</a> for data analysis, exploration, and simulation at the LSA Institute.  Here are the slides as a <a href="assets/lsa13-plyr-reshape.pdf">pdf</a> and a <a href="assets/lsa13-plyr-reshape.Rnw">Rnw (knitr source file)</a>.</p>
-    <p><a href="pubs/kleinschmidt-jaeger-cimsa-2013.pdf" >Here's my poster</a> on how I'm thinking about extending rational analysis approaches to speech perception and adaptation in novel contexts to help understand how people learn and adapt across speech environments. (Presented at the OSU <a href="http://www.ling.ohio-state.edu/research/groups/cimsa/index">Workshop on Current Issues and Methods in Speaker Adaptation</a>, April 2013, and the <a href="http://www.hlp.rochester.edu/variability/" >LSA 13 workshop, "How the brain accommodates variability in linguistic representations"</a>, July 2013)</p>
-    <p>The code I wrote to run phonetic adaptation studies online via Mechanical Turk is available in a little <a href="https://bitbucket.org/dkleinschmidt/mtadapt-demo">demo package</a> that should get you off the ground if you want to run similar studies, and can be pretty easily adapted to other speech paradigms with a bit of JavaScript hacking</p>
-  </div>
+  <!-- div id="updates" class="boxed"><h3>Updates!</h3>
+    
+  </div-->
   
   <h2>The big picture</h2>
 
@@ -66,15 +64,16 @@
       <p>We're working on extending this approach to situations where there are multiple speakers or contexts, and when new categories or cues must be learned.</p>
       <div class="pubs boxed">
           <ul>
-              <li>Kleinschmidt, D., & Jaeger, T. F. (2011). A Bayesian belief updating model of phonetic recalibration and selective adaptation. <em>2nd ACL Workshop on Cognitive Modeling and Computational Linguistics.</em> <a href="http://www.hlp.rochester.edu/publications/KleinschmidtJaeger11_cmcl.pdf">[pdf]</a></li>
+              <li>Kleinschmidt, D. F., & Jaeger, T. F. (2013). Modeling adaptation to multiple speakers as (Bayesian) belief updating. Poster presented at the <a href="http://www.ling.ohio-state.edu/research/groups/cimsa/index"> Workshop on Current Issues and Methods in Speaker Adaptation</a>, The Ohio State University, Columbus, OH. <a href="pubs/kleinschmidt-jaeger-cimsa-2013.pdf" >[pdf]</a>
               <li>Kleinschmidt, D. F., & Jaeger, T. F. (2012). A continuum of phonetic adaptation: Evaluating an incremental belief-updating model of recalibration and selective adaptation. <em>Proceedings of the 34th Annual Conference of the Cognitive Science Society</em>. Sapporo, Japan. <a href="http://www.hlp.rochester.edu/publications/KleinschmidtJaeger_CogSci_2012.pdf">[pdf]</a></li>
+              <li>Kleinschmidt, D., & Jaeger, T. F. (2011). A Bayesian belief updating model of phonetic recalibration and selective adaptation. <em>2nd ACL Workshop on Cognitive Modeling and Computational Linguistics.</em> <a href="http://www.hlp.rochester.edu/publications/KleinschmidtJaeger11_cmcl.pdf">[pdf]</a></li>
           </ul>
       </div>
   </div>
 
   <div class="sliding">
       <h3 class="slidingtitle">Phonetics experiments on the web</h3>
-      <p>I've developed a framework for phonetic adaptation experiments on the web, over Mechanical Turk.  It's written in Javascript and the soure code will be available (soon!) as a <a href="https://bitbucket.org/dkleinschmidt/mtadapt-demo">git repository</a>, or see a demo <a href="http://www.hlp.rochester.edu/mturk/mtadapt-demo/expt_vroomen_replication.html?condition=ambig">here</a>.</p>
+      <p>I've developed a framework for phonetic adaptation experiments on the web, over Mechanical Turk.  It's written in Javascript and the soure code will be available (soon!) as a <a href="https://bitbucket.org/dkleinschmidt/mtadapt-demo">git repository</a>, or see a demo <a href="http://www.hlp.rochester.edu/mturk/mtadapt-demo/">here</a>.</p>
       <p>Using this paradigm, we've replicated a study on the effect of cumulative exposure to audio-visual speech on phonetic adaptation. (Vroomen et al., 2007, <em>Neuropsychologia</em>)</p>
       <div class="boxed pubs">
           <ul>
@@ -107,7 +106,7 @@
       <h3 class="slidingtitle">Efficient coding of sounds in the auditory cortex</h3>
 
   
-      <p>The visual system has been shown to be tuned to the statistical properties of natural images, at multiple levels.  Such sensitivity to the statistics of natural scenes enables the visual system to efficiently represent information, enhancing interesting information and suppressing redundant information.  These types of considerations are relevant to all perceptual systems, and so it is likely that other sensory systems are similarly attuned to the statistics of their natural input.  This project aims to apply models which embody efficient coding principles to acoustic stimuli at the level of the auditory cortex.  Preliminary work has shown that representations of natural sounds, including speech sounds, learned by such a model are very similar to the representations used by the auditory cortex (as indicated by A1 receptive fields).</p>
+      <p>The visual system is tuned to the statistical properties of natural images, at multiple levels.  Such sensitivity to the statistics of natural scenes enables the visual system to efficiently represent information, enhancing interesting information and suppressing redundant information.  These types of considerations are relevant to all perceptual systems, and so it is likely that other sensory systems are similarly attuned to the statistics of their natural input.  This project aims to apply models which embody efficient coding principles to acoustic stimuli at the level of the auditory cortex.  Preliminary work has shown that representations of natural sounds, including speech sounds, learned by such a model are very similar to the representations used by the auditory cortex (as indicated by A1 receptive fields).</p>
 
       <p>Future work aims to apply more sophisticated models to this data, and to relate the salient statistical regularities of speech sounds learned by these models to phonetic categories.</p>
 
