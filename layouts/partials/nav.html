@@ -1,0 +1,9 @@
+{{ range .Site.Data.nav.nav }}
+  {{ if eq .title $.Title }}
+    {{ .title | upper }}
+  {{ else }}
+    <a href="{{ .url }}"> {{ .title | upper }} </a>
+  {{ end }}
+  /
+{{ end }}
+<a target="_blank" href="cv/cv_kleinschmidt.pdf">CV</a>

@@ -1,0 +1,12 @@
+contentDir = "content"
+layoutDir = "layouts"
+publishDir = "public"
+buildDrafts = false
+baseURL = "https://davekleinschmidt.com/"
+canonifyURLs = true
+title = "Dave F. Kleinschmidt"
+
+[author]
+        name = "Dave F. Kleinschmidt"
+        github = "kleinschmidt"
+        twitter = "kleinschmidt"
