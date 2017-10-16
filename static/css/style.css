@@ -193,7 +193,11 @@ li {
     margin-bottom: 3px;
 }
 
-#contact a {
+li a {
+    background-color: #333333;
+}
+
+strong a {
     background-color: #333333;
 }
 

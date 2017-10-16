@@ -1,0 +1,13 @@
+online:
+  - name: "dave.f.kleinschmidt**@**gmail.com"
+    url: "mailto:dave.f.kleinschmidt@gmail.com"
+  - name: "**github**.com/kleinschmidt"
+    url: "https://github.com/kleinschmidt/"
+  - name: "**researchgate**.net/profile/Dave\_Kleinschmidt"
+    url: "https://www.researchgate.net/profile/Dave_Kleinschmidt"
+  - name: "**twitter**.com/kleinschmidt"
+    url: "https://twitter.com/kleinschmidt"
+offline:
+  - "278 Princeton Neuroscience Institute"
+  - "Washington Rd"
+  - "Princeton, NJ 08540"

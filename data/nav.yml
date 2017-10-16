@@ -1,7 +1,7 @@
 nav:
   - title: Home
-    url: index.html
+    url: /
   - title: Work
-    url: work.html
+    url: work/
   - title: Play
-    url: play.html
+    url: play/

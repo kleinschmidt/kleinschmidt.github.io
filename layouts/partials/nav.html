@@ -2,8 +2,8 @@
   {{ if eq .title $.Title }}
     {{ .title | upper }}
   {{ else }}
-    <a href="{{ .url }}"> {{ .title | upper }} </a>
+    <a href="{{ .url | absURL }}"> {{ .title | upper }} </a>
   {{ end }}
   /
 {{ end }}
-<a target="_blank" href="cv/cv_kleinschmidt.pdf">CV</a>
+<a target="_blank" href={{ absURL "cv/cv_kleinschmidt.pdf" }}>CV</a>
