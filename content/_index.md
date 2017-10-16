@@ -17,7 +17,7 @@ Lab](http://raizadalab.org/)**
 I work on **sensation and perception in a non-stationary world**. My
 work uses behavioral, computational, and neural approaches to understand
 how sensory systems **adapt** to semi-predictable variability across
-contexts. I am particularly—but not exclusively—interested in **speech
+contexts. I am particularly---but not exclusively---interested in **speech
 and language**.
 
 Resources
