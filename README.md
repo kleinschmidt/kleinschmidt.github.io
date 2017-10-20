@@ -1,5 +1,7 @@
 # Dave Kleinschmidt's personal (academic) website
 
+Build with [Hugo](https://gohugo.io)
+
 ## TODO
 
 * Blog posts
