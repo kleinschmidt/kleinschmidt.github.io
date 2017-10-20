@@ -1,0 +1,6 @@
+<h3>In prep or submitted</h3>
+<ul>
+    {{ range where .Site.Data.papers.references "keyword" "inprepsubmitted" }}
+    <li><em>{{ .title | markdownify }}</em></li>
+    {{ end }}
+</ul>

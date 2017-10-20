@@ -1,0 +1,578 @@
+---
+references:
+- id: KleinschmidtInPrepFmriAdapt
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Raizada
+    given: Rajeev
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - literal: in prep
+  title: Neural mechanisms of rapid adaptation to unfamiliar talkers via distributional
+    learning
+  keyword: inprepsubmitted
+
+- id: Kleinschmidt2015d
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - literal: in prep
+  title: <span class="nocase">Inferring listeners’ prior beliefs about unfamiliar
+    talkers</span>
+  keyword: inprepsubmitted
+  DOI: 10.13140/RG.2.1.3803.4405
+
+- id: Kleinschmidt2015e
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Emberson
+    given: Lauren L
+  - family: Doko
+    given: Donias
+  - family: Edelman
+    given: Shimon
+  - family: Raizada
+    given: Rajeev D S
+  issued:
+  - literal: in prep
+  title: <span class="nocase">How the brain transforms its representational space
+    to learn to solve a linearly inseparable task</span>
+  keyword: inprepsubmitted
+
+- id: WeatherholtzSubmitted2016
+  type: manuscript
+  author:
+  - family: Weatherholtz
+    given: Kodi
+  - family: Seifeldin
+    given: Maryam
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Kurumada
+    given: Chigusa
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - literal: submitted
+  title: <span class="nocase">Speech perception as probabilistic inference under uncertainty
+    based on social-indexical knowledge</span>
+  container-title: Manuscript submitted for publication
+  keyword: inprepsubmitted
+
+- id: KleinschmidtInPressTopics
+  type: article-journal
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Weatherholtz
+    given: Kodi
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - literal: in press
+  title: <span class="nocase">Sociolinguistic perception as inference under uncertainty</span>
+  container-title: Topics in Cognitive Science
+  keyword: inpress
+
+- id: Pajak2016
+  type: article-journal
+  author:
+  - family: Pajak
+    given: Bozena
+  - family: Fine
+    given: Alex B
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+  title: 'Learning additional languages as hierarchical probabilistic inference:
+    Insights from first language processing'
+  title-short: Learning additional languages as hierarchical probabilistic inference
+  container-title: Language Learning
+  page: '900-944'
+  volume: '66'
+  issue: '4'
+  keyword: second language acquisition, hierarchical probabilistic inference, statistical
+    learning, speech adaptation
+  DOI: 10.1111/lang.12168
+  ISSN: '1467-9922'
+
+- id: Kleinschmidt2016
+  type: article-journal
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+  title: '<span class="nocase">Re-examining selective adaptation: Fatiguing feature
+    detectors, or distributional learning?</span>'
+  container-title: Psychonomic Bulletin & Review
+  page: '678-691'
+  volume: '23'
+  issue: '3'
+  DOI: 10.3758/s13423-015-0943-z
+  ISSN: '1069-9384'
+
+- id: Salverda2014
+  type: article-journal
+  author:
+  - family: Salverda
+    given: Anne Pier
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Tanenhaus
+    given: Michael K
+  issued:
+  - year: '2014'
+    month: '2'
+  title: <span class="nocase">Immediate effects of anticipatory coarticulation in
+    spoken-word recognition</span>
+  container-title: Journal of Memory and Language
+  page: '145-163'
+  volume: '71'
+  issue: '1'
+  URL: http://linkinghub.elsevier.com/retrieve/pii/S0749596X13001113
+  DOI: 10.1016/j.jml.2013.11.002
+  ISSN: 0749596X
+
+- id: Kleinschmidt2015
+  type: article-journal
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2015'
+  title: '<span class="nocase">Robust speech perception: Recognize the familiar,
+    generalize to the similar, and adapt to the novel</span>'
+  container-title: Psychological Review
+  volume: '122'
+  issue: '2'
+  DOI: 10.1037/a0038695
+
+- id: Zaki2013
+  type: article-journal
+  author:
+  - family: Zaki
+    given: Safa R
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2014'
+  title: '<span class="nocase">Procedural memory effects in categorization: Evidence
+    for multiple systems or task complexity?</span>'
+  container-title: Memory & cognition
+  page: '508-24'
+  volume: '42'
+  issue: '3'
+  abstract: According to an influential multiple-systems model of category learning,
+    an implicit procedural system governs the learning of information-integration
+    category structures, whereas a rule-based system governs the learning of explicit
+    rule-based categories. Support for this idea has come in part from demonstrations
+    that motor interference, in the form of inconsistent mapping between response
+    location and category labels, results in observed deficits, but only for learning
+    information-integration category structures. In this article, we argue that this
+    response location manipulation results in a potentially more cognitively complex
+    task in which the feedback is difficult to interpret. In one experiment, we attempted
+    to attenuate the cognitive complexity by providing more information in the feedback,
+    and demonstrated that this eliminates the observed performance deficit for information-integration
+    category structures. In a second experiment, we demonstrated similar interference
+    of the inconsistent mapping manipulation in a rule-based category structure. We
+    claim that task complexity, and not separate systems, might be the source of the
+    original dissociation between performance on rule-based and information-integration
+    tasks.
+  keyword: at,categorization,categorization tasks,considerable debate has focused,in
+    recent years,multiple-systems theorists argue that,not multiple qualitatively
+    different,on whether or,systems are engaged in
+  URL: http://www.ncbi.nlm.nih.gov/pubmed/24217892
+  DOI: 10.3758/s13421-013-0375-9
+  ISSN: '1532-5946'
+  PMID: '24217892'
+
+- id: Croft2011
+  type: article-journal
+  author:
+  - family: Croft
+    given: William
+  - family: Bhattacharya
+    given: Tanmoy
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Smith
+    given: D. Eric
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2011'
+    month: '11'
+  title: <span class="nocase">Greenbergian universals, diachrony, and statistical
+    analyses</span>
+  container-title: Linguistic Typology
+  page: '433-453'
+  volume: '15'
+  issue: '2'
+  annote: From Duplicate 2 ( Greenbergian universals, diachrony and statistical analyses
+    William Croft, - Croft, William; Bhattacharya, Tanmoy; Kleinschmidt, Dave; Smith,
+    D Eric; Jaeger, T Florian )
+  URL: http://www.reference-global.com/doi/abs/10.1515/LITY.2011.029
+  DOI: 10.1515/LITY.2011.029
+  ISSN: '1430-0532'
+
+- id: Kleinschmidt2016a
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  editor:
+  - family: Trueswell
+    given: John
+  - family: Papafragou
+    given: Anna
+  - family: Grodner
+    given: Dan
+  - family: Mirman
+    given: Dan
+  issued:
+  - year: '2016'
+  title: <span class="nocase">What do you expect from an unfamiliar talker?</span>
+  container-title: Proceedings of the 38th annual meeting of the cognitive science
+    society
+  publisher: Cognitive Science Society
+  publisher-place: Austin, TX
+  keyword: bayesian,cognitive science,experimental research with adult,guage understanding,humans,lan-,learning,linguistics,modeling,psychology,speech
+    recognition
+
+- id: Kleinschmidt2015a
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Raizada
+    given: Rajeev
+  - family: Jaeger
+    given: T Florian
+  editor:
+  - family: Dale
+    given: Rick
+  - family: Jennings
+    given: Carolyn
+  - family: Maglio
+    given: Paul
+  - family: Matlock
+    given: Teenie
+  - family: Noelle
+    given: David
+  - family: Warlaumont
+    given: Anne
+  - family: Yoshimi
+    given: Jeff
+  issued:
+  - year: '2015'
+  title: Supervised and unsupervised learning in phonetic adaptation
+  container-title: Proceedings of the 37th annual conference of the cognitive science
+    society
+  publisher: Cognitive Science Society
+  publisher-place: Austin, TX
+
+- id: Kleinschmidt2011
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2011'
+  title: <span class="nocase">A Bayesian belief updating model of phonetic recalibration
+    and selective adaptation</span>
+  container-title: Proceedings of the 2nd ACL workshop on cognitive modeling and computational
+    linguistics
+  publisher: Association for Computational Linguistics
+  publisher-place: Stroudsburg, PA
+  abstract: The mapping from phonetic categories to acoustic cue values is highly
+    flexible, and adapts rapidly in response to exposure. There is currently, however,
+    no theoretical framework which captures the range of this adaptation. We develop
+    a novel approach to modeling phonetic adaptation via a belief-updating model,
+    and demonstrate that this model naturally unifies two adaptation phenomena traditionally
+    considered to be distinct.
+  keyword: adaptation,models,perceptual learning,rational models,speech
+
+- id: Kleinschmidt2012c
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  editor:
+  - family: Miyake
+    given: 'N'
+  - family: Peebles
+    given: D
+  - family: Cooper
+    given: R P
+  issued:
+  - year: '2012'
+    month: '8'
+  title: '<span class="nocase">A continuum of phonetic adaptation: Evaluating an
+    incremental belief-updating model of recalibration and selective adaptation</span>'
+  container-title: Proceedings of the 34th annual conference of the cognitive science
+    society
+  publisher: Talk; Cognitive Science Society
+  publisher-place: Austin, TX
+  page: '605-10'
+  keyword: bayesian models,ibration,mechanical,phonetic adaptation,recal-,selective
+    adaptation,speech perception
+
+- id: Kleinschmidt2012b
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Fine
+    given: Alex B
+  - family: Jaeger
+    given: T Florian
+  editor:
+  - family: Miyake
+    given: 'N'
+  - family: Peebles
+    given: D
+  - family: Cooper
+    given: R P
+  issued:
+  - year: '2012'
+    month: '8'
+  title: <span class="nocase">A belief-updating model of adaptation and cue combination
+    in syntactic comprehension</span>
+  container-title: Proceedings of the 34th annual conference of the cognitive science
+    society
+  publisher: Talk; Cognitive Science Society
+  publisher-place: Austin, TX
+  page: '599-604'
+  keyword: adaptation,bayesian model-,cue combination,ing,rational analysis,sentence
+    processing
+
+- id: Kleinschmidt2010
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2010'
+    month: '11'
+  title: Efficient coding of speech in the auditory cortex
+  note: Poster presented at the 2nd Annual Neurobiology of Language Conference
+
+- id: Kleinschmidt2012
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2012'
+    month: '3'
+  title: <span class="nocase">Evaluation of a Bayesian belief-updating model for the
+    time course of linguistic adaptation</span>
+  note: Poster presented at the 25th CUNY Sentence Processing Conference
+
+- id: Kleinschmidt2012a
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Fine
+    given: Alex B
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2012'
+    month: '3'
+  title: <span class="nocase">A Bayesian belief-updating model of syntactic expectation
+    adaptation</span>
+  note: Poster presented at the 25th CUNY Sentence Processing Conference
+
+- id: Kleinschmidt2013
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2013'
+    month: '4'
+  title: 'Speech perception, the lack of invariance, and adaptation: A computational
+    level analysis'
+  title-short: Speech perception, the lack of invariance, and adaptation
+  note: Poster presented at the Workshop on Current Issues and Methods in Speaker
+    Adaptation
+
+- id: Kleinschmidt2013a
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2013'
+    month: '7'
+  title: 'Speech perception, the lack of invariance, and adaptation: A computational
+    level analysis'
+  title-short: Speech perception, the lack of invariance, and adaptation
+  note: 'Poster presented at the LSA Institute 2013 Workshop: How the brain accommodates
+    variability in linguistic representations'
+
+- id: Jaeger2014
+  type: manuscript
+  author:
+  - family: Jaeger
+    given: T Florian
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2014'
+    month: '4'
+  title: 'Efficient language understanding in a variable world: Prediction and adaptation'
+  title-short: Efficient language understanding in a variable world
+  note: Talk jointly presented at the 21st Annual Meeting of the Cognitive Neuroscience
+    Society
+
+- id: Jaeger2014a
+  type: manuscript
+  author:
+  - family: Jaeger
+    given: T Florian
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2014'
+    month: '12'
+  title: Speech perception and adaptation as inference under uncertainty
+  note: Plenary talk jointly presented at the 15th Australasian International Speech
+    Science and Technology Conference
+
+- id: Salverda2013
+  type: manuscript
+  author:
+  - family: Salverda
+    given: Anne Pier
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Tanenhaus
+    given: Michael K
+  issued:
+  - year: '2013'
+    month: '11'
+  title: Immediate effects of anticipatory coarticulation in spoken-word recognition
+  note: Talk presented at the 54th Annual Meeting of the Psychonomic Society
+
+- id: Zaki2011
+  type: manuscript
+  author:
+  - family: Zaki
+    given: Safa R
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2011'
+  title: 'Response location effects in categorization: Evidence for multiple systems
+    or task complexity?'
+  title-short: Response location effects in categorization
+  note: Poster presented at the 52nd Annual Meeting of the Psychonomic Society
+
+- id: Kleinschmidt2015b
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  - family: Raizada
+    given: Rajeev
+  issued:
+  - year: '2015'
+    month: '3'
+  title: 'Informativity in adaptation: Supervised and unsupervised learning of linguistic
+    cue distributions'
+  title-short: Informativity in adaptation
+  note: Poster presented at the 28th Annual CUNY Sentence Processing Conference
+
+- id: Kleinschmidt2016svalp
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+    month: '4'
+  title: What do you expect from an unfamiliar talker?
+  note: Talk presented at the conference on Sociolinguistic Variation and Language
+    Processing
+
+- id: Kleinschmidt2016labphon
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+    month: '7'
+  title: What do you expect from an unfamiliar talker?
+  note: Talk presented at LabPhon15
+
+- id: Kleinschmidt2016labphonworkshop
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Weatherholtz
+    given: Kodi
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+    month: '7'
+  title: How informative is dialect about vowel distributions?
+  note: Poster presented at the LabPhon15 workshop on higher-order structure in speech
+    variability
+
+- id: Kleinschmidt2016snl
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Raizada
+    given: Rajeev
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2016'
+    month: '8'
+  title: Neural mechanisms for coping with talker variability by rapid distributional
+    learning
+  note: Talk presented at the Society for the Neurobiology of Language meeting
+...
