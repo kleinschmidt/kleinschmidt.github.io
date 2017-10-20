@@ -1,6 +1,6 @@
 # Dave Kleinschmidt's personal (academic) website
 
-Build with [Hugo](https://gohugo.io)
+Built with [Hugo](https://gohugo.io)
 
 ## TODO
 
