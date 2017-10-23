@@ -1,0 +1,4 @@
+
+{{ delimit (apply .author "partial" "author" ".") ", " " & " }}.
+{{ partial .issued "issued" }}
+{{ .title | markdownify }}
