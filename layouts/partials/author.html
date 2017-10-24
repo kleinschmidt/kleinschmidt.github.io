@@ -1,1 +1,1 @@
-{{ if eq .family "Kleinschmidt" }}<strong>{{ .family }}, {{ partial "initials" .given }}</strong>{{ else }}{{ .family }}, {{ partial "initials" .given }}{{ end }}
+{{ if eq .family "Kleinschmidt" }}<strong>{{ .family }}, {{ partial "initials" .given | chomp }}</strong>{{ else }}{{ .family }}, {{ partial "initials" .given }}{{ end }}
