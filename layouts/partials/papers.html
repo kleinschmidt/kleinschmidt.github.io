@@ -1,6 +1,6 @@
 <h3>In prep or submitted</h3>
 <ul>
-    {{ range where .Site.Data.papers.references "keyword" "inprepsubmitted" }}
-    <li><em>{{ partial "paper.html" . }}</em></li>
+    {{ range .Site.Data.papers.references }}
+    <li>{{ partial "paper.html" . }}</li>
     {{ end }}
 </ul>

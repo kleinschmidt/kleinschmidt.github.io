@@ -1,4 +1,6 @@
+{{ $authors := apply .author "partial" "author" "." }}
+{{ $clean := apply $authors "chomp" "." }}
 
-{{ delimit (apply .author "partial" "author" ".") ", " " & " }}.
-{{ partial .issued "issued" }}
+{{ delimit $clean ", " " & " }}.
+{{ index .issued 0 | partial "issued" | chomp }}.
 {{ .title | markdownify }}

@@ -1,5 +1,5 @@
-{{ if isset . "year" }}
-({{ .year }})
-{{ else if isset . "literal" }}
-(<em>{{ .literal }}</em>)
+{{ if .year }}
+({{- .year -}})
+{{ else if .literal }}
+(<em>{{- .literal -}}</em>)
 {{ end }}
