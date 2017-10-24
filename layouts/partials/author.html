@@ -1,6 +1,1 @@
-{{ $givens := split .given " " }}
-{{ $initials := apply $givens "partial" "initial" "." }}
-{{ $clean := apply $initials "chomp" "." }}
-{{ $given := delimit $clean " " }}
-
-{{ if eq .family "Kleinschmidt" }}<strong>{{ .family }}, {{ $given }}</strong>{{ else }}{{ .family }}, {{ $given }}{{ end }}
+{{ if eq .family "Kleinschmidt" }}<strong>{{ .family }}, {{ partial "initials" .given }}</strong>{{ else }}{{ .family }}, {{ partial "initials" .given }}{{ end }}

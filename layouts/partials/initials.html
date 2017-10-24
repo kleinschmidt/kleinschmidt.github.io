@@ -1,0 +1,4 @@
+{{ $givens := split . " " }}
+{{ $initials := apply $givens "partial" "initial" "." }}
+{{ $clean := apply $initials "chomp" "." }}
+{{ delimit $clean " " }}
