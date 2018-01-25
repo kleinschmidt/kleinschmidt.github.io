@@ -3,6 +3,7 @@ layoutDir = "layouts"
 publishDir = "public"
 buildDrafts = false
 canonifyURLs = true
+baseURL = "/"
 title = "Dave F. Kleinschmidt"
 
 [author]
