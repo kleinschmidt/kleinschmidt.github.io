@@ -6,7 +6,12 @@
 {{ else if .status }}
   (<em>{{ .status }}</em>).
 {{ end }}
-{{ .title | markdownify }}.
+{{ with .title | plainify | markdownify }}
+  {{ . }}
+  {{- if ne (substr . -1 1) "?" -}}
+    .
+  {{- end -}}
+{{ end }}
 {{ if index . "container-title" }}
   <em>
     {{ index . "container-title" | chomp }}
