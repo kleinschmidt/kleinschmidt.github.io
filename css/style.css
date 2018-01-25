@@ -11,7 +11,7 @@ html, body {
     clear: both;
     padding: 0px; /*100px 10px 10px;*/
     background: #333333;
-    font-family: Helvetica, Arial, Sans-serif;
+    font-family: Helvetica, Arimo, Arial, Sans-serif;
     color: #dbdbdb;
 }
 
@@ -197,7 +197,7 @@ li {
     background-color: #333333;
 }
 
-a.contact {
+strong a {
     background-color: #333333;
 }
 
