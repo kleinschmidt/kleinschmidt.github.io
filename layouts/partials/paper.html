@@ -1,7 +1,24 @@
 {{ $authors := apply .author "partial" "author" "." }}
 {{ $clean := apply $authors "chomp" "." }}
 {{ delimit $clean ", " " & " }}
-{{ index .issued 0 | partial "issued" | chomp }}.
+{{ if index . "issued" }}
+  {{ index .issued 0 | partial "issued" | chomp }}.
+{{ else if .status }}
+  (<em>{{ .status }}</em>).
+{{ end }}
 {{ .title | markdownify }}.
-{{ if index . "container-title" }}<em>{{ index . "container-title" | chomp }}{{ if .volume }}, {{ .volume }}{{ if .issue }} ({{ .issue }}){{ end }}{{ end }}{{ if .page }}, {{ .page }}{{ end }}</em>.{{ end }}
+{{ if index . "container-title" }}
+  <em>
+    {{ index . "container-title" | chomp }}
+    {{- if .volume -}},
+      {{ .volume }}
+      {{ if .issue }}
+        ({{ .issue }})
+      {{- end -}}
+    {{- end -}}
+  {{- if .page -}},
+    {{ .page }}
+  {{- end -}}
+  </em>.
+{{ end }}
 {{ if .DOI }}<a class="doi" href="http://doi.org/{{ .DOI }}" >DOI:{{ .DOI }}</a>{{ end }}

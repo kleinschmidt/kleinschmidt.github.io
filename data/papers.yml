@@ -9,11 +9,9 @@ references:
     given: Rajeev
   - family: Jaeger
     given: T Florian
-  issued:
-  - literal: in prep
   title: Neural mechanisms of rapid adaptation to unfamiliar talkers via distributional
     learning
-  keyword: inprepsubmitted
+  status: in preparation
 
 - id: Kleinschmidt2015d
   type: manuscript
@@ -22,11 +20,9 @@ references:
     given: Dave F
   - family: Jaeger
     given: T Florian
-  issued:
-  - literal: in prep
   title: <span class="nocase">Inferring listeners’ prior beliefs about unfamiliar
     talkers</span>
-  keyword: inprepsubmitted
+  status: in preparation
   DOI: 10.13140/RG.2.1.3803.4405
 
 - id: Kleinschmidt2015e
@@ -42,31 +38,20 @@ references:
     given: Shimon
   - family: Raizada
     given: Rajeev D S
-  issued:
-  - literal: in prep
   title: <span class="nocase">How the brain transforms its representational space
     to learn to solve a linearly inseparable task</span>
-  keyword: inprepsubmitted
+  status: in preparation
 
-- id: WeatherholtzSubmitted2016
+- id: KleinschmidtSubmittedLCN
   type: manuscript
   author:
-  - family: Weatherholtz
-    given: Kodi
-  - family: Seifeldin
-    given: Maryam
   - family: Kleinschmidt
     given: Dave F
-  - family: Kurumada
-    given: Chigusa
-  - family: Jaeger
-    given: T Florian
-  issued:
-  - literal: submitted
-  title: <span class="nocase">Speech perception as probabilistic inference under uncertainty
-    based on social-indexical knowledge</span>
-  container-title: Manuscript submitted for publication
-  keyword: inprepsubmitted
+  title: 'Structure in talker variability: How much is there and how much can it
+    help?'
+  title-short: Structure in talker variability
+  status: submitted
+  DOI: 10.17605/OSF.IO/A4TKN
 
 - id: KleinschmidtInPressTopics
   type: article-journal
@@ -77,11 +62,9 @@ references:
     given: Kodi
   - family: Jaeger
     given: T Florian
-  issued:
-  - literal: in press
   title: <span class="nocase">Sociolinguistic perception as inference under uncertainty</span>
   container-title: Topics in Cognitive Science
-  keyword: inpress
+  status: in press
 
 - id: Pajak2016
   type: article-journal
