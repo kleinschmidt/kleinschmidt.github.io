@@ -1,0 +1,20 @@
+sudo: required
+branches:
+  except:
+  - master                      # master hosts hugo-generated content
+services:
+  - docker
+before_install:
+  - docker pull jojomi/hugo:0.32.4
+script:
+  - mkdir public
+  - docker run -i --rm -P -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  target-branch: staging
+  local-dir: public
+  on:
+    branch: hugo
