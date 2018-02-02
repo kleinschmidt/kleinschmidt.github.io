@@ -3,6 +3,15 @@ title: Home
 footer_img: imgs/porch_reader.jpg
 ---
 
+I work on **sensation and perception in a non-stationary world**. My work uses
+behavioral, computational, and neural approaches to understand how sensory
+systems **adapt** to structured variability across contexts.
+
+I am particularly---but not exclusively---interested in **speech and language**.
+
+Appointments
+------------
+
 Currently a C.V. Starr Fellow, Princeton Neuroscience Institute
 
 Starting in 2018, I'll be Asst. Professor of Psychology, Rutgers New
@@ -13,12 +22,6 @@ Department of Brain and Cognitive Sciences, where I was affiliated with
 the **[Human Language Processing
 Lab](http://www.hlp.rochester.edu/)** and the **[Raizada
 Lab](http://raizadalab.org/)**
-
-I work on **sensation and perception in a non-stationary world**. My
-work uses behavioral, computational, and neural approaches to understand
-how sensory systems **adapt** to semi-predictable variability across
-contexts. I am particularly---but not exclusively---interested in **speech
-and language**.
 
 Resources
 ---------

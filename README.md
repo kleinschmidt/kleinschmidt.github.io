@@ -9,6 +9,8 @@ Built with [Hugo](https://gohugo.io)
 * Blog posts
     * github writing workflow
     * github pages workflow
+    * basic concepts of probability theory, with samples (marginalization=
+      weighted average, etc.)
 * "today I learned"
 * Resources as posts/links
 * restructure "work" page:
