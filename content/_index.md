@@ -24,7 +24,7 @@ Resources
 ---------
 
 Take your data to go as an R package: [tutorial](r-packages/) and [git
-repostory](https://github.com/kleinschmidt/r-packages)
+repository](https://github.com/kleinschmidt/r-packages)
 
 Data and analysis for a phonetic adaptation experiment: [R
 package](https://github.com/kleinschmidt/phonetic-sup-unsup)
