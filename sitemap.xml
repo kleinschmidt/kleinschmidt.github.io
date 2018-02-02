@@ -16,16 +16,8 @@
   </url>
   
   <url>
-    <loc>/play/</loc>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/work/</loc>
   </url>
   
   <url>

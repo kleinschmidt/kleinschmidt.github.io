@@ -9,14 +9,5 @@
 	<atom:link href="/play/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Play</title>
-      <link>/play/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/play/</guid>
-      <description>I like making things Open-source projects I&#39;ve contributed to include JuliaStats, Gadfly (ggplot-style visualization for Julia), FAAV (now FAVE), latexdiff, and, most importantly, lolcommits. I ride bikes (even, yes, through the Rochester winter). My commuter bike is a fixie I built up on a beater 10-speed Fuji frame with some pretty ostentatious red deep-v wheels, and when I feel like wrapping myself in spandex I have a 1993 Bianchi Campione, which sports a fabulously 90s purple-and-black paint job.</description>
-    </item>
-    
   </channel>
 </rss>

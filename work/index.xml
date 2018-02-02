@@ -9,15 +9,5 @@
 	<atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Work</title>
-      <link>/work/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/work/</guid>
-      <description>As part of UMD&#39;s 2010 Winter Storm IGERT workshop, I gave a short tutorial on ANOVA and Linear Mixed-Effects models for language scientists. Slides and some R code for running simple ANOVA/MEM analysis of a repeated-measures design can be found here.
- -- Updates! {% for update in site.data.updates %}  {{ update.date }}:  {{ update.content }} {% endfor %}  The big picture Broadly speaking, I&#39;m interested in how the brain manages to efficiently allocate representational resources in a world where the statistics of sensory features changes from situation to situation.</description>
-    </item>
-    
   </channel>
 </rss>
