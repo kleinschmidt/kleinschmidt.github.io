@@ -6,16 +6,16 @@
     {{ end }}
 </ul>
 
-<h3>Submitted and in prep</h3>
+<h2>Submitted and in prep</h2>
 <ul>
     {{ range sort (where .Site.Data.papers.references "status" "in" (slice "in preparation" "submitted")) "status" "desc" }}
     <li>{{ partial "paper.html" . }}</li>
     {{ end }}
 </ul>
 
-<h3>Conference proceedings papers</h3>
+<h2>Conference proceedings</h2>
 <ul>
-    {{ range sort (where .Site.Data.papers.references "type" "paper-conference") "issued" "desc" }}
+    {{ range where .Site.Data.papers.references "type" "paper-conference" }}
     <li>{{ partial "paper.html" . }}</li>
     {{ end }}
 </ul>
