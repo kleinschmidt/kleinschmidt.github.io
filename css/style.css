@@ -16,13 +16,6 @@ html, body {
     color: #dbdbdb;
 }
 
-@media screen and (max-width: 500px) {
-    #page-container {
-        width: 100%;
-        margin: 0px auto;
-    }
-}
-
 #header{
     margin-top: 135px;
     margin-bottom: 0px;
@@ -35,6 +28,24 @@ html, body {
 #header h1 {
     margin-left: 10px;
     margin-bottom: 10px;
+    color: #c7b299;
+    font-size: 60px;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+}
+
+@media screen and (max-width: 500px) {
+    #page-container {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    #header h1 {
+        /* want to scale down from 60px at 500px vw */
+        font-size: calc(60 * (100vw / 500));
+        line-height: calc(50 * (100vw / 500));
+    }
 }
 
 #nav {
@@ -90,12 +101,6 @@ html, body {
 /*div {background: red}*/
 
 h1 {
-    color: #c7b299;
-    font-size: 60px;
-    line-height: 50px;
-    margin: 0px;
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
 }
 
 h2 {
