@@ -62,9 +62,12 @@ references:
     given: Kodi
   - family: Jaeger
     given: T Florian
+  issued:
+  - year: '2018'
   title: <span class="nocase">Sociolinguistic perception as inference under uncertainty</span>
   container-title: Topics in Cognitive Science
-  status: in press
+  volume: Advance online publication
+  DOI: 10.1111/tops.12331
 
 - id: Pajak2016
   type: article-journal
@@ -214,6 +217,17 @@ references:
   URL: http://www.reference-global.com/doi/abs/10.1515/LITY.2011.029
   DOI: 10.1515/LITY.2011.029
   ISSN: '1430-0532'
+
+- id: Kleinschmidt2018cogsci
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  title: 'Learning distributions as they come: Particle filter models for online
+    distributional learning of phonetic categories'
+  title-short: Learning distributions as they come
+  status: submitted
+  DOI: 10.17605/OSF.IO/DYMC8
 
 - id: Kleinschmidt2016a
   type: paper-conference
@@ -558,4 +572,17 @@ references:
   title: Neural mechanisms for coping with talker variability by rapid distributional
     learning
   note: Talk presented at the Society for the Neurobiology of Language meeting
+
+- id: Kleinschmidt2017icon
+  type: manuscript
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  issued:
+  - year: '2017'
+    month: '8'
+  title: 'The ideal adapter: Life-long, hierarchical distributional learning'
+  title-short: The ideal adapter
+  note: 'Talk presented at ICON symposium "Models of category formation and adaptation:
+    distributional learning of speech and language"'
 ...
