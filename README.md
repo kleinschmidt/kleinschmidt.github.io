@@ -11,6 +11,8 @@ Built with [Hugo](https://gohugo.io)
     * github pages workflow
     * basic concepts of probability theory, with samples (marginalization=
       weighted average, etc.)
+    * pysurfer installation on arch
+    * (updated) data packages tutorial with `usethis`
 * "today I learned"
 * Resources as posts/links
 * restructure "work" page:
