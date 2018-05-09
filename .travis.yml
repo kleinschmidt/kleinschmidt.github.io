@@ -8,7 +8,7 @@ before_install:
   - docker pull jojomi/hugo:0.32.4
 script:
   - mkdir public
-  - docker run -i --rm -P -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo
+  - docker run -i --rm -P -v $(pwd):/src -v $(pwd)/public:/output jojomi/hugo hugo
 deploy:
   provider: pages
   skip-cleanup: true
