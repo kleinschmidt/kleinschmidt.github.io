@@ -3,12 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/work/</loc>
   </url>
   
   <url>
@@ -16,12 +15,13 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/work/</loc>
+    <loc>/tags/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
