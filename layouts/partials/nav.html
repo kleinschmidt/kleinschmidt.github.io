@@ -1,8 +1,8 @@
-{{ range .Site.Data.nav.nav }}
-  {{ if eq .title $.Title }}
-    {{ .title | upper }}
+{{ range .Site.Menus.main }}
+  {{ if eq .Name $.Title }}
+    {{ .Name }}
   {{ else }}
-    <a href="{{ .url | absURL }}"> {{ .title | upper }} </a>
+    <a href="{{ .URL | absURL }}"> {{ .Name }} </a>
   {{ end }}
   /
 {{ end }}

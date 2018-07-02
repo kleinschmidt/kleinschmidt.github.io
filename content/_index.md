@@ -1,6 +1,8 @@
 --- 
 title: Home 
 footer_img: imgs/porch_reader.jpg
+menu: "main"
+weight: 1
 ---
 
 I work on **sensation and perception in a non-stationary world**. My work uses

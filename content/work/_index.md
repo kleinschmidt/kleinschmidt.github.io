@@ -1,6 +1,8 @@
 ---
 title: Work
 footer_img: imgs/walking_away2.jpg
+menu: "main"
+weight: 2
 ---
 
 Broadly speaking, I'm interested in how the brain manages to efficiently

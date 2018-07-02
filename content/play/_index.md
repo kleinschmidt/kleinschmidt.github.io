@@ -1,6 +1,8 @@
 --- 
 title: Play 
 footer_img: imgs/fixie2.jpg 
+menu: "main"
+weight: 3
 ---
 
 I like making things
