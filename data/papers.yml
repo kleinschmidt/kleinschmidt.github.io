@@ -51,7 +51,12 @@ references:
     help?'
   title-short: Structure in talker variability
   status: submitted
-  DOI: 10.17605/OSF.IO/A4TKN
+  DOI: 10.1080/23273798.2018.1500698
+  source_links:
+    - name: preprint
+      link: https://psyarxiv.com/a4tkn/
+    - name: osf
+      link: https://osf.io/3wcy5/
 
 - id: KleinschmidtInPressTopics
   type: article-journal
@@ -66,8 +71,11 @@ references:
   - year: '2018'
   title: <span class="nocase">Sociolinguistic perception as inference under uncertainty</span>
   container-title: Topics in Cognitive Science
-  volume: Advance online publication
+  volume: Early View
   DOI: 10.1111/tops.12331
+  source_links:
+    - name: osf
+      link: https://osf.io/e2ku4/
 
 - id: Pajak2016
   type: article-journal

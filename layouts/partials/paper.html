@@ -27,3 +27,6 @@
   </em>.
 {{ end }}
 {{ if .DOI }}<a class="doi" href="http://doi.org/{{ .DOI }}" >DOI:{{ .DOI }}</a>{{ end }}
+{{ range .source_links }}
+  <a class="source-link" href="{{ .link }}">[{{- .name -}}]</a>
+{{ end }}
