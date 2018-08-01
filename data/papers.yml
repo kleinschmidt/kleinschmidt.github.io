@@ -43,14 +43,16 @@ references:
   status: in preparation
 
 - id: KleinschmidtSubmittedLCN
-  type: manuscript
+  type: article-journal
   author:
   - family: Kleinschmidt
     given: Dave F
   title: 'Structure in talker variability: How much is there and how much can it
     help?'
   title-short: Structure in talker variability
-  status: submitted
+  issued:
+  - year: 'in press'
+  container-title: "Language, Cognition, and Neuroscience"
   DOI: 10.1080/23273798.2018.1500698
   source_links:
     - name: preprint
@@ -120,6 +122,22 @@ references:
   DOI: 10.3758/s13423-015-0943-z
   ISSN: '1069-9384'
 
+- id: Kleinschmidt2015
+  type: article-journal
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2015'
+  title: 'Robust speech perception: Recognize the familiar,
+    generalize to the similar, and adapt to the novel'
+  container-title: "Psychological Review"
+  volume: '122'
+  issue: '2'
+  DOI: 10.1037/a0038695
+
 - id: Salverda2014
   type: article-journal
   author:
@@ -131,7 +149,6 @@ references:
     given: Michael K
   issued:
   - year: '2014'
-    month: '2'
   title: <span class="nocase">Immediate effects of anticipatory coarticulation in
     spoken-word recognition</span>
   container-title: Journal of Memory and Language
@@ -141,22 +158,6 @@ references:
   URL: http://linkinghub.elsevier.com/retrieve/pii/S0749596X13001113
   DOI: 10.1016/j.jml.2013.11.002
   ISSN: 0749596X
-
-- id: Kleinschmidt2015
-  type: article-journal
-  author:
-  - family: Kleinschmidt
-    given: Dave F
-  - family: Jaeger
-    given: T Florian
-  issued:
-  - year: '2015'
-  title: '<span class="nocase">Robust speech perception: Recognize the familiar,
-    generalize to the similar, and adapt to the novel</span>'
-  container-title: Psychological Review
-  volume: '122'
-  issue: '2'
-  DOI: 10.1037/a0038695
 
 - id: Zaki2013
   type: article-journal
@@ -228,14 +229,20 @@ references:
 
 - id: Kleinschmidt2018cogsci
   type: paper-conference
+  issued:
+  - year: "2018"
   author:
   - family: Kleinschmidt
     given: Dave F
   title: 'Learning distributions as they come: Particle filter models for online
     distributional learning of phonetic categories'
+  container-title: "Proceedings of the 40th Annual Conference of the Cognitive Science Society"
   title-short: Learning distributions as they come
-  status: submitted
-  DOI: 10.17605/OSF.IO/DYMC8
+  source_links:
+  - link: "https://OSF.IO/DYMC8"
+    name: "osf"
+  - link: "http://mindmodeling.org/cogsci2018/papers/0372/0372.pdf"
+    name: "pdf"
 
 - id: Kleinschmidt2016a
   type: paper-conference
