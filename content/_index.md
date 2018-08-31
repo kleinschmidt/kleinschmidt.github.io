@@ -14,14 +14,12 @@ I am particularly---but not exclusively---interested in **speech and language**.
 Appointments
 ------------
 
-Currently a C.V. Starr Fellow, Princeton Neuroscience Institute
+Assistant Professor of Psychology, **Rutgers New Brunswick**
 
-Starting in 2018, I'll be Asst. Professor of Psychology, Rutgers New
-Brunswick
+Previously C.V. Starr Fellow, Princeton Neuroscience Institute
 
-Formerly I was a PhD student at the University of Rochester in the
-Department of Brain and Cognitive Sciences, where I was affiliated with
-the **[Human Language Processing
+I did my PhD at the University of Rochester in the Department of Brain and
+Cognitive Sciences, where I was affiliated with the **[Human Language Processing
 Lab](http://www.hlp.rochester.edu/)** and the **[Raizada
 Lab](http://raizadalab.org/)**
 
