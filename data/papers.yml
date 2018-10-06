@@ -268,6 +268,8 @@ references:
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
   source_links:
+    - link: https://github.com/kleinschmidt/cogsci_2016
+      name: github
     - link: https://mindmodeling.org/cogsci2016/papers/0407/paper0407.pdf
       name: pdf
 
@@ -303,31 +305,10 @@ references:
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
   source_links:
+    - link: https://github.com/kleinschmidt/cogsci_2015
+      name: github
     - link: https://mindmodeling.org/cogsci2015/papers/0200/paper0200.pdf
       name: pdf
-
-- id: Kleinschmidt2011
-  type: paper-conference
-  author:
-  - family: Kleinschmidt
-    given: Dave F
-  - family: Jaeger
-    given: T Florian
-  issued:
-  - year: '2011'
-  title: <span class="nocase">A Bayesian belief updating model of phonetic recalibration
-    and selective adaptation</span>
-  container-title: Proceedings of the 2nd ACL workshop on cognitive modeling and computational
-    linguistics
-  publisher: Association for Computational Linguistics
-  publisher-place: Stroudsburg, PA
-  abstract: The mapping from phonetic categories to acoustic cue values is highly
-    flexible, and adapts rapidly in response to exposure. There is currently, however,
-    no theoretical framework which captures the range of this adaptation. We develop
-    a novel approach to modeling phonetic adaptation via a belief-updating model,
-    and demonstrate that this model naturally unifies two adaptation phenomena traditionally
-    considered to be distinct.
-  keyword: adaptation,models,perceptual learning,rational models,speech
 
 - id: Kleinschmidt2012c
   type: paper-conference
@@ -355,6 +336,9 @@ references:
   page: '605-10'
   keyword: bayesian models,ibration,mechanical,phonetic adaptation,recal-,selective
     adaptation,speech perception
+  source_links:
+    - name: pdf
+      link: https://mindmodeling.org/cogsci2012/papers/0115/paper0115.pdf
 
 - id: Kleinschmidt2012b
   type: paper-conference
@@ -384,6 +368,35 @@ references:
   page: '599-604'
   keyword: adaptation,bayesian model-,cue combination,ing,rational analysis,sentence
     processing
+  source_links:
+    - name: pdf
+      link: https://mindmodeling.org/cogsci2012/papers/0114/paper0114.pdf
+
+- id: Kleinschmidt2011
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Jaeger
+    given: T Florian
+  issued:
+  - year: '2011'
+  title: <span class="nocase">A Bayesian belief updating model of phonetic recalibration
+    and selective adaptation</span>
+  container-title: Proceedings of the 2nd ACL workshop on cognitive modeling and computational
+    linguistics
+  publisher: Association for Computational Linguistics
+  publisher-place: Stroudsburg, PA
+  abstract: The mapping from phonetic categories to acoustic cue values is highly
+    flexible, and adapts rapidly in response to exposure. There is currently, however,
+    no theoretical framework which captures the range of this adaptation. We develop
+    a novel approach to modeling phonetic adaptation via a belief-updating model,
+    and demonstrate that this model naturally unifies two adaptation phenomena traditionally
+    considered to be distinct.
+  keyword: adaptation,models,perceptual learning,rational models,speech
+  source_links:
+    - link: http://www.aclweb.org/anthology/W11-0602
+      name: pdf
 
 - id: Kleinschmidt2010
   type: manuscript
