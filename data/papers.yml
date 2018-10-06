@@ -267,8 +267,9 @@ references:
     society
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
-  keyword: bayesian,cognitive science,experimental research with adult,guage understanding,humans,lan-,learning,linguistics,modeling,psychology,speech
-    recognition
+  source_links:
+    - link: https://mindmodeling.org/cogsci2016/papers/0407/paper0407.pdf
+      name: pdf
 
 - id: Kleinschmidt2015a
   type: paper-conference
@@ -301,6 +302,9 @@ references:
     society
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
+  source_links:
+    - link: https://mindmodeling.org/cogsci2015/papers/0200/paper0200.pdf
+      name: pdf
 
 - id: Kleinschmidt2011
   type: paper-conference
