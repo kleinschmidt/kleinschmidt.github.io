@@ -6,6 +6,9 @@ baseURL = "/"
 canonifyURLs = true
 title = "Dave F. Kleinschmidt"
 
+pygmentsCodefences = true
+pygmentsUseClasses = true
+
 [author]
         name = "Dave F. Kleinschmidt"
         github = "kleinschmidt"
