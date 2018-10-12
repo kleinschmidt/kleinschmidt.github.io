@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+<div id="content">
+    {{ .Content }}
+
+    Hellooo wowrrrldd.
+    <div id="posts" >
+        <ul class="posts" >
+            {{ range .Pages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ partial "footer.html" . }}
