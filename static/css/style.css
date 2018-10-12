@@ -51,7 +51,7 @@ html, body {
 #nav {
     margin: 0px;
     padding: 0px;
-    padding-left: 12px;
+    margin-left: 12px;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
@@ -226,6 +226,16 @@ strong a {
 strong {
     font-style: bold;
     color: #f8f8f8;
+}
+
+.post div.highlight {
+    margin: 10px -13px -5px;
+    padding: 5px 13px;
+}
+
+.highlight pre {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 a.post-title {
