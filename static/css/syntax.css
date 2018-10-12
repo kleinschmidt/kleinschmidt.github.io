@@ -7,6 +7,7 @@ TODO: convert this to SCSS
  */
 
 
+.highlight { background-color: #3a3a3a; }
 .highlight .hll { background-color: #424242 }
 /* .highlight  { background: #000000; color: #eaeaea } */
 .highlight .c { color: #969896 } /* Comment */

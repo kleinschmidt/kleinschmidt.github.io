@@ -228,6 +228,15 @@ strong {
     color: #f8f8f8;
 }
 
+a.post-title {
+    background-color: inherit;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.post-date {
+    color: #929292;
+}
 
 .clearer {
 clear:both;
