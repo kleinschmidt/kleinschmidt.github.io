@@ -244,8 +244,13 @@ a.post-title {
     font-weight: bold;
 }
 
-.post-date {
+div.post-date {
+    display: inline-block;
     color: #929292;
+}
+
+div#posts {
+    margin-top: 20px;
 }
 
 .clearer {
