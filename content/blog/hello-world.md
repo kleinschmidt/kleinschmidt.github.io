@@ -5,34 +5,42 @@ draft = true
 title = "Hello World"
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a vulputate
-augue. Nulla eu quam ac tortor porttitor mattis. Suspendisse potenti. Sed ac
-mauris eros. Proin molestie sed diam quis pretium. Donec ac finibus
-quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
-venenatis dignissim interdum. Vivamus laoreet metus ac tellus tincidunt
-pulvinar.
+Why a blog?  Because [Hugo](https://gohugo.io) makes it really easy and why not.
 
 <!--more-->
-```julia
-function hello()
-    println("world")
-end
-```
 
-Aliquam erat volutpat. Etiam elementum rutrum lorem nec dignissim. Cras pretium
-neque ut nisl sodales ultricies. Vestibulum elit augue, tempor nec semper eget,
-ornare a urna. Aenean ac mi eu lectus feugiat lobortis vitae et sapien. Integer
-ornare finibus porta. Vestibulum nec volutpat justo. Proin gravida, ipsum sed
-imperdiet auctor, justo erat gravida mauris, vitae faucibus lacus nunc in neque.
+## Some history
 
-Suspendisse et leo mollis, tempus nulla quis, pellentesque metus. Vivamus
-tristique libero in purus vulputate, ut pretium arcu cursus. Donec non magna et
-dolor consequat feugiat. Ut nec tempor tortor, id gravida urna. Curabitur nibh
-eros, pulvinar posuere nibh quis, luctus varius quam. Aenean finibus justo odio,
-viverra rutrum turpis rutrum non. Nulla sit amet ullamcorper orci. Aenean
-rhoncus tortor risus, eu iaculis ipsum vehicula vitae. Sed posuere varius
-vestibulum. Phasellus vestibulum dui id lacus aliquam, id porttitor metus
-iaculis. In nec turpis leo. Aenean fermentum libero non dolor aliquet, id
-sodales nibh maximus. Pellentesque elementum massa risus, eu consequat augue
-scelerisque at. Duis urna nisi, sollicitudin in tellus quis, finibus placerat
-justo. Fusce nec orci sit amet nisl cursus tempus.
+As with the rest of the site, the source is in a [Github
+repository](https://github.com/kleinschmidt/kleinschmidt.github.io) repository.
+If you look back in the history, you'll see that this site was
+[originally](https://github.com/kleinschmidt/kleinschmidt.github.io/tree/4424a5510ec06a601e9a7b49563337ef03e10265)
+just a bunch of HTML files with something like a common structure and some
+hacked together CSS.
+
+At some point I moved it from our department's FTP server to [Github
+pages](https://pages.github.com/), which natively supports Jekyll.  Jekyll also
+had the distinct advantage of preferring sites that are mostly HTML with some
+template logic mixed in, so that made it pretty painless to add some smarts to
+the site without rewriting all my lovingly hand-crafted HTML.
+
+
+
+Eventually, I ~~got bored~~ ~~finished my PhD and had a ton of time on my
+hands~~ was procrastinating and decided it was time to refresh the site.  I
+decided to look at Hugo because it was the new hotness and because it's powered
+by Go templates which provide a lot of power.  I wanted to do things like
+generate a nicely formatted [list of papers](/work/) on the fly.  I also at that
+point was sick of writing HTML by hand so 
+
+
+The downside of Hugo is that it's not natively supported on Github pages, but
+needs to be run to generate the HTML files that actually get hosted.  If I
+didn't know any better, I would have to just do this manually and commit all the
+generated HTML before updating the Github repository.  But fortunately, since
+becoming more involved with open source projects I've learned a bit more about
+continuous integration.  So I was able (with some thrashing about) to figure out
+how to automatically render and deployed the site with
+[Travis](https://travis-ci.org/kleinschmidt/kleinschmidt.github.io).
+
+
