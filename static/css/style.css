@@ -141,12 +141,13 @@ p {
 
 a {
     text-decoration: none;
-    color: #dbdbdb;
-    background-color: #555555;
+    color: #c7b299; /* #fff; */
+    /* background-color: #444444; */
 }
 
 a:hover {
     color: #f8f8f8;
+    background-color: #444444;
 }
 
 .boxed {
@@ -216,7 +217,8 @@ li {
 }
 
 #contact a {
-    background-color: #333333;
+    background-color: inherit;
+    color: inherit;
 }
 
 strong a {
@@ -238,8 +240,13 @@ strong {
     margin-bottom: 0px;
 }
 
+h1.post-title {
+    margin-bottom: 3px;
+}
+
 a.post-title {
     background-color: inherit;
+    color: inherit;
     font-size: 150%;
     font-weight: bold;
 }
