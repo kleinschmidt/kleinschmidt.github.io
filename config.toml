@@ -6,7 +6,12 @@ baseURL = "/"
 canonifyURLs = true
 title = "Dave F. Kleinschmidt"
 
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
+
 [author]
         name = "Dave F. Kleinschmidt"
         github = "kleinschmidt"
         twitter = "kleinschmidt"
+        email = "dave.f.kleinschmidt@gmail.com"

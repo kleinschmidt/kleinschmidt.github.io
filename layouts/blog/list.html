@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+<div id="content">
+    {{ .Content }}
+    <div id="posts" >
+        <ul class="posts" >
+            {{ range .Pages }}
+            <li>
+                <a class="post-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                <div class="post-date">{{ .PublishDate.Format "2 Jan 2006" }}</div>
+                <div class="post-summary">
+                    {{ .Summary }}
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ partial "footer.html" . }}
