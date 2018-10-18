@@ -1,20 +1,18 @@
 +++
 date = "2018-10-12T16:16:22-04:00"
-publishdate = ""
-draft = true
+publishdate = "2018-10-17T22:28:22-04:00"
+draft = false
 title = "Hello World"
 +++
 
 Why a blog?  Because why not.
 
-<!--more-->
-
-## How
-
 Like the rest of this site, it's powered by [Hugo](https://gohugo.io), a static
 site generator powered by Go templates.  The content of each page is written in
 [markdown](https://daringfireball.net/projects/markdown/syntax), and rendered
 into HTML by a series of hand-crafted templates and CSS.
+
+<!--more-->
 
 ## Some history
 
@@ -161,4 +159,10 @@ title = "A Wonderful Blog Post"
 +++
 ```
 
-hugo
+## What
+
+I'm planning to write about research/lab updates, progress on the JuliaStats
+ecosystem (especially the [future of the `@formula`
+language](https://github.com/JuliaStats/StatsModels.jl/pull/71) for specifying
+and fitting statistical models from tabular data!), and more mundane personal
+discoveries, frustrations, and victories while I get my lab going at Rutgers.
