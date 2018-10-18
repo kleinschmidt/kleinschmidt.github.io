@@ -267,6 +267,16 @@ a.post-title {
     font-weight: bold;
 }
 
+div.post-more {
+    margin: 15px 0px;
+}
+
+.post-more a {
+    color: inherit;
+    font-weight: bold;
+    color: #929292;
+}
+
 div.post-date {
     display: inline-block;
     color: #929292;
