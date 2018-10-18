@@ -16,7 +16,7 @@ into HTML by a series of hand-crafted templates and CSS.
 
 ## Some history
 
-These templates and CSS are an organic outgrowth of this sites past as a bunch
+These templates and CSS are an organic outgrowth of this site's past as a bunch
 of HTML and CSS that I hacked together because someone told me I needed to have
 a website when I was applying to grad school.[^gh-orig]
 
@@ -37,7 +37,6 @@ content.[^gh-jekyll]
 
 [^gh-jekyll]: This process starts around
     [`230507b`](https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b).
-
 
 Eventually, I ~~finished my PhD and had a ton of time on my hands~~ was
 procrastinating and decided it was time to properly refresh the site.[^gh-hugo]
