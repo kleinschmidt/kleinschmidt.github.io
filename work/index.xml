@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Work on Dave F. Kleinschmidt</title>
-    <link>/work/</link>
-    <description>Recent content in Work on Dave F. Kleinschmidt</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="/work/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+    <title>Work - Dave F. Kleinschmidt</title>
+  
+  <link href="/work/index.xml" rel="self"/>
+  <link href="/work/"/>
+  <id>/work/</id>
+  <author>
+    <name>Dave F. Kleinschmidt</name>
+    <email>dave.f.kleinschmidt@gmail.com</email>
+  </author>
+  <generator>Hugo -- gohugo.io</generator>
+</feed>
