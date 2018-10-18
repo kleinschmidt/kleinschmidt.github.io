@@ -90,13 +90,19 @@ html, body {
 
 
 #footer {
-    margin: 0px;
     margin-bottom: -1px;
     margin-top: 50px;
+    margin-left: -13px;
+    margin-right: -13px;
     padding: 0px;
     float: left;
 }
 
+#footer img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+}
 
 /*div {background: red}*/
 
