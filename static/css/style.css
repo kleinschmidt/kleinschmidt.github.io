@@ -34,16 +34,16 @@ html, body {
     text-rendering: optimizeLegibility;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 526px) {
     #page-container {
-        width: 100%;
+        width: calc(100vw - 26px);
         margin: 0px auto;
     }
 
     #header h1 {
         /* want to scale down from 60px at 500px vw */
-        font-size: calc(60 * (100vw / 500));
-        line-height: calc(50 * (100vw / 500));
+        font-size: calc(60 * (100vw / 526));
+        line-height: calc(50 * (100vw / 526));
     }
 }
 
