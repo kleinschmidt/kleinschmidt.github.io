@@ -1,9 +1,5 @@
 {{ range .Site.Menus.main }}
-  {{ if eq .Name $.Title }}
-    {{ .Name }}
-  {{ else }}
-    <a href="{{ .URL | absURL }}"> {{ .Name }} </a>
-  {{ end }}
+  <a href="{{ .URL | absURL }}" {{ if $.IsDescendant .Page }}class="active"{{ end }}> {{ .Name }} </a>
   /
 {{ end }}
 <a target="_blank" href={{ absURL "cv/cv_kleinschmidt.pdf" }}>CV</a>
