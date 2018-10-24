@@ -68,6 +68,14 @@ html, body {
     text-decoration: none;
 }
 
+#nav a.active {
+    color: #dbdbdb;
+}
+
+#nav a.active:hover {
+    color: #eeeeee;
+}
+
 #sidepic {
     float: right;
     margin: 0px;
