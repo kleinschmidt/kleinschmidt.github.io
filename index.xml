@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-    <title>Home - Dave F. Kleinschmidt</title>
+    <title>Home</title>
   
   <link href="/index.xml" rel="self"/>
   <link href="/"/>
@@ -24,8 +24,6 @@
 site generator powered by Go templates.  The content of each page is written in
 <a href="https://daringfireball.net/projects/markdown/syntax">markdown</a>, and rendered
 into HTML by a series of hand-crafted templates and CSS.</p>
-
-<p></p>
 
 <h2 id="some-history">Some history</h2>
 
