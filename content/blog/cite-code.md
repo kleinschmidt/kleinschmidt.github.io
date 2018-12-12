@@ -1,6 +1,6 @@
 +++
 date = "2018-12-11T15:55:18-05:00"
-publishdate = ""
+publishdate = "2018-12-12"
 draft = true
 title = "Cite your code!"
 +++
@@ -8,17 +8,22 @@ title = "Cite your code!"
 TL;DR: **cite the code you use in your research!**
 
 In lab meeting the other day someone asked what the major R packages for
-analyzing psycholinguistic data are, and I had a hard time thinking of any that
-are dedicated (and not just a collection of helper functions).  That made me
-think about _why_ there's so little truly useful field-specific code out there.
-Part of the reason might simply be that there's not enough overlap in the
-specific kinds of analyses we do to justify creating brand new packages, rather
-than using domain-general tools (like the [tidyverse](https://tidyverse.org)).
+analyzing psycholinguistic data are, and I had a hard time thinking of
+any.[^ignorance] That made me think about _why_ software is such a small part of
+our scholarly output.  Part of the reason might simply be that there's not
+enough overlap in the specific kinds of analyses we do to justify creating brand
+new packages, rather than using domain-general tools (like the
+[tidyverse](https://tidyverse.org)).
+
+[^ignorance]: Of course, that could just be my own ignorance.  If I've missed an
+    R package that you find really useful in your psycholingustics etc. research
+    please let me know and I'll post an update!
 
 But I think there may be a deeper explanation: it's _hard_ to write good, useful
-software.  <!--more--> Designing, implementing, and maintaining software
-packages is difficulty at best and downright consuming at worst.  Being involved
-with developing and maintaining some of the
+software, and academia does not reward that particular kind of hard work.
+<!--more--> Designing, implementing, and maintaining software packages is
+difficulty at best and downright consuming at worst.  Being involved with
+developing and maintaining some of the
 [JuliaStats](https://github.com/JuliaStats) packages has shown me how much work
 and energy goes into just providing support to users and keeping things from
 breaking as the language changes and other packages are updated.  And, if I'm
@@ -69,10 +74,10 @@ encouraged by the academy.
 Of course, not all code you write is _software_, in the sense of a product
 that's usable by a third party for a task that may be very different than you
 originally intended.  But my hunch is that there's a lot of very useful software
-hiding out there in bits of one-off research code, and that if we rewarded
+hiding out there in bits of one-off research code,[^julia] and that if we rewarded
 academics _at all_ for doing the work to take that one-off code over the top to
 being useful software we'd collectively save ourselves a lot of
-wheel-reinventing.[^julia]  So, if you use software, cite it.  If you're using an
+wheel-reinventing.  So, if you use software, cite it.  If you're using an
 `R` package, you can get a citation with `citation`:
 
 [^julia]: There's a running joke in the Julia language community that most Julia
