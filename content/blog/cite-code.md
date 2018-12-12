@@ -16,9 +16,9 @@ specific kinds of analyses we do to justify creating brand new packages, rather
 than using domain-general tools (like the [tidyverse](https://tidyverse.org)).
 
 But I think there may be a deeper explanation: it's _hard_ to write good, useful
-code.  <!--more--> Designing, implementing, and maintaining software packages is
-difficulty at best and downright consuming at worst.  Being involved with
-developing and maintaining some of the
+software.  <!--more--> Designing, implementing, and maintaining software
+packages is difficulty at best and downright consuming at worst.  Being involved
+with developing and maintaining some of the
 [JuliaStats](https://github.com/JuliaStats) packages has shown me how much work
 and energy goes into just providing support to users and keeping things from
 breaking as the language changes and other packages are updated.  And, if I'm
@@ -37,21 +37,20 @@ they come up, but I barely have time for that.  Making a
 [is](https://github.com/JuliaPlots/Plots.jl)
 [truly](https://github.com/tidyverse/dplyr)
 [useful](https://github.com/tidyverse/ggplot2) to other people requires a huge
-amount of careful, laborious, heartbreaking work to design and implement.
+amount of careful, laborious work to design and implement.
 
-Academics---especially those at the junior professor stage, as I am now---are
-constantly faced with competing demands on their time and energy.  A major
-consideration is whether investing time in some activity will lead to more of
-the gold stars which allow you to advance in your career.  Right now, in my
-field, those gold stars are **citations**, and (at least if the conventional
+As an academic---especially those at the junior professor stage, as I am
+now---you are constantly faced with competing demands on your time and energy.
+A major consideration is whether investing time in some activity will lead to
+more of the gold stars which allow you to advance in your career.  Right now, in
+my field, those gold stars are **citations**, and (at least if the conventional
 wisdom is to be believed) any activity that does not lead to more gold stars
 (citations) is, essentially, a leisure activity.  Absent any change in
-incentives, it's not worth it to me to spend the time to develop useful software
-(from a purely careerist perspective, which I don't necessarily endorse).  So,
-what do you get?  A lot of cobbled-together one-off scripts, useful only for the
-project at hand, guided by oral tradition/lab culture, and (hopefully) [dumped on
-the internet in a well-intentioned attempt at
-openness](https://github.com/kleinschmidt/cogsci-particle-learn).
+incentives and from a purely careerist perspective (which I don't necessarily
+endorse), it's not worth it to me to spend the time to develop useful software.
+So, what do we get?  A lot of cobbled-together one-off scripts and notebooks,
+useful only for the project at hand, guided by oral tradition/lab culture, and
+(hopefully) dumped on the internet in a well-intentioned attempt at openness.
 
 Which brings me the take-home message of this post: **cite the software you
 use**.  This is _especially_ important if that software is open-source software.
@@ -72,9 +71,12 @@ that's usable by a third party for a task that may be very different than you
 originally intended.  But my hunch is that there's a lot of very useful software
 hiding out there in bits of one-off research code, and that if we rewarded
 academics _at all_ for doing the work to take that one-off code over the top to
-being useful software we'd save ourselves a lot of work and pain collectively.
-So, if you use software, cite it.  If you're using an `R` package, you can get a
-citation with, e.g.
+being useful software we'd collectively save ourselves a lot of
+wheel-reinventing.[^julia]  So, if you use software, cite it.  If you're using an
+`R` package, you can get a citation with `citation`:
+
+[^julia]: There's a running joke in the Julia language community that most Julia
+    code is written by procrastinating PhD students.
 
 ```{r}
 citation('rmarkdown')
