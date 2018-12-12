@@ -1,11 +1,11 @@
 +++
 date = "2018-12-11T15:55:18-05:00"
 publishdate = "2018-12-12"
-draft = true
+draft = false
 title = "Cite your code!"
 +++
 
-TL;DR: **cite the code you use in your research!**
+TL;DR: **cite the software you use in your research!**
 
 In lab meeting the other day someone asked what the major R packages for
 analyzing psycholinguistic data are, and I had a hard time thinking of
