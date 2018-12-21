@@ -65,6 +65,31 @@
         <ul class="posts" >
             
             <li>
+                <a class="post-title" href="/blog/scraping-brewtoad/">Web scraping with Julia</a>
+                <div class="post-date">21 Dec 2018</div>
+                <div class="post-summary">
+                    <p>One of my grad school procrastination projects was learning how to brew beer.  I
+started off using a website called Hopville to keep track of the recipes I
+brewed, until they were acquired in 2013 by Brewtoad.  Both sites provided a
+really convenient way to play around with recipe ideas, learn from others, and
+keep track of how each step of each brew went which was really helpful as a
+beginner.</p>
+
+<p>Now, just five years later, Brewtoad is shutting down.<sup class="footnote-ref" id="fnref:ask-for-money"><a href="#fn:ask-for-money">1</a></sup> With no
+way to easily grab an archive of the dozens of recipes and brew logs I&rsquo;ve saved
+on the site, and no public API.<sup class="footnote-ref" id="fnref:xml"><a href="#fn:xml">2</a></sup>  So, the only remaining option is to go
+through and download the HTML for each page, one-by-one.  I <em>could</em> do that
+myself but I <del>don&rsquo;t have time for that</del> think that&rsquo;s a task more appropriate
+for a computer.  So I wrote a <a href="https://github.com/kleinschmidt/brewtoad-scrape.jl">Julia
+script</a> to scrape a user&rsquo;s
+recipes and brew logs.</p>
+                </div>
+                <div class="post-more">
+                    <a href="/blog/scraping-brewtoad/">more →</a>
+                </div>
+            </li>
+            
+            <li>
                 <a class="post-title" href="/blog/cite-code/">Cite your code!</a>
                 <div class="post-date">12 Dec 2018</div>
                 <div class="post-summary">

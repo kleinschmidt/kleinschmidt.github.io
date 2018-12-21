@@ -4,7 +4,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-12-11T15:55:18-05:00</lastmod>
+    <lastmod>2018-12-21T11:30:18-05:00</lastmod>
   </url>
   
   <url>
@@ -17,7 +17,12 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-12-11T15:55:18-05:00</lastmod>
+    <lastmod>2018-12-21T11:30:18-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/scraping-brewtoad/</loc>
+    <lastmod>2018-12-21T11:30:18-05:00</lastmod>
   </url>
   
   <url>
