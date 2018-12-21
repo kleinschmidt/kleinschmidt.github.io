@@ -20,17 +20,18 @@
     <updated>2018-12-21T11:30:18-05:00</updated>
     <content type="html"><![CDATA[<p>One of my grad school procrastination projects was learning how to brew beer.  I
 started off using a website called Hopville to keep track of the recipes I
-brewed, until they were acquired in 2013 by Brewtoad.  Both sites provided a
-really convenient way to play around with recipe ideas, learn from others, and
-keep track of how each step of each brew went which was really helpful as a
-beginner.</p>
+brewed, until they were acquired in 2013 by
+<a href="https://www.brewtoad.com">Brewtoad</a>.  Both sites provided a really convenient
+way to play around with recipe ideas, learn from others, and keep track of how
+each step of each brew went which was really helpful as a beginner.</p>
 
-<p>Now, just five years later, Brewtoad is shutting down.<sup class="footnote-ref" id="fnref:ask-for-money"><a href="#fn:ask-for-money">1</a></sup> With no
-way to easily grab an archive of the dozens of recipes and brew logs I&rsquo;ve saved
-on the site, and no public API.<sup class="footnote-ref" id="fnref:xml"><a href="#fn:xml">2</a></sup>  So, the only remaining option is to go
-through and download the HTML for each page, one-by-one.  I <em>could</em> do that
-myself but I <del>don&rsquo;t have time for that</del> think that&rsquo;s a task more appropriate
-for a computer.  So I wrote a <a href="https://github.com/kleinschmidt/brewtoad-scrape.jl">Julia
+<p>Now, just five years later, Brewtoad is <a href="https://www.brewtoad.com/shutdown">shutting
+down</a>.<sup class="footnote-ref" id="fnref:ask-for-money"><a href="#fn:ask-for-money">1</a></sup> With no way to easily
+grab an archive of the dozens of recipes and brew logs I&rsquo;ve saved on the site,
+and no public API.<sup class="footnote-ref" id="fnref:xml"><a href="#fn:xml">2</a></sup> So, the only remaining option is to go through and
+download the HTML for each page, one-by-one.  I <em>could</em> do that myself but I
+<del>don&rsquo;t have time for that</del> think that&rsquo;s a task more appropriate for a
+computer.  So I wrote a <a href="https://github.com/kleinschmidt/brewtoad-scrape.jl">Julia
 script</a> to scrape a user&rsquo;s
 recipes and brew logs.</p>
 
