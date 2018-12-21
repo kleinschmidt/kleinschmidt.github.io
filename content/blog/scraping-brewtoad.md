@@ -7,17 +7,18 @@ title = "Web scraping with Julia"
 
 One of my grad school procrastination projects was learning how to brew beer.  I
 started off using a website called Hopville to keep track of the recipes I
-brewed, until they were acquired in 2013 by Brewtoad.  Both sites provided a
-really convenient way to play around with recipe ideas, learn from others, and
-keep track of how each step of each brew went which was really helpful as a
-beginner.
+brewed, until they were acquired in 2013 by
+[Brewtoad](https://www.brewtoad.com).  Both sites provided a really convenient
+way to play around with recipe ideas, learn from others, and keep track of how
+each step of each brew went which was really helpful as a beginner.
 
-Now, just five years later, Brewtoad is shutting down.[^ask-for-money] With no
-way to easily grab an archive of the dozens of recipes and brew logs I've saved
-on the site, and no public API.[^xml]  So, the only remaining option is to go
-through and download the HTML for each page, one-by-one.  I _could_ do that
-myself but I ~~don't have time for that~~ think that's a task more appropriate
-for a computer.  So I wrote a [Julia
+Now, just five years later, Brewtoad is [shutting
+down](https://www.brewtoad.com/shutdown).[^ask-for-money] With no way to easily
+grab an archive of the dozens of recipes and brew logs I've saved on the site,
+and no public API.[^xml] So, the only remaining option is to go through and
+download the HTML for each page, one-by-one.  I _could_ do that myself but I
+~~don't have time for that~~ think that's a task more appropriate for a
+computer.  So I wrote a [Julia
 script](https://github.com/kleinschmidt/brewtoad-scrape.jl) to scrape a user's
 recipes and brew logs.
 
