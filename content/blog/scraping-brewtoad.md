@@ -1,8 +1,8 @@
 +++
 date = "2018-12-21T11:30:18-05:00"
-publishdate = ""
-draft = true
-title = "Scraping Brewtoad"
+publishdate = "2018-12-21"
+draft = false
+title = "Web scraping with Julia"
 +++
 
 One of my grad school procrastination projects was learning how to brew beer.  I
@@ -14,11 +14,14 @@ beginner.
 
 Now, just five years later, Brewtoad is shutting down.[^ask-for-money] With no
 way to easily grab an archive of the dozens of recipes and brew logs I've saved
-on the site.[^xml].  So, the only remaining option is to go through and download
-the HTML for each page, one-by-one.  I _could_ do that myself but I ~~don't have
-time for that~~ think that's a task more appropriate for a computer.  So I wrote
-a [Julia script](https://github.com/kleinschmidt/brewtoad-scrape.jl) to scrape a
-user's recipes and brew logs.
+on the site, and no public API.[^xml]  So, the only remaining option is to go
+through and download the HTML for each page, one-by-one.  I _could_ do that
+myself but I ~~don't have time for that~~ think that's a task more appropriate
+for a computer.  So I wrote a [Julia
+script](https://github.com/kleinschmidt/brewtoad-scrape.jl) to scrape a user's
+recipes and brew logs.
+
+<!--more-->
 
 One neat thing was that the sluggish brewtoad servers---never particularly
 snappy and now positively groaning under the weight of desperate users
@@ -99,6 +102,18 @@ Finally, at some point requests to brewtoad.com from HTTP.jl started to return
 fine.  So I had to use run `curl` for each request instead of using HTTP.jl just
 to finish downloading my own goddamn data.
 
+If you, too, want to save your recipes and logs from oblivion, here's how:
+
+```bash
+$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
+
+$ cd brewtoad-scrape.jl
+
+$ julia --project=. -e "using Pkg; Pkg.instantiate()"
+
+$ julia --project=. scrape.jl <userid>
+```
+
 [^ask-for-money]: Probably has something to do with the fact that I've never
     given them any money and my sweet sweet content is sufficiently monetizable
     to run a sustainable business.  Of course they never _asked_ for any money,
@@ -115,3 +130,4 @@ to finish downloading my own goddamn data.
     [Cascadia](https://github.com/andybalholm/cascadia) CSS Selector library,
     written in [Go](https://golang.org/), by
     [@andybalhom](https://github.com/andybalholm)."
+
