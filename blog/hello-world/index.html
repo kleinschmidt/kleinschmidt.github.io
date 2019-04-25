@@ -157,11 +157,11 @@ at <a href="/blog">blog/</a></p>
 renders the navigation menu based on the list of pages automatically generated
 by Hugo, so all that&rsquo;s needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
 YAML metadata block in <code>/content/blog/_index.md</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---<span class="err">
-</span><span class="err"></span>title: &#34;Blog&#34;<span class="err">
-</span><span class="err"></span>menu: &#34;main&#34;<span class="err">
-</span><span class="err"></span>weight: 4<span class="err">
-</span><span class="err"></span>---</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;Blog&#34;
+menu: &#34;main&#34;
+weight: 4
+---</code></pre></div>
 <p>The final piece is a bit of convenience: the <code>archetypes/default.md</code> provides a
 skeleton markdown file for a new post:</p>
 <div class="highlight"><pre class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="x">+++
