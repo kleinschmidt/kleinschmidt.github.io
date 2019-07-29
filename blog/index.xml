@@ -73,9 +73,10 @@ selector queries:</p>
         <span class="n">push!</span><span class="p">(</span><span class="n">pages</span><span class="p">,</span> <span class="n">baseurl</span> <span class="o">*</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
         <span class="n">println</span><span class="p">(</span><span class="s">&#34;Next page: &#34;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
     <span class="k">end</span>
-<span class="k">end</span></code></pre></div></li>
-
-<li><p><a href="https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter"><code>Iterators.filter</code></a></p>
+<span class="k">end</span></code></pre></div>
+<ol>
+<li><a href="https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter"><code>Iterators.filter</code></a></li>
+</ol>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="n">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
                              <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="n">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">h1</span><span class="p">},</span>
                          <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">root</span><span class="p">))</span></code></pre></div></li>
@@ -88,9 +89,7 @@ with an <code>if</code> clause</p>
      <span class="k">for</span> <span class="n">n</span>
      <span class="kp">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
      <span class="k">if</span> <span class="n">n</span> <span class="n">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
-         <span class="n">occursin</span><span class="p">(</span><span class="sr">r&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span></code></pre></div></li>
-</ol>
-
+         <span class="n">occursin</span><span class="p">(</span><span class="sr">r&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span></code></pre></div>
 <p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
 If I get a chance I&rsquo;ll go back and re-write it with
 <a href="https://github.com/Algocircle/Cascadia.jl">Cascadia.jl</a>,<sup class="footnote-ref" id="fnref:cascadia"><a href="#fn:cascadia">3</a></sup> which I
@@ -109,7 +108,9 @@ $ <span class="nb">cd</span> brewtoad-scrape.jl
 
 $ julia --project<span class="o">=</span>. -e <span class="s2">&#34;using Pkg; Pkg.instantiate()&#34;</span>
 
-$ julia --project<span class="o">=</span>. scrape.jl &lt;userid&gt;</code></pre></div><div class="footnotes">
+$ julia --project<span class="o">=</span>. scrape.jl &lt;userid&gt;</code></pre></div></li>
+</ol>
+<div class="footnotes">
 
 <hr />
 
