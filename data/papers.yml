@@ -1,5 +1,26 @@
 ---
 references:
+- id: Wu2019submitted
+  type: manuscript
+  author:
+  - family: Wu
+    given: Meng-Huan
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Emberson
+    given: Lauren L
+  - family: Doko
+    given: Donias
+  - family: Edelman
+    given: Shimon
+  - family: Jacobs
+    given: Robert
+  - family: Raizada
+    given: Rajeev D S
+  title: <span class="nocase">Cortical transformation of stimulus-space in order to
+    linearize a linearly inseparable task</span>
+  status: submitted
+
 - id: KleinschmidtInPrepFmriAdapt
   type: manuscript
   author:
@@ -25,42 +46,43 @@ references:
   status: in preparation
   DOI: 10.13140/RG.2.1.3803.4405
 
-- id: Kleinschmidt2015e
-  type: manuscript
-  author:
-  - family: Kleinschmidt
-    given: Dave F
-  - family: Emberson
-    given: Lauren L
-  - family: Doko
-    given: Donias
-  - family: Edelman
-    given: Shimon
-  - family: Raizada
-    given: Rajeev D S
-  title: <span class="nocase">How the brain transforms its representational space
-    to learn to solve a linearly inseparable task</span>
-  status: in preparation
-
-- id: KleinschmidtSubmittedLCN
+- id: Kleinschmidt2019
   type: article-journal
   author:
   - family: Kleinschmidt
     given: Dave F
-  title: 'Structure in talker variability: How much is there and how much can it
-    help?'
-  title-short: Structure in talker variability
   issued:
-  - year: 'in press'
-  container-title: "Language, Cognition, and Neuroscience"
+  - year: 2019
+  title: 'Structure in talker variability: How much is there and how much can it help?'
+  title-short: Structure in talker variability
+  container-title: Language, Cognition and Neuroscience
+  page: 43-68
+  volume: '34'
+  issue: '1'
+  abstract: 'One of the persistent puzzles in understanding human speech perception
+    is how listeners cope with talker variability. One thing that might help listeners
+    is structure in talker variability: rather than varying randomly, talkers of the
+    same gender, dialect, age, etc. tend to produce language in similar ways. Listeners
+    are sensitive to this covariation between linguistic variation and socioindexical
+    variables. In this paper I present new techniques based on ideal observer models
+    to quantify (1) the amount and type of structure in talker variation (informativity
+    of a grouping variable), and (2) how useful such structure can be for robust speech
+    recognition in the face of talker variability (the utility of a grouping variable).
+    I demonstrate these techniques in two phonetic domains—word-initial stop voicing
+    and vowel identity—and show that these domains have diﬀerent amounts and types
+    of talker variability, consistent with previous, impressionistic ﬁndings. An R
+    package (phondisttools) accompanies this paper, and the source and data are available
+    from osf.io/zv6e3.'
   DOI: 10.1080/23273798.2018.1500698
+  ISSN: 2327-3798, 2327-3801
+  language: en-US
   source_links:
-    - name: preprint
-      link: https://psyarxiv.com/a4tkn/
-    - name: osf
-      link: https://osf.io/3wcy5/
+  - link: "https://psyarxiv.com/a4tkn/"
+    name: "preprint"
+  - link: "https://osf.io/3wcy5/"
+    name: "osf"
 
-- id: KleinschmidtInPressTopics
+- id: Kleinschmidt2018
   type: article-journal
   author:
   - family: Kleinschmidt
@@ -70,14 +92,15 @@ references:
   - family: Jaeger
     given: T Florian
   issued:
-  - year: '2018'
-  title: <span class="nocase">Sociolinguistic perception as inference under uncertainty</span>
+  - year: 2018
+  title: Sociolinguistic perception as inference under uncertainty
   container-title: Topics in Cognitive Science
-  volume: Early View
+  page: 818-834
+  volume: '10'
+  issue: '4'
   DOI: 10.1111/tops.12331
-  source_links:
-    - name: osf
-      link: https://osf.io/e2ku4/
+  ISSN: '17568757'
+  language: en-US
 
 - id: Pajak2016
   type: article-journal
@@ -220,12 +243,35 @@ references:
   page: '433-453'
   volume: '15'
   issue: '2'
-  annote: From Duplicate 2 ( Greenbergian universals, diachrony and statistical analyses
-    William Croft, - Croft, William; Bhattacharya, Tanmoy; Kleinschmidt, Dave; Smith,
-    D Eric; Jaeger, T Florian )
   URL: http://www.reference-global.com/doi/abs/10.1515/LITY.2011.029
   DOI: 10.1515/LITY.2011.029
   ISSN: '1430-0532'
+
+- id: Kleinschmidt2019cogsci
+  type: paper-conference
+  author:
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Hemmer
+    given: Pernille
+  editor:
+  - family: Goel
+    given: Ashok
+  - family: Seifert
+    given: Colleen
+  - family: Freksa
+    given: Christian
+  issued:
+  - year: 2019
+  title: A Bayesian model of memory in a multi-context environment
+  container-title: Proceedings of the 41st Annual Conference
+    of the Cognitive Science Society
+  publisher: Cognitive Science Society
+  source_links:
+  - link: "https://osf.io/vuksn/"
+    name: "osf"
+  - link: "https://mindmodeling.org/cogsci2019/papers/0355/0355.pdf"
+    name: "pdf"
 
 - id: Kleinschmidt2018cogsci
   type: paper-conference
@@ -263,8 +309,8 @@ references:
   issued:
   - year: '2016'
   title: <span class="nocase">What do you expect from an unfamiliar talker?</span>
-  container-title: Proceedings of the 38th annual meeting of the cognitive science
-    society
+  container-title: Proceedings of the 38th Annual Meeting of the Cognitive Science
+    Society
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
   source_links:
@@ -300,8 +346,8 @@ references:
   issued:
   - year: '2015'
   title: Supervised and unsupervised learning in phonetic adaptation
-  container-title: Proceedings of the 37th annual conference of the cognitive science
-    society
+  container-title: Proceedings of the 37th Annual Conference of the Cognitive Science
+    Society
   publisher: Cognitive Science Society
   publisher-place: Austin, TX
   source_links:
@@ -329,13 +375,11 @@ references:
     month: '8'
   title: '<span class="nocase">A continuum of phonetic adaptation: Evaluating an
     incremental belief-updating model of recalibration and selective adaptation</span>'
-  container-title: Proceedings of the 34th annual conference of the cognitive science
-    society
+  container-title: Proceedings of the 34th Annual Conference of the Cognitive Science
+    Society
   publisher: Talk; Cognitive Science Society
   publisher-place: Austin, TX
   page: '605-10'
-  keyword: bayesian models,ibration,mechanical,phonetic adaptation,recal-,selective
-    adaptation,speech perception
   source_links:
     - name: pdf
       link: https://mindmodeling.org/cogsci2012/papers/0115/paper0115.pdf
@@ -361,8 +405,8 @@ references:
     month: '8'
   title: <span class="nocase">A belief-updating model of adaptation and cue combination
     in syntactic comprehension</span>
-  container-title: Proceedings of the 34th annual conference of the cognitive science
-    society
+  container-title: Proceedings of the 34th Annual Conference of the Cognitive Science
+    Society
   publisher: Talk; Cognitive Science Society
   publisher-place: Austin, TX
   page: '599-604'
@@ -383,8 +427,8 @@ references:
   - year: '2011'
   title: <span class="nocase">A Bayesian belief updating model of phonetic recalibration
     and selective adaptation</span>
-  container-title: Proceedings of the 2nd ACL workshop on cognitive modeling and computational
-    linguistics
+  container-title: Proceedings of the 2nd ACL Workshop on Cognitive Modeling and Computational
+    Linguistics (CMCL)
   publisher: Association for Computational Linguistics
   publisher-place: Stroudsburg, PA
   abstract: The mapping from phonetic categories to acoustic cue values is highly
@@ -419,8 +463,8 @@ references:
   issued:
   - year: '2012'
     month: '3'
-  title: <span class="nocase">Evaluation of a Bayesian belief-updating model for the
-    time course of linguistic adaptation</span>
+  title: Evaluation of a Bayesian belief-updating model for the
+    time course of linguistic adaptation
   note: Poster presented at the 25th CUNY Sentence Processing Conference
 
 - id: Kleinschmidt2012a
