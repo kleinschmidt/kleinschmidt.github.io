@@ -1,25 +1,5 @@
 ---
 references:
-- id: Wu2019submitted
-  type: manuscript
-  author:
-  - family: Wu
-    given: Meng-Huan
-  - family: Kleinschmidt
-    given: Dave F
-  - family: Emberson
-    given: Lauren L
-  - family: Doko
-    given: Donias
-  - family: Edelman
-    given: Shimon
-  - family: Jacobs
-    given: Robert
-  - family: Raizada
-    given: Rajeev D S
-  title: <span class="nocase">Cortical transformation of stimulus-space in order to
-    linearize a linearly inseparable task</span>
-  status: submitted
 
 - id: KleinschmidtInPrepFmriAdapt
   type: manuscript
@@ -45,6 +25,32 @@ references:
     talkers</span>
   status: in preparation
   DOI: 10.13140/RG.2.1.3803.4405
+
+- id: Wu2019submitted
+  type: article-journal
+  author:
+  - family: Wu*
+    given: Meng-Huan
+  - family: Kleinschmidt*
+    given: Dave F
+  - family: Emberson
+    given: Lauren L
+  - family: Doko
+    given: Donias
+  - family: Edelman
+    given: Shimon
+  - family: Jacobs
+    given: Robert
+  - family: Raizada
+    given: Rajeev D S
+  title: Cortical transformation of stimulus-space in order to linearize a
+    linearly inseparable task
+  issued:
+  - year: in press
+  container-title: Journal of Cognitive Neuroscience
+  source_links:
+  - link: "https://psyarxiv.com/ctgy6"
+    name: "preprint"
 
 - id: Kleinschmidt2019
   type: article-journal
