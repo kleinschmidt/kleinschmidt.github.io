@@ -65,25 +65,22 @@
     <div class="post-date" >12 Dec 2018</div>
     <div class="post" >
         <p>TL;DR: <strong>cite the software you use in your research!</strong></p>
-
 <p>In lab meeting the other day someone asked what the major R packages for
 analyzing psycholinguistic data are, and I had a hard time thinking of
-any.<sup class="footnote-ref" id="fnref:ignorance"><a href="#fn:ignorance">1</a></sup> That made me think about <em>why</em> software is such a small part of
-our scholarly output.  Part of the reason might simply be that there&rsquo;s not
+any.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> That made me think about <em>why</em> software is such a small part of
+our scholarly output.  Part of the reason might simply be that there's not
 enough overlap in the specific kinds of analyses we do to justify creating brand
 new packages, rather than using domain-general tools (like the
 <a href="https://tidyverse.org">tidyverse</a>).</p>
-
-<p>But I think there may be a deeper explanation: it&rsquo;s <em>hard</em> to write good, useful
+<p>But I think there may be a deeper explanation: it's <em>hard</em> to write good, useful
 software, and academia does not reward that particular kind of hard work.</p>
-
 <p>Designing, implementing, and maintaining software packages is
 difficulty at best and downright consuming at worst.  Being involved with
 developing and maintaining some of the
 <a href="https://github.com/JuliaStats">JuliaStats</a> packages has shown me how much work
 and energy goes into just providing support to users and keeping things from
-breaking as the language changes and other packages are updated.  And, if I&rsquo;m
-being honest, the packages of my own research code that I&rsquo;ve released
+breaking as the language changes and other packages are updated.  And, if I'm
+being honest, the packages of my own research code that I've released
 (<a href="https://github.com/kleinschmidt/beliefupdatr"><code>beliefupdatr</code></a> and
 <a href="https://github.com/kleinschmidt/phondisttools"><code>phondisttools</code></a>) are not
 particularly well-crafted.  I basically pushed them out the door when I
@@ -99,7 +96,6 @@ they come up, but I barely have time for that.  Making a
 <a href="https://github.com/tidyverse/dplyr">truly</a>
 <a href="https://github.com/tidyverse/ggplot2">useful</a> to other people requires a huge
 amount of careful, laborious work to design and implement.</p>
-
 <p>As an academic&mdash;especially those at the junior professor stage, as I am
 now&mdash;you are constantly faced with competing demands on your time and energy.
 A major consideration is whether investing time in some activity will lead to
@@ -107,35 +103,34 @@ more of the gold stars which allow you to advance in your career.  Right now, in
 my field, those gold stars are <strong>citations</strong>, and (at least if the conventional
 wisdom is to be believed) any activity that does not lead to more gold stars
 (citations) is, essentially, a leisure activity.  Absent any change in
-incentives and from a purely careerist perspective (which I don&rsquo;t necessarily
-endorse), it&rsquo;s not worth it to me to spend the time to develop useful software.
+incentives and from a purely careerist perspective (which I don't necessarily
+endorse), it's not worth it to me to spend the time to develop useful software.
 So, what do we get?  A lot of cobbled-together one-off scripts and notebooks,
 useful only for the project at hand, guided by oral tradition/lab culture, and
 (hopefully) dumped on the internet in a well-intentioned attempt at openness.</p>
-
 <p>Which brings me the take-home message of this post: <strong>cite the software you
 use</strong>.  This is <em>especially</em> important if that software is open-source software.
 Citing software is important for a lot of reasons, not least of which is that it
 feels <em>good</em> to see your software acknowledged as useful in such a public forum,
 and developing open source software can often feel like a <a href="https://nolanlawson.com/2017/03/05/what-it-feels-like-to-be-an-open-source-maintainer/">thankless
 slog</a>.
-But there are two reasons I want to highlight here.  First, you&rsquo;re rewarding the
+But there are two reasons I want to highlight here.  First, you're rewarding the
 people who write and maintain that software, in a way that for your fellow
 academics will <em>directly</em> help them get a job, tenure, or a promotion.  Second,
 by citing software you treat it just like any other piece of intellectual labor
-you&rsquo;re building on to do your work, and in doing so you normalize the idea that
+you're building on to do your work, and in doing so you normalize the idea that
 good software <em>is</em> useful intellectual labor which should be valued and
 encouraged by the academy.</p>
-
 <p>Of course, not all code you write is <em>software</em>, in the sense of a product
-that&rsquo;s usable by a third party for a task that may be very different than you
-originally intended.  But my hunch is that there&rsquo;s a lot of very useful software
-hiding out there in bits of one-off research code,<sup class="footnote-ref" id="fnref:julia"><a href="#fn:julia">2</a></sup> and that if we rewarded
+that's usable by a third party for a task that may be very different than you
+originally intended.  But my hunch is that there's a lot of very useful software
+hiding out there in bits of one-off research code,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and that if we rewarded
 academics <em>at all</em> for doing the work to take that one-off code over the top to
-being useful software we&rsquo;d collectively save ourselves a lot of
-wheel-reinventing.  So, if you use software, cite it.  If you&rsquo;re using an
+being useful software we'd collectively save ourselves a lot of
+wheel-reinventing.  So, if you use software, cite it.  If you're using an
 <code>R</code> package, you can get a citation with <code>citation</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r">citation<span class="p">(</span><span class="s">&#39;rmarkdown&#39;</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
+<pre><code class="language-{r}" data-lang="{r}">citation('rmarkdown')
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
 
   JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, 
   Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston
@@ -152,24 +147,24 @@ A BibTeX entry for LaTeX users is
     year = {2018},
     note = {R package version 1.10},
     url = {https://CRAN.R-project.org/package=rmarkdown},
-  }</code></pre></div>
-<p>Finally, I should be clear that I&rsquo;ve been remiss in citing the software I use.
-I&rsquo;m trying to do better but it&rsquo;s hard to form new citation habits!</p>
-<div class="footnotes">
+  }
 
-<hr />
-
+</code></pre></div><p>Finally, I should be clear that I've been remiss in citing the software I use.
+I'm trying to do better but it's hard to form new citation habits!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:ignorance"><p>Of course, that could just be my own ignorance.  If I&rsquo;ve missed an
+<li id="fn:1" role="doc-endnote">
+<p>Of course, that could just be my own ignorance.  If I've missed an
 R package that you find really useful in your psycholingustics etc. research
-please let me know and I&rsquo;ll post an update!</p>
- <a class="footnote-return" href="#fnref:ignorance"><sup>[return]</sup></a></li>
-
-<li id="fn:julia"><p>There&rsquo;s a running joke in the Julia language community that most Julia
-code is written by procrastinating PhD students.</p>
- <a class="footnote-return" href="#fnref:julia"><sup>[return]</sup></a></li>
+please let me know and I'll post an update!<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>There's a running joke in the Julia language community that most Julia
+code is written by procrastinating PhD students.<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
 </div>
 
