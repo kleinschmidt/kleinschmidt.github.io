@@ -1,5 +1,7 @@
 <h2>Papers</h2>
 
+<div class="note" >* indicates equal contributions.</div>
+
 <ul>
     {{ range sort (where .Site.Data.papers.references "type" "article-journal") "issued" }}
     <li>{{ partial "paper.html" . }}</li>
