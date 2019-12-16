@@ -213,7 +213,7 @@ div.dropimg:hover {
 
 ul {
     list-style: none;
-    margin: 0px;
+    margin: 10px 0px;
     padding: 0px;
 }
 
@@ -301,6 +301,11 @@ div.post h2 {
 div.footnotes {
     font-size: 80%;
     margin-top: 20px;
+}
+
+div.note {
+    font-size: 80%;
+    color: #aaaaaa;
 }
 
 .clearer {
