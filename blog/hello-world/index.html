@@ -43,7 +43,7 @@
 
         <div id="nav">
             
-  <a href="/" > Home </a>
+  <a href="/" class="active"> Home </a>
   /
 
   <a href="/work/" > Work </a>
@@ -65,25 +65,25 @@
     <div class="post-date" >17 Oct 2018</div>
     <div class="post" >
         <p>Why a blog?  Because why not.</p>
-<p>Like the rest of this site, it's powered by <a href="https://gohugo.io">Hugo</a>, a static
+<p>Like the rest of this site, it&rsquo;s powered by <a href="https://gohugo.io">Hugo</a>, a static
 site generator powered by Go templates.  The content of each page is written in
 <a href="https://daringfireball.net/projects/markdown/syntax">markdown</a>, and rendered
 into HTML by a series of hand-crafted templates and CSS.</p>
 <h2 id="some-history">Some history</h2>
-<p>These templates and CSS are an organic outgrowth of this site's past as a bunch
+<p>These templates and CSS are an organic outgrowth of this site&rsquo;s past as a bunch
 of HTML and CSS that I hacked together because someone told me I needed to have
 a website when I was applying to grad school.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>Because I <del>had abundant free time in grad school</del> love procrastinating, when I
-moved the site from our department's FTP server to <a href="https://pages.github.com/">Github
+moved the site from our department&rsquo;s FTP server to <a href="https://pages.github.com/">Github
 pages</a>, I also refactored the site to generate some
-of the repetitive boilerplate HTML using templates.  I chose Jekyll because it's
+of the repetitive boilerplate HTML using templates.  I chose Jekyll because it&rsquo;s
 natively supported by Github pages (so not build step is required), and because
-it's natural to write content for a Jekyll site directly in HTML which meant
+it&rsquo;s natural to write content for a Jekyll site directly in HTML which meant
 there was no need to mess with my artisinal, handcrafted HTML
 content.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>Eventually, I <del>finished my PhD and had a ton of time on my hands</del> was
 procrastinating and decided it was time to properly refresh the site.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
-I decided to look at Hugo because it was the new hotness and because it's
+I decided to look at Hugo because it was the new hotness and because it&rsquo;s
 powered by Go templates which provide a lot of power.  I wanted to do things
 like generate a nicely formatted <a href="/work/">list of papers</a> from some
 bibliographic data.  Hugo is also more opinionated about the content being in
@@ -91,17 +91,17 @@ markdown which is a position I was coming to appreciate more and more.  Markdown
 is a great format for both reading and writing structured text, and I was
 starting to get sick of editing HTML by hand whenever I wanted to update
 something.</p>
-<p>The downside of Hugo is that it's not natively supported on Github pages, but
+<p>The downside of Hugo is that it&rsquo;s not natively supported on Github pages, but
 needs to be run to generate the HTML files that actually get hosted.  If I
-didn't know any better, I would have to just do this manually and commit all the
+didn&rsquo;t know any better, I would have to just do this manually and commit all the
 generated HTML before updating the Github repository.  But fortunately, since
-becoming more involved with open source projects I've learned a bit more about
+becoming more involved with open source projects I&rsquo;ve learned a bit more about
 continuous integration.  So I was able (with some thrashing about) to figure out
 how to automatically render and deployed the site with
 <a href="https://travis-ci.org/kleinschmidt/kleinschmidt.github.io">Travis</a>.  If you
-yourself don't want to mess around with that, <a href="https://www.netlify.com">Netlify</a>
+yourself don&rsquo;t want to mess around with that, <a href="https://www.netlify.com">Netlify</a>
 provides a great hosting and CI service that includes Hugo, which makes it
-much simpler to host a Hugo site.  I've used this for another site I made with
+much simpler to host a Hugo site.  I&rsquo;ve used this for another site I made with
 Hugo.</p>
 <h2 id="blogging-with-hugo">Blogging with Hugo</h2>
 <p>Once Hugo was set up, adding a blog was straightforward: add templates for the
@@ -146,7 +146,7 @@ at <a href="/blog">blog/</a></p>
 <span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div><p>The <code>nav.html</code> <a href="https://gohugo.io/templates/partials/">partial template</a>
 renders the navigation menu based on the list of pages automatically generated
-by Hugo, so all that's needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
+by Hugo, so all that&rsquo;s needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
 YAML metadata block in <code>/content/blog/_index.md</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: &#34;Blog&#34;
@@ -162,18 +162,18 @@ skeleton markdown file for a new post:</p>
 </span><span class="x">title = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="na">.Name</span><span class="w"> </span><span class="s">&#34;-&#34;</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
 </span><span class="x">+++
 </span></code></pre></div><p>which automatically populates some of the metadata to begin drafting:</p>
-<pre><code>➜ hugo new blog/a-wonderful-blog-post.md
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜ hugo new blog/a-wonderful-blog-post.md
 content/blog/a-wonderful-blog-post.md created
 
 ➜ cat content/blog/a-wonderful-blog-post.md
 +++
-date = &quot;2018-10-17T21:09:19-04:00&quot;
-publishdate = &quot;&quot;
+date = &#34;2018-10-17T21:09:19-04:00&#34;
+publishdate = &#34;&#34;
 draft = true
-title = &quot;A Wonderful Blog Post&quot;
+title = &#34;A Wonderful Blog Post&#34;
 +++
-</code></pre><h2 id="what">What</h2>
-<p>I'm planning to write about research/lab updates, progress on the JuliaStats
+</code></pre></div><h2 id="what">What</h2>
+<p>I&rsquo;m planning to write about research/lab updates, progress on the JuliaStats
 ecosystem (especially the <a href="https://github.com/JuliaStats/StatsModels.jl/pull/71">future of the <code>@formula</code>
 language</a> for specifying
 and fitting statistical models from tabular data!), and more mundane personal
@@ -186,17 +186,17 @@ discoveries, frustrations, and victories while I get my lab going at Rutgers.</p
 Github</a>, so the
 morbidly curious can turn back time to
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/4424a5510ec06a601e9a7b49563337ef03e10265"><code>4424a551</code></a>
-and see for themselves<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+and see for themselves <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>This process starts around
-<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>.<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>Starting at
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/36508bf"><code>36508bf</code></a>,
 reaching something like a finished state around
-<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>.<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
