@@ -5,6 +5,8 @@ draft = true
 title = "Weave Rmarkdown"
 +++
 
+(maybe this is an "R vs. Julia" series?)
+
 # Weave.jl for RMarkdown users
 
 I'm an extremely enthusiastic RMarkdown user, and I try really hard to write all
