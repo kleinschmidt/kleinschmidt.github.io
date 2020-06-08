@@ -14,17 +14,31 @@ references:
     learning
   status: in preparation
 
-- id: Kleinschmidt2015d
+- id: Kleinschmidt2020submitted
   type: manuscript
   author:
   - family: Kleinschmidt
     given: Dave F
-  - family: Jaeger
-    given: T Florian
-  title: <span class="nocase">Inferring listeners’ prior beliefs about unfamiliar
-    talkers</span>
-  status: in preparation
-  DOI: 10.13140/RG.2.1.3803.4405
+  title: What constrains distributional learning in adults?
+  status: submitted
+  DOI: 10.31234/osf.io/6yhbe
+
+- id: Luthra2020submitted
+  type: manuscript
+  author:
+  - family: Luthra
+    given: Sahil
+  - family: Correia
+    given: João M
+  - family: Kleinschmidt
+    given: Dave F
+  - family: Mesite
+    given: Laura
+  - family: Myers
+    given: Emily B
+  title: Lexical information guides retuning of neural patterns in perceptual learning
+    for speech
+  status: submitted
 
 - id: Wu2019submitted
   type: article-journal
