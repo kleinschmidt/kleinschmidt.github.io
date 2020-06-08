@@ -4,7 +4,7 @@
   
   <link href="/index.xml" rel="self"/>
   <link href="/"/>
-  <updated>2018-12-21T11:30:18-05:00</updated>
+  <updated>2020-06-08T16:19:12-04:00</updated>
   <id>/</id>
   <author>
     <name>Dave F. Kleinschmidt</name>
@@ -15,8 +15,8 @@
     <title type="html"><![CDATA[Blog]]></title>
     <link href="/blog/"/>
     <id>/blog/</id>
-    <published>2018-12-21T11:30:18-05:00</published>
-    <updated>2018-12-21T11:30:18-05:00</updated>
+    <published>2020-06-08T16:19:12-04:00</published>
+    <updated>2020-06-08T16:19:12-04:00</updated>
     <content type="html"><![CDATA[]]></content>
   </entry>
 </feed>

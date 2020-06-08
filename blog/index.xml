@@ -4,13 +4,64 @@
   
   <link href="/blog/index.xml" rel="self"/>
   <link href="/blog/"/>
-  <updated>2018-12-21T11:30:18-05:00</updated>
+  <updated>2020-06-08T16:19:12-04:00</updated>
   <id>/blog/</id>
   <author>
     <name>Dave F. Kleinschmidt</name>
     <email>dave.f.kleinschmidt@gmail.com</email>
   </author>
   <generator>Hugo -- gohugo.io</generator>
+  <entry>
+    <title type="html"><![CDATA[(How to) cite your code]]></title>
+    <link href="/blog/how-to-cite-your-code/"/>
+    <id>/blog/how-to-cite-your-code/</id>
+    <published>2020-06-08T16:19:12-04:00</published>
+    <updated>2020-06-08T16:19:12-04:00</updated>
+    <content type="html"><![CDATA[<p>I just <a href="https://psyarxiv.com/6yhbe/">submitted a paper</a> where I tried to follow
+my own advice to <a href="/blog/cite-code/">cite the code you use</a>.
+This project was done with R, which makes it really easy to automatically
+generate citations for packages.  With just a bit of glue code you can
+automatically generate in-text citations, too.</p>
+<p>If you&rsquo;re using <a href="https://github.com/crsh/papaja"><code>papaja</code></a> to prepare your
+manuscript in APA format, you can use the <code>cite_r</code> command to <a href="https://crsh.github.io/papaja_man/writing.html#citing-r-and-its-packages">automatically
+generate citations for R and loaded
+packges</a>
+(or any list of packages you want).  I&rsquo;m not using <code>papaja</code> because I&rsquo;m a
+control freak and find it a thrill to wrestle with RMarkdown, pandoc, and
+various latex dialects all on my own, but it&rsquo;s actually quite easy to implement
+this feature yourself:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
+
+<span class="n">packages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+  <span class="s">&#39;base&#39;</span><span class="p">,</span>
+  <span class="s">&#39;knitr&#39;</span><span class="p">,</span>
+  <span class="s">&#39;rmarkdown&#39;</span><span class="p">,</span>
+  <span class="c1"># ... etc.</span>
+<span class="p">)</span>
+
+<span class="n">knitr</span><span class="o">::</span><span class="nf">write_bib</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s">&#34;packages.bib&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#34;R-&#34;</span><span class="p">)</span>
+
+<span class="c1"># generate in-text citations (skip base which is cited manually)</span>
+<span class="n">citation_strings</span> <span class="o">&lt;-</span> <span class="nf">glue</span><span class="p">(</span><span class="s">&#34;`{pkg}` [@R-{pkg}]&#34;</span><span class="p">,</span> <span class="n">pkg</span><span class="o">=</span><span class="n">packages[</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+<span class="c1"># join with &#34;, &#34; and &#34;, and &#34; for last</span>
+<span class="n">citation_string</span> <span class="o">&lt;-</span>
+  <span class="nf">str_c</span><span class="p">(</span>
+    <span class="nf">lift</span><span class="p">(</span><span class="n">str_c</span><span class="p">)(</span>
+      <span class="nf">head</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">-1</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;, &#34;</span>
+    <span class="p">),</span>
+    <span class="s">&#34;, and &#34;</span><span class="p">,</span>
+    <span class="nf">tail</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+  <span class="p">)</span>
+
+</code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">I am also indebted to the developers and maintainers of the R
+language [@R-base], as well as the following R packages:
+`r citation_string`.
+</code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
+versions as well, but it gets the job done.  You can omit the list of packages
+and <code>knitr::write_bib</code> will do all the packages you have loaded.</p>]]></content>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Web scraping with Julia]]></title>
     <link href="/blog/scraping-brewtoad/"/>
