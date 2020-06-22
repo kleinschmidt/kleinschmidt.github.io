@@ -23,8 +23,8 @@ references:
   status: submitted
   DOI: 10.31234/osf.io/6yhbe
 
-- id: Luthra2020submitted
-  type: manuscript
+- id: Luthra2020inpress
+  type: article-journal
   author:
   - family: Luthra
     given: Sahil
@@ -38,7 +38,9 @@ references:
     given: Emily B
   title: Lexical information guides retuning of neural patterns in perceptual learning
     for speech
-  status: submitted
+  container-title: Journal of Cognitive Neuroscience
+  issued:
+  - year: in press
 
 - id: Wu2019submitted
   type: article-journal
