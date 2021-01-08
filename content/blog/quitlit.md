@@ -1,11 +1,12 @@
 ---
 title: "Quit lit"
 date: 2021-01-07T16:36:40-05:00
-draft: true
 ---
 
 **TL;DR** I'm joining [Beacon Biosignals](https://beacon.bio) as a research
-scientist and leaving my tenure-track position at Rutgers.
+scientist and leaving my tenure-track position.
+
+<!--more-->
 
 2020 was a hard year for all of us in many, many ways, but at least for me it
 clarified some things.  In particular, it helped me see the ways in which I
