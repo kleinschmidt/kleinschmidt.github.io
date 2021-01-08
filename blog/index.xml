@@ -1,0 +1,433 @@
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Dave F. Kleinschmidt</title><link href="/blog/index.xml" rel="self"/><link href="/blog/"/><updated>2021-01-07T16:36:40-05:00</updated><id>/blog/</id><author><name>Dave F. Kleinschmidt</name><email>dave.f.kleinschmidt@gmail.com</email></author><generator>Hugo -- gohugo.io</generator><entry><title type="html">Quit lit</title><link href="/blog/quitlit/"/><id>/blog/quitlit/</id><published>2021-01-07T16:36:40-05:00</published><updated>2021-01-07T16:36:40-05:00</updated><content type="html"><![CDATA[<p><strong>TL;DR</strong> I&rsquo;m joining <a href="https://beacon.bio">Beacon Biosignals</a> as a research
+scientist and leaving my tenure-track position.</p>
+<p>2020 was a hard year for all of us in many, many ways, but at least for me it
+clarified some things.  In particular, it helped me see the ways in which I
+wasn&rsquo;t really feeling excited or fulfilled by my academic work anymore.  The
+prospects of my tenure-track academic career started to seem like the proverbial
+pie eating contest where the prize is more pie.  So I started looking for
+opportunities to do meaningful, intellectually engaging work outside of academic
+research, and I think I&rsquo;ve found that with Beacon.  I&rsquo;m really excited to learn
+more about the brain, pick up some hands on experience with some new machine
+learning techniques, and help make folks' lives better in the process.  I&rsquo;m
+also, honestly, excited to be able to use <a href="https://julialang.org">Julia</a> for my
+&ldquo;day job&rdquo;, instead of just as a weird hobby project, and more generally to do
+more hands on work than is really possible on the tenure track.</p>
+<p>Also, while I am immensely grateful for the unflagging support of my many
+mentors over the years, I&rsquo;ve started to unpack a bit my motivations for
+continuing down an academic career trajectory that has always felt kind of
+inevitable.  I think a lot of it comes down to the feelings of validation and
+approval and belonging that I&rsquo;ve always (again, fortunately) found in academic
+settings, starting from being a kid that found school easy and rewarding and
+found a lot of comfort in the approval of my teachers.  For a long time I&rsquo;ve
+confused that feeling of being a <em>good boy</em> with the satisfaction that comes
+from honoring my curiosity and growing and learning new things.  Unsurprisingly,
+this has recently had me recently feeling pretty unmoored and unmotivated.</p>
+<p>I don&rsquo;t regret the time I&rsquo;ve spent in academia, far from it.  My PhD years were
+challenging, of course, but also a truly precious time to deeply engage with
+things I was curious about and to create new knowledge.  Since I started at
+Rutgers, my basic advice to undergrads who are thinking about pursuing a PhD is
+to think of it like a monastic experience rather than a credential.  That
+experience itself better be worth it for you, personally, since credential isn&rsquo;t
+worth much in the labor market it supposedly gives you access to&mdash;tenure track
+academic positions&mdash;because there is a massive oversupply of PhDs created every
+year and a systematic, concerted effort by university administrations to move
+the core teaching functions of the university onto poorly compensated,
+contingent labor (grad students and &ldquo;adjunct faculty&rdquo;).</p>
+<p>I suppose the reason I&rsquo;m writing this here is to share, out loud and in public,
+my own discovery that even if you&rsquo;re <em>good</em> at your academic work, an academic
+career might not be the best thing for you, and there are plenty of other things
+you can do, even though it feels so psychically dangerous to step off that
+track.  It took a global pandemic and months of lockdown to really make me
+confront that possibility, but even so I&rsquo;m grateful to be able to move on.</p>]]></content></entry><entry><title type="html">(How to) cite your code</title><link href="/blog/how-to-cite-your-code/"/><id>/blog/how-to-cite-your-code/</id><published>2020-06-08T16:19:12-04:00</published><updated>2020-06-08T16:19:12-04:00</updated><content type="html"><![CDATA[<p>I just <a href="https://psyarxiv.com/6yhbe/">submitted a paper</a> where I tried to follow
+my own advice to <a href="/blog/cite-code/">cite the code you use</a>.
+This project was done with R, which makes it really easy to automatically
+generate citations for packages.  With just a bit of glue code you can
+automatically generate in-text citations, too.</p>
+<p>If you&rsquo;re using <a href="https://github.com/crsh/papaja"><code>papaja</code></a> to prepare your
+manuscript in APA format, you can use the <code>cite_r</code> command to <a href="https://crsh.github.io/papaja_man/writing.html#citing-r-and-its-packages">automatically
+generate citations for R and loaded
+packges</a>
+(or any list of packages you want).  I&rsquo;m not using <code>papaja</code> because I&rsquo;m a
+control freak and find it a thrill to wrestle with RMarkdown, pandoc, and
+various latex dialects all on my own, but it&rsquo;s actually quite easy to implement
+this feature yourself:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
+
+<span class="n">packages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+  <span class="s">&#39;base&#39;</span><span class="p">,</span>
+  <span class="s">&#39;knitr&#39;</span><span class="p">,</span>
+  <span class="s">&#39;rmarkdown&#39;</span><span class="p">,</span>
+  <span class="c1"># ... etc.</span>
+<span class="p">)</span>
+
+<span class="n">knitr</span><span class="o">::</span><span class="nf">write_bib</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s">&#34;packages.bib&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#34;R-&#34;</span><span class="p">)</span>
+
+<span class="c1"># generate in-text citations (skip base which is cited manually)</span>
+<span class="n">citation_strings</span> <span class="o">&lt;-</span> <span class="nf">glue</span><span class="p">(</span><span class="s">&#34;`{pkg}` [@R-{pkg}]&#34;</span><span class="p">,</span> <span class="n">pkg</span><span class="o">=</span><span class="n">packages[</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+<span class="c1"># join with &#34;, &#34; and &#34;, and &#34; for last</span>
+<span class="n">citation_string</span> <span class="o">&lt;-</span>
+  <span class="nf">str_c</span><span class="p">(</span>
+    <span class="nf">lift</span><span class="p">(</span><span class="n">str_c</span><span class="p">)(</span>
+      <span class="nf">head</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">-1</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;, &#34;</span>
+    <span class="p">),</span>
+    <span class="s">&#34;, and &#34;</span><span class="p">,</span>
+    <span class="nf">tail</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+  <span class="p">)</span>
+
+</code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">I am also indebted to the developers and maintainers of the R
+language [@R-base], as well as the following R packages:
+`r citation_string`.
+</code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
+versions as well, but it gets the job done.  You can omit the list of packages
+and <code>knitr::write_bib</code> will do all the packages you have loaded.</p>]]></content></entry><entry><title type="html">Web scraping with Julia</title><link href="/blog/scraping-brewtoad/"/><id>/blog/scraping-brewtoad/</id><published>2018-12-21T11:30:18-05:00</published><updated>2018-12-21T11:30:18-05:00</updated><content type="html"><![CDATA[<p>One of my grad school procrastination projects was learning how to brew beer.  I
+started off using a website called Hopville to keep track of the recipes I
+brewed, until they were acquired in 2013 by
+<a href="https://www.brewtoad.com">Brewtoad</a>.  Both sites provided a really convenient
+way to play around with recipe ideas, learn from others, and keep track of how
+each step of each brew went which was really helpful as a beginner.</p>
+<p>Now, just five years later, Brewtoad is <a href="https://www.brewtoad.com/shutdown">shutting
+down</a>.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> With no way to easily
+grab an archive of the dozens of recipes and brew logs I&rsquo;ve saved on the site,
+and no public API.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> So, the only remaining option is to go through and
+download the HTML for each page, one-by-one.  I <em>could</em> do that myself but I
+<del>don&rsquo;t have time for that</del> think that&rsquo;s a task more appropriate for a
+computer.  So I wrote a <a href="https://github.com/kleinschmidt/brewtoad-scrape.jl">Julia
+script</a> to scrape a user&rsquo;s
+recipes and brew logs.</p>
+<p>One neat thing was that the sluggish brewtoad servers&mdash;never particularly
+snappy and now positively groaning under the weight of desperate users
+appending <code>.xml</code> to the ends of their recipes one by one before they&rsquo;re gone
+forever on December 31&mdash;provide the perfect use case for <code>@async</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">main</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+    <span class="n">recipes</span> <span class="o">=</span> <span class="n">recipe_links</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+    <span class="c"># wait for all recipes to finish processing before return</span>
+    <span class="nd">@sync</span> <span class="k">begin</span>
+        <span class="k">for</span> <span class="n">recipe</span> <span class="kp">in</span> <span class="n">recipes</span>
+            <span class="c"># fetch and process each recipe asynchronously</span>
+            <span class="nd">@async</span> <span class="n">process_recipe</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>I was sure that this was too easy to work the first time but lo, no problems.
+The only fiddly bit is remembering to enclose all the <code>@async</code> calls in a
+<code>@sync begin ... end</code> block but I&rsquo;d seen enough examples with that pattern to
+know what to do.</p>
+<p>The library I used for HTML parsing was
+<a href="https://github.com/JuliaWeb/Gumbo.jl">Gumbo.jl</a>, which wraps Google&rsquo;s Gumbo.
+This worked great for my purposes, but does not include any functionality for
+extracting desired elements from the result.  If you look at my script you can
+see at least three different and rather clumsy ways I tried to roll my own
+selector queries:</p>
+<ol>
+<li>
+<p>A <code>for</code> loop with lots of <code>if</code>/<code>else</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">node</span> <span class="kp">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">node</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">a</span><span class="p">}</span> <span class="o">||</span> <span class="k">continue</span>
+    <span class="n">class</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="s">&#34;class&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;recipe-link&#34;</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
+        <span class="n">push!</span><span class="p">(</span><span class="n">recipelinks</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+    <span class="k">elseif</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;next_page&#34;</span>
+        <span class="n">push!</span><span class="p">(</span><span class="n">pages</span><span class="p">,</span> <span class="n">baseurl</span> <span class="o">*</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&#34;Next page: &#34;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter"><code>Iterators.filter</code></a></p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="kp">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
+                             <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">h1</span><span class="p">},</span>
+                         <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">root</span><span class="p">))</span>
+</code></pre></div></li>
+<li>
+<p>a <a href="https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1">list
+comprehension</a>.
+with an <code>if</code> clause</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">brewlog_links</span> <span class="o">=</span> 
+    <span class="p">[</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
+     <span class="k">for</span> <span class="n">n</span>
+     <span class="kp">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">n</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
+         <span class="n">occursin</span><span class="p">(</span><span class="sr">r&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span>
+</code></pre></div></li>
+</ol>
+<p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
+If I get a chance I&rsquo;ll go back and re-write it with
+<a href="https://github.com/Algocircle/Cascadia.jl">Cascadia.jl</a>,<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> which I
+didn&rsquo;t see until after I&rsquo;d basically written the script but <em>does</em> provide a
+convenient way to query the parsed HTML.</p>
+<p>Finally, at some point requests to brewtoad.com from HTTP.jl started to return
+<code>403: Forbidden</code>, even while requests from a browser or even <code>curl</code> worked
+fine.  So I had to use run <code>curl</code> for each request instead of using HTTP.jl just
+to finish downloading my own goddamn data.</p>
+<p>If you, too, want to save your recipes and logs from oblivion, here&rsquo;s how:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
+
+$ <span class="nb">cd</span> brewtoad-scrape.jl
+
+$ julia --project<span class="o">=</span>. -e <span class="s2">&#34;using Pkg; Pkg.instantiate()&#34;</span>
+
+$ julia --project<span class="o">=</span>. scrape.jl &lt;userid&gt;
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Probably has something to do with the fact that I&rsquo;ve never
+given them any money and my sweet sweet content is sufficiently monetizable
+to run a sustainable business.  Of course they never <em>asked</em> for any money,
+or made it clear in any way that they were in danger of shutting down.  If
+they had I would likely have paid a few bucks a month and I suspect many
+others would too. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Their official suggestion is to &ldquo;append <code>.xml</code> after your recipe URL to
+download a <a href="https://en.wikipedia.org/wiki/BeerXML">BeerXML</a> file&rdquo;.  There&rsquo;s
+no such export option for the brew logs though, which are at least as
+important to me. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>&ldquo;Inspired by, and mostly a direct translation of, the
+<a href="https://github.com/andybalholm/cascadia">Cascadia</a> CSS Selector library,
+written in <a href="https://golang.org/">Go</a>, by
+<a href="https://github.com/andybalholm">@andybalhom</a>.&rdquo; <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>]]></content></entry><entry><title type="html">Cite your code!</title><link href="/blog/cite-code/"/><id>/blog/cite-code/</id><published>2018-12-11T15:55:18-05:00</published><updated>2018-12-11T15:55:18-05:00</updated><content type="html"><![CDATA[<p>TL;DR: <strong>cite the software you use in your research!</strong></p>
+<p>In lab meeting the other day someone asked what the major R packages for
+analyzing psycholinguistic data are, and I had a hard time thinking of
+any.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> That made me think about <em>why</em> software is such a small part of
+our scholarly output.  Part of the reason might simply be that there&rsquo;s not
+enough overlap in the specific kinds of analyses we do to justify creating brand
+new packages, rather than using domain-general tools (like the
+<a href="https://tidyverse.org">tidyverse</a>).</p>
+<p>But I think there may be a deeper explanation: it&rsquo;s <em>hard</em> to write good, useful
+software, and academia does not reward that particular kind of hard work.</p>
+<p>Designing, implementing, and maintaining software packages is
+difficulty at best and downright consuming at worst.  Being involved with
+developing and maintaining some of the
+<a href="https://github.com/JuliaStats">JuliaStats</a> packages has shown me how much work
+and energy goes into just providing support to users and keeping things from
+breaking as the language changes and other packages are updated.  And, if I&rsquo;m
+being honest, the packages of my own research code that I&rsquo;ve released
+(<a href="https://github.com/kleinschmidt/beliefupdatr"><code>beliefupdatr</code></a> and
+<a href="https://github.com/kleinschmidt/phondisttools"><code>phondisttools</code></a>) are not
+particularly well-crafted.  I basically pushed them out the door when I
+submitted the papers behind them in the spirit of openness and the hope that
+they might be useful to someone else.  And I think they have been!  But they
+could be so much <em>better</em>&mdash;more flexible, ergonomic, intuitive,
+integrated&mdash;and if they were I suspect their utility would be much greater.  Of
+course, I fix problems, bugs, and incompatibilities with new versions of R as
+they come up, but I barely have time for that.  Making a
+<a href="https://github.com/JuliaCI/BenchmarkTools.jl">package</a>
+<a href="https://github.com/timholy/Revise.jl">that</a>
+<a href="https://github.com/JuliaPlots/Plots.jl">is</a>
+<a href="https://github.com/tidyverse/dplyr">truly</a>
+<a href="https://github.com/tidyverse/ggplot2">useful</a> to other people requires a huge
+amount of careful, laborious work to design and implement.</p>
+<p>As an academic&mdash;especially those at the junior professor stage, as I am
+now&mdash;you are constantly faced with competing demands on your time and energy.
+A major consideration is whether investing time in some activity will lead to
+more of the gold stars which allow you to advance in your career.  Right now, in
+my field, those gold stars are <strong>citations</strong>, and (at least if the conventional
+wisdom is to be believed) any activity that does not lead to more gold stars
+(citations) is, essentially, a leisure activity.  Absent any change in
+incentives and from a purely careerist perspective (which I don&rsquo;t necessarily
+endorse), it&rsquo;s not worth it to me to spend the time to develop useful software.
+So, what do we get?  A lot of cobbled-together one-off scripts and notebooks,
+useful only for the project at hand, guided by oral tradition/lab culture, and
+(hopefully) dumped on the internet in a well-intentioned attempt at openness.</p>
+<p>Which brings me the take-home message of this post: <strong>cite the software you
+use</strong>.  This is <em>especially</em> important if that software is open-source software.
+Citing software is important for a lot of reasons, not least of which is that it
+feels <em>good</em> to see your software acknowledged as useful in such a public forum,
+and developing open source software can often feel like a <a href="https://nolanlawson.com/2017/03/05/what-it-feels-like-to-be-an-open-source-maintainer/">thankless
+slog</a>.
+But there are two reasons I want to highlight here.  First, you&rsquo;re rewarding the
+people who write and maintain that software, in a way that for your fellow
+academics will <em>directly</em> help them get a job, tenure, or a promotion.  Second,
+by citing software you treat it just like any other piece of intellectual labor
+you&rsquo;re building on to do your work, and in doing so you normalize the idea that
+good software <em>is</em> useful intellectual labor which should be valued and
+encouraged by the academy.</p>
+<p>Of course, not all code you write is <em>software</em>, in the sense of a product
+that&rsquo;s usable by a third party for a task that may be very different than you
+originally intended.  But my hunch is that there&rsquo;s a lot of very useful software
+hiding out there in bits of one-off research code,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and that if we rewarded
+academics <em>at all</em> for doing the work to take that one-off code over the top to
+being useful software we&rsquo;d collectively save ourselves a lot of
+wheel-reinventing.  So, if you use software, cite it.  If you&rsquo;re using an
+<code>R</code> package, you can get a citation with <code>citation</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">citation(&#39;rmarkdown&#39;)
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
+
+  JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, 
+  Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston
+  Chang (2018). rmarkdown: Dynamic Documents for R. R package
+  version 1.10. https://CRAN.R-project.org/package=rmarkdown
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {rmarkdown: Dynamic Documents for R},
+    author = {JJ Allaire and Yihui Xie and Jonathan McPherson and 
+      Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley
+      Wickham and Joe Cheng and Winston Chang},
+    year = {2018},
+    note = {R package version 1.10},
+    url = {https://CRAN.R-project.org/package=rmarkdown},
+  }
+
+</code></pre></div><p>Finally, I should be clear that I&rsquo;ve been remiss in citing the software I use.
+I&rsquo;m trying to do better but it&rsquo;s hard to form new citation habits!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Of course, that could just be my own ignorance.  If I&rsquo;ve missed an
+R package that you find really useful in your psycholingustics etc. research
+please let me know and I&rsquo;ll post an update! <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>There&rsquo;s a running joke in the Julia language community that most Julia
+code is written by procrastinating PhD students. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>]]></content></entry><entry><title type="html">Hello World</title><link href="/blog/hello-world/"/><id>/blog/hello-world/</id><published>2018-10-12T16:16:22-04:00</published><updated>2018-10-12T16:16:22-04:00</updated><content type="html"><![CDATA[<p>Why a blog?  Because why not.</p>
+<p>Like the rest of this site, it&rsquo;s powered by <a href="https://gohugo.io">Hugo</a>, a static
+site generator powered by Go templates.  The content of each page is written in
+<a href="https://daringfireball.net/projects/markdown/syntax">markdown</a>, and rendered
+into HTML by a series of hand-crafted templates and CSS.</p>
+<h2 id="some-history">Some history</h2>
+<p>These templates and CSS are an organic outgrowth of this site&rsquo;s past as a bunch
+of HTML and CSS that I hacked together because someone told me I needed to have
+a website when I was applying to grad school.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Because I <del>had abundant free time in grad school</del> love procrastinating, when I
+moved the site from our department&rsquo;s FTP server to <a href="https://pages.github.com/">Github
+pages</a>, I also refactored the site to generate some
+of the repetitive boilerplate HTML using templates.  I chose Jekyll because it&rsquo;s
+natively supported by Github pages (so not build step is required), and because
+it&rsquo;s natural to write content for a Jekyll site directly in HTML which meant
+there was no need to mess with my artisinal, handcrafted HTML
+content.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Eventually, I <del>finished my PhD and had a ton of time on my hands</del> was
+procrastinating and decided it was time to properly refresh the site.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
+I decided to look at Hugo because it was the new hotness and because it&rsquo;s
+powered by Go templates which provide a lot of power.  I wanted to do things
+like generate a nicely formatted <a href="/work/">list of papers</a> from some
+bibliographic data.  Hugo is also more opinionated about the content being in
+markdown which is a position I was coming to appreciate more and more.  Markdown
+is a great format for both reading and writing structured text, and I was
+starting to get sick of editing HTML by hand whenever I wanted to update
+something.</p>
+<p>The downside of Hugo is that it&rsquo;s not natively supported on Github pages, but
+needs to be run to generate the HTML files that actually get hosted.  If I
+didn&rsquo;t know any better, I would have to just do this manually and commit all the
+generated HTML before updating the Github repository.  But fortunately, since
+becoming more involved with open source projects I&rsquo;ve learned a bit more about
+continuous integration.  So I was able (with some thrashing about) to figure out
+how to automatically render and deployed the site with
+<a href="https://travis-ci.org/kleinschmidt/kleinschmidt.github.io">Travis</a>.  If you
+yourself don&rsquo;t want to mess around with that, <a href="https://www.netlify.com">Netlify</a>
+provides a great hosting and CI service that includes Hugo, which makes it
+much simpler to host a Hugo site.  I&rsquo;ve used this for another site I made with
+Hugo.</p>
+<h2 id="blogging-with-hugo">Blogging with Hugo</h2>
+<p>Once Hugo was set up, adding a blog was straightforward: add templates for the
+list of posts and a single post, and write posts as markdown files in
+<code>content/blog/post-title.md</code>.</p>
+<p>The first template is (<code>layouts/blog/single.html</code>), which renders the pages for
+individual posts (like this one):</p>
+<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span> <span class="p">&gt;</span>
+        <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="p">&gt;</span>
+        <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div><p>The other template is <code>layouts/blog/list.html</code>, which renders the list of posts
+at <a href="/blog">blog/</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
+    <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
+            <span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="na">.Pages</span><span class="w"> </span><span class="cp">}}</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Permalink</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="p">&gt;</span>
+                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span>
+                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span><span class="p">&gt;</span>
+                    <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-summary&#34;</span><span class="p">&gt;</span>
+                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Summary</span><span class="w"> </span><span class="cp">}}</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div><p>The <code>nav.html</code> <a href="https://gohugo.io/templates/partials/">partial template</a>
+renders the navigation menu based on the list of pages automatically generated
+by Hugo, so all that&rsquo;s needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
+YAML metadata block in <code>/content/blog/_index.md</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;Blog&#34;
+menu: &#34;main&#34;
+weight: 4
+---
+</code></pre></div><p>The final piece is a bit of convenience: the <code>archetypes/default.md</code> provides a
+skeleton markdown file for a new post:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="x">+++
+</span><span class="x">date = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
+</span><span class="x">publishdate = &#34;&#34;
+</span><span class="x">draft = true
+</span><span class="x">title = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="na">.Name</span><span class="w"> </span><span class="s">&#34;-&#34;</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
+</span><span class="x">+++
+</span></code></pre></div><p>which automatically populates some of the metadata to begin drafting:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜ hugo new blog/a-wonderful-blog-post.md
+content/blog/a-wonderful-blog-post.md created
+
+➜ cat content/blog/a-wonderful-blog-post.md
++++
+date = &#34;2018-10-17T21:09:19-04:00&#34;
+publishdate = &#34;&#34;
+draft = true
+title = &#34;A Wonderful Blog Post&#34;
++++
+</code></pre></div><h2 id="what">What</h2>
+<p>I&rsquo;m planning to write about research/lab updates, progress on the JuliaStats
+ecosystem (especially the <a href="https://github.com/JuliaStats/StatsModels.jl/pull/71">future of the <code>@formula</code>
+language</a> for specifying
+and fitting statistical models from tabular data!), and more mundane personal
+discoveries, frustrations, and victories while I get my lab going at Rutgers.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The source for this site is <a href="https://github.com/kleinschmidt/kleinschmidt.github.io">hosted on
+Github</a>, so the
+morbidly curious can turn back time to
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/4424a5510ec06a601e9a7b49563337ef03e10265"><code>4424a551</code></a>
+and see for themselves <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>This process starts around
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Starting at
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/36508bf"><code>36508bf</code></a>,
+reaching something like a finished state around
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>]]></content></entry></feed>
