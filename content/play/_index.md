@@ -16,7 +16,8 @@ visualization for Julia), [FAAV](https://github.com/JoFrhwld/FAAV) (now
 [latexdiff](https://github.com/ftilmann/latexdiff/), and, most
 importantly, [lolcommits](https://github.com/mroth/lolcommits).
 
-I ride and tinker with my bikes.  I'm a recovering [year-round fixie
+I [ride](https://www.strava.com/athletes/1622041) and tinker with my bikes.  I'm
+a recovering [year-round fixie
 commuter](http://www.flickr.com/photos/dklein/5238069139/) (even, yes, through
 the Rochester winter) and a wannabe cyclocrosser.  I have a stable of mediocre
 craigslist Bianchis onto which I've lovingly frankensteined modern groupsets.  I
