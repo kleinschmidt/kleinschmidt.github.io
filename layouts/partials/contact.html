@@ -1,13 +1,8 @@
-<h2>Online</h2>
+<h2>Contact</h2>
 <ul id="contact" >
     {{ range .Site.Data.contact.online }}
     <li>
-        <a target="_blank" href="{{ .url }}">{{.name | markdownify}} </a>
+        <a target="_blank" href="{{ .url }}">{{ .name | markdownify }} </a>
     </li>
     {{ end }}
 </ul>
-
-<h2>Offline</h2>
-<p>
-    {{ delimit .Site.Data.contact.offline "<br />" }}
-</p>

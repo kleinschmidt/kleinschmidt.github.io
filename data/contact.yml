@@ -1,15 +1,11 @@
 online:
-  - name: "dave.f.kleinschmidt**@**gmail.com"
+  - name: "dave.f.kleinschmidt@**gmail**.com"
     url: "mailto:dave.f.kleinschmidt@gmail.com"
   - name: "**github**.com/kleinschmidt"
     url: "https://github.com/kleinschmidt/"
-  - name: "**osf**.io/bx6m9/"
-    url: "https://osf.io/bx6m9/"
   - name: "**twitter**.com/kleinschmidt"
     url: "https://twitter.com/kleinschmidt"
+  - name: "**osf**.io/bx6m9/"
+    url: "https://osf.io/bx6m9/"
   - name: "**scholar**.google.com"
     url: "https://scholar.google.com/citations?user=brveZnwAAAAJ"
-offline:
-  - "213 Psychology Building"
-  - "152 Frelinghuysen Road"
-  - "Piscataway, NJ 08854"

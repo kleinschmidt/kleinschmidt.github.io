@@ -5,7 +5,12 @@ menu: "main"
 weight: 2
 ---
 
-Broadly speaking, I'm interested in how the brain manages to efficiently
+At [Beacon](https://beacon.bio), I work on neuroscience tool development, data
+science, and software engineering.
+
+## Academic work
+
+In my academic work, I was interested in how the brain manages to efficiently
 allocate representational resources in a world where the statistics of sensory
 features changes from situation to situation. I'm particularly interested in how
 the **structure** in this sensory non-stationarity makes it possible to adapt to
@@ -19,20 +24,10 @@ adaptation, with a particular emphasis on speech. I think that good theories and
 models draw on insights from—and try to make connections between—neuroscience,
 behavioral data, and broader computational-level cognitive modeling.
 
-Topics that I have or am working on or am interested in include: perceptual
-category learning, phonetic adaptation/recalibration, acquisition of phonetic
-categories, and cue combination and complex acoustic feature extraction. I'm
-also particularly interested in increasing awareness and appreciation of
-Bayesian methods for modeling (although I don't consider myself a
-capital-B-Bayesian) and—especially—data analysis.
-
-
-<!-- 
-
-a general mission statement
-
-papers
-
-list of projects?
-
--->
+Topics that I've worked on or am interested in include: cognitive neuroscience
+of learning and perception, perceptual category learning, phonetic
+adaptation/recalibration, acquisition of phonetic categories, and cue
+combination and complex acoustic feature extraction. I'm also particularly
+interested in increasing awareness and appreciation of Bayesian methods for
+modeling (although I don't consider myself a capital-B-Bayesian)
+and—especially—data analysis.
