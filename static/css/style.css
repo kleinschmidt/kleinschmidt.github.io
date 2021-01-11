@@ -108,7 +108,7 @@ html, body {
 
 #footer img {
     max-width: 100%;
-    min-width: 100%;
+    width: 526px;
     height: auto;
 }
 
