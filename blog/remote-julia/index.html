@@ -1,91 +1,168 @@
-<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-12080659-5');</script><script src=/js/codeblocks.js></script><script type=text/x-mathjax-config>
+<!doctype html><html> <head>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-12080659-5')</script>
+<script src=/js/codeblocks.js></script>
+<script type=text/x-mathjax-config>
      MathJax.Hub.Config({
          tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              processEscapes: true
          }
      });
-    </script><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><title>Dave Kleinschmidt // Remote emacs+Julia workflow</title><link rel=stylesheet type=text/css href=/css/style.css><link rel=stylesheet type=text/css href=/css/syntax.css><link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt"></script></head><body><div id=page-container><div id=header><h1>DAVE<br>KLEINSCHMIDT</h1></div><div id=nav><a href=/ class=active>Home</a>
+    </script>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<title>Dave Kleinschmidt // Remote emacs+Julia workflow</title>
+<link rel=stylesheet type=text/css href=/css/style.css>
+<link rel=stylesheet type=text/css href=/css/syntax.css>
+<link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt">
+</script>
+</head>
+<body>
+<div id=page-container>
+<div id=header>
+<h1>DAVE<br>KLEINSCHMIDT</h1>
+</div>
+<div id=nav>
+<a href=/ class=active> Home </a>
 /
-<a href=/work/>Work</a>
+<a href=/work/> Work </a>
 /
-<a href=/play/>Play</a>
+<a href=/play/> Play </a>
 /
-<a href=/blog/ class=active>Blog</a>
+<a href=/blog/ class=active> Blog </a>
 /
-<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a></div><div id=content class=blog><h1 class=post-title>Remote emacs+Julia workflow</h1><div class=post-date>14 Apr 2021</div><div class=post><p>In my role at <a href=https://beacon.bio>Beacon</a>, I spend most of my working day
+<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a>
+</div>
+<div id=content class=blog>
+<h1 class=post-title>Remote emacs+Julia workflow</h1>
+<div class=post-date>14 Apr 2021</div>
+<div class=post>
+<p>In my role at <a href=https://beacon.bio>Beacon</a>, I spend most of my working day
 interacting with Julia on a remote machine, and I wanted to document the
 workflow that I&rsquo;ve settled on. The very short version is that emacs/TRAMP,
 <a href>emacs-jupyter</a>, and <a href>IJulia</a> together provide a pretty smooth&mdash;but not
-perfect&mdash;experience.</p><p>My main criteria are</p><ol><li>Support interactive workflows in Julia</li><li>Can display rich output inline (super important for exploratory plotting)</li><li>Operates over an SSH connection</li><li>Persistent sessions that survive network hiccups</li><li>Emacs-based, because my brain was ruined in my first CS classes and I can&rsquo;t
-use anything else at this point</li></ol><h2 id=emacstramp-mode>Emacs/TRAMP mode</h2><p>TRAMP mode is wonderful in that it mostly Just Works™ and allows you to pretend
+perfect&mdash;experience.</p>
+<p>My main criteria are</p>
+<ol>
+<li>Support interactive workflows in Julia</li>
+<li>Can display rich output inline (super important for exploratory plotting)</li>
+<li>Operates over an SSH connection</li>
+<li>Persistent sessions that survive network hiccups</li>
+<li>Emacs-based, because my brain was ruined in my first CS classes and I can&rsquo;t
+use anything else at this point</li>
+</ol>
+<h2 id=emacstramp-mode>Emacs/TRAMP mode</h2>
+<p>TRAMP mode is wonderful in that it mostly Just Works™ and allows you to pretend
 you&rsquo;re interacting with the remote host as if it&rsquo;s local. To activate TRAMP
 mode you type <code>C-x C-f</code> to open a file (like usual), and then type
 <code>/ssh:&lt;hostname>:</code> and hit Enter. Assuming you&rsquo;ve set up SSH keys for the
 remote host, this should open an SSH connection behind the scenes and then show
-the remote filesystem in the normal file picker interface.</p><p>Any files you open can be edited exactly as if they&rsquo;re on the local host, and
+the remote filesystem in the normal file picker interface.</p>
+<p>Any files you open can be edited exactly as if they&rsquo;re on the local host, and
 any changes are sent (in a compressed form) over SSH when you save as usual with
-<code>C-x C-s</code>.</p><p>One nice thing is that TRAMP mode is <em>sticky</em>, in the sense that if you&rsquo;re in a
+<code>C-x C-s</code>.</p>
+<p>One nice thing is that TRAMP mode is <em>sticky</em>, in the sense that if you&rsquo;re in a
 buffer visiting a remote file, when you hit <code>C-x C-f</code> to open another file it
 starts you in the directory on remote host. So once I&rsquo;ve opened one file it&rsquo;s
-pretty seamless.</p><h3 id=tips-for-working-with-tramp-mode>Tips for working with TRAMP mode</h3><p>Sometimes things go sideways for reasons that are completely mysterious to me,
-and when that happens I do a &ldquo;superstitious reset&rdquo; with <code>M-x tramp-cleanup-all-connections</code> which clears the connections cache.</p><p>To break out of the sticky find-file mode, type <code>/~ &lt;Enter></code> to reset to the
+pretty seamless.</p>
+<h3 id=tips-for-working-with-tramp-mode>Tips for working with TRAMP mode</h3>
+<p>Sometimes things go sideways for reasons that are completely mysterious to me,
+and when that happens I do a &ldquo;superstitious reset&rdquo; with <code>M-x tramp-cleanup-all-connections</code> which clears the connections cache.</p>
+<p>To break out of the sticky find-file mode, type <code>/~ &lt;Enter></code> to reset to the
 local host home directory, or <code>/ &lt;Enter></code> for root. However, with
 <a href=https://github.com/abo-abo/swiper>swiper/counsel</a>, I found that didn&rsquo;t work,
 and you need to use <code>/ C-j</code> (which in normal circumstances is equivalent to
-<code>&lt;Enter></code>, but I guess counsel hijacks that somehow)</p><p>Most of the emacs packages you use Just Work™ under TRAMP mode, including <a href=https://magit.vc/>magit
+<code>&lt;Enter></code>, but I guess counsel hijacks that somehow)</p>
+<p>Most of the emacs packages you use Just Work™ under TRAMP mode, including <a href=https://magit.vc/>magit
 (my absolute favorite git interface)</a>. However, beware of
 magit operations that assume you can roundtrip many small files without
-significant latency (e.g., when rebasing a large number of commits).</p><h2 id=emacs-jupyter-and-ijulia><code>emacs-jupyter</code> and IJulia</h2><p>Interacting with Julia is a bit trickier. I&rsquo;ve been using
+significant latency (e.g., when rebasing a large number of commits).</p>
+<h2 id=emacs-jupyter-and-ijulia><code>emacs-jupyter</code> and IJulia</h2>
+<p>Interacting with Julia is a bit trickier. I&rsquo;ve been using
 <a href=https://github.com/nnicandro/emacs-jupyter/><code>emacs-jupyter</code></a> with pretty good
 results for a while now, and like many things it does Just Work™ with tramp (if
 you <code>M-x run-jupyter-repl</code> in a remote buffer, it&rsquo;ll launch a kernel on that
 remote machine). However, if you do that then when the connection drops, the
-kernel dies, which is not ideal.</p><p>Instead, I&rsquo;ve settled on using the &ldquo;server&rdquo; mode, where you run a jupyter server
+kernel dies, which is not ideal.</p>
+<p>Instead, I&rsquo;ve settled on using the &ldquo;server&rdquo; mode, where you run a jupyter server
 on the remote host and connect to it over a forwarded port. Here are the steps
-for that:</p><ol><li><p>On the remote host, install jupyter and run <code>jupyter notebook</code>. If you&rsquo;re
+for that:</p>
+<ol>
+<li>
+<p>On the remote host, install jupyter and run <code>jupyter notebook</code>. If you&rsquo;re
 only going to interact with Julia, I prefer to do this directly in Julia via
-something like</p><div class=highlight><pre class=chroma><code class=language-julia data-lang=julia><span class=k>using</span> <span class=n>Pkg</span>
+something like</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-julia data-lang=julia><span class=k>using</span> <span class=n>Pkg</span>
 <span class=n>Pkg</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=s>&#34;IJulia&#34;</span><span class=p>)</span>
 <span class=k>using</span> <span class=n>IJulia</span>
 <span class=n>IJulia</span><span class=o>.</span><span class=n>notebook</span><span class=p>()</span>
 </code></pre></div><p>Make sure you run this in a way that can survive a dropped connection (so in
 <a href=https://www.gnu.org/software/screen/>screen</a>,
 <a href=https://github.com/tmux/tmux/wiki>tmux</a>, etc.), otherwise you&rsquo;ll defeat the
-whole point of this exercise :)</p></li><li><p>Forward a port on your localhost to the remote host over SSH (assuming you
-don&rsquo;t want to or can&rsquo;t expose the jupyter port on your remote host):</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
-</code></pre></div></li><li><p>In emacs, start a new kernel with <code>M-x jupyter-run-server-repl</code>. This will
+whole point of this exercise :)</p>
+</li>
+<li>
+<p>Forward a port on your localhost to the remote host over SSH (assuming you
+don&rsquo;t want to or can&rsquo;t expose the jupyter port on your remote host):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
+</code></pre></div></li>
+<li>
+<p>In emacs, start a new kernel with <code>M-x jupyter-run-server-repl</code>. This will
 start the kernel on the remote server and create an <code>emacs-jupyter</code> REPL
 buffer, and associate it with the current buffer if you&rsquo;re visiting a buffer
 in <code>julia-mode</code>. Now <code>C-c C-z</code> will switch point to the associated REPL
 buffer (raising it if it&rsquo;s not currently displayed), and <code>C-c C-c</code> will send
 code in the current region for eval (defaults to the current line if no
-region is active).</p></li><li><p>To connect a buffer visiting a <code>.jl</code> file to a running kernel (say, in a
-new emacs session), then you can <code>M-x jupyter-connect-server-repl</code>.</p></li><li><p>To associate a buffer with a REPL buffer that&rsquo;s already connected to a
-kernel, use <code>M-x jupyter-repl-associate-buffer</code>.</p></li></ol><p>I prefer using <code>emacs-jupyter</code> over a direct REPL connection especially for
+region is active).</p>
+</li>
+<li>
+<p>To connect a buffer visiting a <code>.jl</code> file to a running kernel (say, in a
+new emacs session), then you can <code>M-x jupyter-connect-server-repl</code>.</p>
+</li>
+<li>
+<p>To associate a buffer with a REPL buffer that&rsquo;s already connected to a
+kernel, use <code>M-x jupyter-repl-associate-buffer</code>.</p>
+</li>
+</ol>
+<p>I prefer using <code>emacs-jupyter</code> over a direct REPL connection especially for
 interacting with a remote host because it displays (some) rich output directly
 in the REPL buffer (PNG and SVG images chief among them). It&rsquo;s also nice to
 have workspace-aware tab-completion like you get in an actual jupyter
-notebook (with <code>M-TAB</code>).</p><h3 id=tips>Tips</h3><p>There was for some time a <a href=https://github.com/nnicandro/emacs-jupyter/issues/219>pretty nasty font-locking bug in
+notebook (with <code>M-TAB</code>).</p>
+<h3 id=tips>Tips</h3>
+<p>There was for some time a <a href=https://github.com/nnicandro/emacs-jupyter/issues/219>pretty nasty font-locking bug in
 <code>emacs-jupyter</code></a>
 triggered by sending long-ish chunks of text to the REPL. It&rsquo;s been <a href=https://github.com/nnicandro/emacs-jupyter/pull/308>fixed at
 least on trunk</a> but it
 doesn&rsquo;t look like it&rsquo;s made it into a release yet, so make sure you&rsquo;re getting a
-version since that PR landed.</p><p>You can have multiple REPL buffers in a single emacs session</p><p>There isn&rsquo;t necessarily a 1-1 relationship between REPL <em>buffers</em> and running
+version since that PR landed.</p>
+<p>You can have multiple REPL buffers in a single emacs session</p>
+<p>There isn&rsquo;t necessarily a 1-1 relationship between REPL <em>buffers</em> and running
 <em>kernels</em> on the remote server: there may be kernels with no REPL buffer
 connected to them, and there can be multiple buffers connected to the same
-kernel.</p><p>There&rsquo;s a difference between <em>connecting</em> to a kernel and <em>associating</em> a buffer
+kernel.</p>
+<p>There&rsquo;s a difference between <em>connecting</em> to a kernel and <em>associating</em> a buffer
 with a REPL. If you already have a REPL buffer connected to a kernel and you
 just want to interact with it from another <code>.jl</code> buffer, you want to <code>M-x jupyter-repl-associate-buffer</code>. If you have a running kernel on the remote host
 but not REPL buffer locally, you want to <code>M-x jupyter-connect-server-repl</code>. If
 you do this and already have a local REPL buffer, than I <em>think</em> that it&rsquo;ll
-(confusingly) create a <em>new</em> buffer connected to the same kernel.</p><p>I prefer to keep the associated REPL buffer open because if it&rsquo;s not,
+(confusingly) create a <em>new</em> buffer connected to the same kernel.</p>
+<p>I prefer to keep the associated REPL buffer open because if it&rsquo;s not,
 <code>emacs-jupyter</code> will open a million new buffers to display <code>STDOUT</code>, <code>STDERR</code>,
 and anything that&rsquo;s <code>display</code>ed, in seemingly random locations. There&rsquo;s
-probably a way to turn this off but I&rsquo;m too lazy to dig into it.</p><p>Sometimes things interrupt the connection in a way that <code>emacs-jupyter</code> has a
+probably a way to turn this off but I&rsquo;m too lazy to dig into it.</p>
+<p>Sometimes things interrupt the connection in a way that <code>emacs-jupyter</code> has a
 hard time recovering from. When this happens, I find that it&rsquo;s best to kill the
 port-forwarding connection to the server, which causes <code>emacs-jupyter</code> to detect
 that the websocket connection is closed and clean up after itself. Then, you
 can re-connect the port forwarding SSH connection and everything should pick up
-where it left off.</p></div></div><div id=footer></div><div class=clearer></div></div></body></html>
+where it left off.</p>
+</div>
+</div>
+<div id=footer>
+</div>
+<div class=clearer></div>
+</div>
+</body>
+</html>

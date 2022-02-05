@@ -53,7 +53,7 @@ for that:</p>
 <p>On the remote host, install jupyter and run <code>jupyter notebook</code>.  If you&rsquo;re
 only going to interact with Julia, I prefer to do this directly in Julia via
 something like</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span>
 <span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;IJulia&#34;</span><span class="p">)</span>
 <span class="k">using</span> <span class="n">IJulia</span>
 <span class="n">IJulia</span><span class="o">.</span><span class="n">notebook</span><span class="p">()</span>
@@ -65,7 +65,7 @@ whole point of this exercise :)</p>
 <li>
 <p>Forward a port on your localhost to the remote host over SSH (assuming you
 don&rsquo;t want to or can&rsquo;t expose the jupyter port on your remote host):</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
 </code></pre></div></li>
 <li>
 <p>In emacs, start a new kernel with <code>M-x jupyter-run-server-repl</code>.  This will
@@ -170,7 +170,7 @@ packges</a>
 control freak and find it a thrill to wrestle with RMarkdown, pandoc, and
 various latex dialects all on my own, but it&rsquo;s actually quite easy to implement
 this feature yourself:</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
 
 <span class="n">packages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
@@ -195,7 +195,7 @@ this feature yourself:</p>
   <span class="p">)</span>
 
 </code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">I am also indebted to the developers and maintainers of the R
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">I am also indebted to the developers and maintainers of the R
 language [@R-base], as well as the following R packages:
 `r citation_string`.
 </code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
@@ -219,11 +219,11 @@ recipes and brew logs.</p>
 snappy and now positively groaning under the weight of desperate users
 appending <code>.xml</code> to the ends of their recipes one by one before they&rsquo;re gone
 forever on December 31&mdash;provide the perfect use case for <code>@async</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">main</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">main</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
     <span class="n">recipes</span> <span class="o">=</span> <span class="n">recipe_links</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
     <span class="c"># wait for all recipes to finish processing before return</span>
     <span class="nd">@sync</span> <span class="k">begin</span>
-        <span class="k">for</span> <span class="n">recipe</span> <span class="kp">in</span> <span class="n">recipes</span>
+        <span class="k">for</span> <span class="n">recipe</span> <span class="k">in</span> <span class="n">recipes</span>
             <span class="c"># fetch and process each recipe asynchronously</span>
             <span class="nd">@async</span> <span class="n">process_recipe</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
         <span class="k">end</span>
@@ -242,8 +242,8 @@ selector queries:</p>
 <ol>
 <li>
 <p>A <code>for</code> loop with lots of <code>if</code>/<code>else</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">node</span> <span class="kp">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
-    <span class="n">node</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">a</span><span class="p">}</span> <span class="o">||</span> <span class="k">continue</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">node</span> <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+    <span class="n">node</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">||</span> <span class="k">continue</span>
     <span class="n">class</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="s">&#34;class&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;recipe-link&#34;</span>
         <span class="n">link</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
@@ -257,20 +257,20 @@ selector queries:</p>
 </code></pre></div></li>
 <li>
 <p><a href="https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter"><code>Iterators.filter</code></a></p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="kp">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
-                             <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">h1</span><span class="p">},</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="k">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
+                             <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:h1</span><span class="p">},</span>
                          <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">root</span><span class="p">))</span>
 </code></pre></div></li>
 <li>
 <p>a <a href="https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1">list
 comprehension</a>.
 with an <code>if</code> clause</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">brewlog_links</span> <span class="o">=</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">brewlog_links</span> <span class="o">=</span> 
     <span class="p">[</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
      <span class="k">for</span> <span class="n">n</span>
-     <span class="kp">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
-     <span class="k">if</span> <span class="n">n</span> <span class="kp">isa</span> <span class="n">HTMLElement</span><span class="p">{</span><span class="o">:</span><span class="n">a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
-         <span class="n">occursin</span><span class="p">(</span><span class="sr">r&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span>
+     <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">n</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
+         <span class="n">occursin</span><span class="p">(</span><span class="sa">r</span><span class="sr">&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span>
 </code></pre></div></li>
 </ol>
 <p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
@@ -283,7 +283,7 @@ convenient way to query the parsed HTML.</p>
 fine.  So I had to use run <code>curl</code> for each request instead of using HTTP.jl just
 to finish downloading my own goddamn data.</p>
 <p>If you, too, want to save your recipes and logs from oblivion, here&rsquo;s how:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
 
 $ <span class="nb">cd</span> brewtoad-scrape.jl
 
@@ -299,19 +299,19 @@ given them any money and my sweet sweet content is sufficiently monetizable
 to run a sustainable business.  Of course they never <em>asked</em> for any money,
 or made it clear in any way that they were in danger of shutting down.  If
 they had I would likely have paid a few bucks a month and I suspect many
-others would too. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+others would too.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>Their official suggestion is to &ldquo;append <code>.xml</code> after your recipe URL to
 download a <a href="https://en.wikipedia.org/wiki/BeerXML">BeerXML</a> file&rdquo;.  There&rsquo;s
 no such export option for the brew logs though, which are at least as
-important to me. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+important to me.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>&ldquo;Inspired by, and mostly a direct translation of, the
 <a href="https://github.com/andybalholm/cascadia">Cascadia</a> CSS Selector library,
 written in <a href="https://golang.org/">Go</a>, by
-<a href="https://github.com/andybalholm">@andybalhom</a>.&rdquo; <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a href="https://github.com/andybalholm">@andybalhom</a>.&rdquo;&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>]]></content></entry><entry><title type="html">Cite your code!</title><link href="/blog/cite-code/"/><id>/blog/cite-code/</id><published>2018-12-11T15:55:18-05:00</published><updated>2018-12-11T15:55:18-05:00</updated><content type="html"><![CDATA[<p>TL;DR: <strong>cite the software you use in your research!</strong></p>
@@ -379,8 +379,8 @@ academics <em>at all</em> for doing the work to take that one-off code over the 
 being useful software we&rsquo;d collectively save ourselves a lot of
 wheel-reinventing.  So, if you use software, cite it.  If you&rsquo;re using an
 <code>R</code> package, you can get a citation with <code>citation</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">citation(&#39;rmarkdown&#39;)
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">citation(&#39;rmarkdown&#39;)
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
 
   JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, 
   Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston
@@ -407,11 +407,11 @@ I&rsquo;m trying to do better but it&rsquo;s hard to form new citation habits!</
 <li id="fn:1" role="doc-endnote">
 <p>Of course, that could just be my own ignorance.  If I&rsquo;ve missed an
 R package that you find really useful in your psycholingustics etc. research
-please let me know and I&rsquo;ll post an update! <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+please let me know and I&rsquo;ll post an update!&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>There&rsquo;s a running joke in the Julia language community that most Julia
-code is written by procrastinating PhD students. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+code is written by procrastinating PhD students.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>]]></content></entry><entry><title type="html">Hello World</title><link href="/blog/hello-world/"/><id>/blog/hello-world/</id><published>2018-10-12T16:16:22-04:00</published><updated>2018-10-12T16:16:22-04:00</updated><content type="html"><![CDATA[<p>Why a blog?  Because why not.</p>
@@ -459,7 +459,7 @@ list of posts and a single post, and write posts as markdown files in
 <code>content/blog/post-title.md</code>.</p>
 <p>The first template is (<code>layouts/blog/single.html</code>), which renders the pages for
 individual posts (like this one):</p>
-<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span> <span class="p">&gt;</span>
@@ -472,7 +472,7 @@ individual posts (like this one):</p>
 <span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
 </code></pre></div><p>The other template is <code>layouts/blog/list.html</code>, which renders the list of posts
 at <a href="/blog">blog/</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
     <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
@@ -498,21 +498,21 @@ at <a href="/blog">blog/</a></p>
 renders the navigation menu based on the list of pages automatically generated
 by Hugo, so all that&rsquo;s needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
 YAML metadata block in <code>/content/blog/_index.md</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">---
 title: &#34;Blog&#34;
 menu: &#34;main&#34;
 weight: 4
 ---
 </code></pre></div><p>The final piece is a bit of convenience: the <code>archetypes/default.md</code> provides a
 skeleton markdown file for a new post:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="x">+++
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="x">+++
 </span><span class="x">date = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
 </span><span class="x">publishdate = &#34;&#34;
 </span><span class="x">draft = true
 </span><span class="x">title = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="na">.Name</span><span class="w"> </span><span class="s">&#34;-&#34;</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
 </span><span class="x">+++
 </span></code></pre></div><p>which automatically populates some of the metadata to begin drafting:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜ hugo new blog/a-wonderful-blog-post.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">➜ hugo new blog/a-wonderful-blog-post.md
 content/blog/a-wonderful-blog-post.md created
 
 ➜ cat content/blog/a-wonderful-blog-post.md
@@ -536,17 +536,17 @@ discoveries, frustrations, and victories while I get my lab going at Rutgers.</p
 Github</a>, so the
 morbidly curious can turn back time to
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/4424a5510ec06a601e9a7b49563337ef03e10265"><code>4424a551</code></a>
-and see for themselves <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+and see for themselves&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>This process starts around
-<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>Starting at
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/36508bf"><code>36508bf</code></a>,
 reaching something like a finished state around
-<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>]]></content></entry></feed>

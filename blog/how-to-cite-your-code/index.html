@@ -1,31 +1,57 @@
-<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-12080659-5');</script><script src=/js/codeblocks.js></script><script type=text/x-mathjax-config>
+<!doctype html><html> <head>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-12080659-5')</script>
+<script src=/js/codeblocks.js></script>
+<script type=text/x-mathjax-config>
      MathJax.Hub.Config({
          tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              processEscapes: true
          }
      });
-    </script><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><title>Dave Kleinschmidt // (How to) cite your code</title><link rel=stylesheet type=text/css href=/css/style.css><link rel=stylesheet type=text/css href=/css/syntax.css><link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt"></script></head><body><div id=page-container><div id=header><h1>DAVE<br>KLEINSCHMIDT</h1></div><div id=nav><a href=/ class=active>Home</a>
+    </script>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<title>Dave Kleinschmidt // (How to) cite your code</title>
+<link rel=stylesheet type=text/css href=/css/style.css>
+<link rel=stylesheet type=text/css href=/css/syntax.css>
+<link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt">
+</script>
+</head>
+<body>
+<div id=page-container>
+<div id=header>
+<h1>DAVE<br>KLEINSCHMIDT</h1>
+</div>
+<div id=nav>
+<a href=/ class=active> Home </a>
 /
-<a href=/work/>Work</a>
+<a href=/work/> Work </a>
 /
-<a href=/play/>Play</a>
+<a href=/play/> Play </a>
 /
-<a href=/blog/ class=active>Blog</a>
+<a href=/blog/ class=active> Blog </a>
 /
-<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a></div><div id=content class=blog><h1 class=post-title>(How to) cite your code</h1><div class=post-date>8 Jun 2020</div><div class=post><p>I just <a href=https://psyarxiv.com/6yhbe/>submitted a paper</a> where I tried to follow
+<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a>
+</div>
+<div id=content class=blog>
+<h1 class=post-title>(How to) cite your code</h1>
+<div class=post-date>8 Jun 2020</div>
+<div class=post>
+<p>I just <a href=https://psyarxiv.com/6yhbe/>submitted a paper</a> where I tried to follow
 my own advice to <a href=/blog/cite-code/>cite the code you use</a>.
 This project was done with R, which makes it really easy to automatically
 generate citations for packages. With just a bit of glue code you can
-automatically generate in-text citations, too.</p><p>If you&rsquo;re using <a href=https://github.com/crsh/papaja><code>papaja</code></a> to prepare your
+automatically generate in-text citations, too.</p>
+<p>If you&rsquo;re using <a href=https://github.com/crsh/papaja><code>papaja</code></a> to prepare your
 manuscript in APA format, you can use the <code>cite_r</code> command to <a href=https://crsh.github.io/papaja_man/writing.html#citing-r-and-its-packages>automatically
 generate citations for R and loaded
 packges</a>
 (or any list of packages you want). I&rsquo;m not using <code>papaja</code> because I&rsquo;m a
 control freak and find it a thrill to wrestle with RMarkdown, pandoc, and
 various latex dialects all on my own, but it&rsquo;s actually quite easy to implement
-this feature yourself:</p><div class=highlight><pre class=chroma><code class=language-r data-lang=r><span class=nf>library</span><span class=p>(</span><span class=n>glue</span><span class=p>)</span>
+this feature yourself:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=nf>library</span><span class=p>(</span><span class=n>glue</span><span class=p>)</span>
 <span class=nf>library</span><span class=p>(</span><span class=n>knitr</span><span class=p>)</span>
 
 <span class=n>packages</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span>
@@ -49,9 +75,18 @@ this feature yourself:</p><div class=highlight><pre class=chroma><code class=lan
     <span class=nf>tail</span><span class=p>(</span><span class=n>citation_strings</span><span class=p>,</span> <span class=m>1</span><span class=p>)</span>
   <span class=p>)</span>
 
-</code></pre></div><p>Then in the RMarkdown source you can do something like:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>I am also indebted to the developers and maintainers of the R
+</code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>I am also indebted to the developers and maintainers of the R
 language [@R-base], as well as the following R packages:
 `r citation_string`.
 </code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
 versions as well, but it gets the job done. You can omit the list of packages
-and <code>knitr::write_bib</code> will do all the packages you have loaded.</p></div></div><div id=footer></div><div class=clearer></div></div></body></html>
+and <code>knitr::write_bib</code> will do all the packages you have loaded.</p>
+</div>
+</div>
+<div id=footer>
+</div>
+<div class=clearer></div>
+</div>
+</body>
+</html>

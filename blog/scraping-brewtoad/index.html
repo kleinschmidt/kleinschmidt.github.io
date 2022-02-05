@@ -1,25 +1,50 @@
-<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-12080659-5');</script><script src=/js/codeblocks.js></script><script type=text/x-mathjax-config>
+<!doctype html><html> <head>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-12080659-5')</script>
+<script src=/js/codeblocks.js></script>
+<script type=text/x-mathjax-config>
      MathJax.Hub.Config({
          tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              processEscapes: true
          }
      });
-    </script><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><title>Dave Kleinschmidt // Web scraping with Julia</title><link rel=stylesheet type=text/css href=/css/style.css><link rel=stylesheet type=text/css href=/css/syntax.css><link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt"></script></head><body><div id=page-container><div id=header><h1>DAVE<br>KLEINSCHMIDT</h1></div><div id=nav><a href=/ class=active>Home</a>
+    </script>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<title>Dave Kleinschmidt // Web scraping with Julia</title>
+<link rel=stylesheet type=text/css href=/css/style.css>
+<link rel=stylesheet type=text/css href=/css/syntax.css>
+<link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt">
+</script>
+</head>
+<body>
+<div id=page-container>
+<div id=header>
+<h1>DAVE<br>KLEINSCHMIDT</h1>
+</div>
+<div id=nav>
+<a href=/ class=active> Home </a>
 /
-<a href=/work/>Work</a>
+<a href=/work/> Work </a>
 /
-<a href=/play/>Play</a>
+<a href=/play/> Play </a>
 /
-<a href=/blog/ class=active>Blog</a>
+<a href=/blog/ class=active> Blog </a>
 /
-<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a></div><div id=content class=blog><h1 class=post-title>Web scraping with Julia</h1><div class=post-date>21 Dec 2018</div><div class=post><p>One of my grad school procrastination projects was learning how to brew beer. I
+<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a>
+</div>
+<div id=content class=blog>
+<h1 class=post-title>Web scraping with Julia</h1>
+<div class=post-date>21 Dec 2018</div>
+<div class=post>
+<p>One of my grad school procrastination projects was learning how to brew beer. I
 started off using a website called Hopville to keep track of the recipes I
 brewed, until they were acquired in 2013 by
 <a href=https://www.brewtoad.com>Brewtoad</a>. Both sites provided a really convenient
 way to play around with recipe ideas, learn from others, and keep track of how
-each step of each brew went which was really helpful as a beginner.</p><p>Now, just five years later, Brewtoad is <a href=https://www.brewtoad.com/shutdown>shutting
+each step of each brew went which was really helpful as a beginner.</p>
+<p>Now, just five years later, Brewtoad is <a href=https://www.brewtoad.com/shutdown>shutting
 down</a>.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> With no way to easily
 grab an archive of the dozens of recipes and brew logs I&rsquo;ve saved on the site,
 and no public API.<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> So, the only remaining option is to go through and
@@ -27,14 +52,16 @@ download the HTML for each page, one-by-one. I <em>could</em> do that myself but
 <del>don&rsquo;t have time for that</del> think that&rsquo;s a task more appropriate for a
 computer. So I wrote a <a href=https://github.com/kleinschmidt/brewtoad-scrape.jl>Julia
 script</a> to scrape a user&rsquo;s
-recipes and brew logs.</p><p>One neat thing was that the sluggish brewtoad servers&mdash;never particularly
+recipes and brew logs.</p>
+<p>One neat thing was that the sluggish brewtoad servers&mdash;never particularly
 snappy and now positively groaning under the weight of desperate users
 appending <code>.xml</code> to the ends of their recipes one by one before they&rsquo;re gone
-forever on December 31&mdash;provide the perfect use case for <code>@async</code>:</p><div class=highlight><pre class=chroma><code class=language-julia data-lang=julia><span class=k>function</span> <span class=n>main</span><span class=p>(</span><span class=n>userid</span><span class=p>)</span>
+forever on December 31&mdash;provide the perfect use case for <code>@async</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-julia data-lang=julia><span class=k>function</span> <span class=n>main</span><span class=p>(</span><span class=n>userid</span><span class=p>)</span>
     <span class=n>recipes</span> <span class=o>=</span> <span class=n>recipe_links</span><span class=p>(</span><span class=n>userid</span><span class=p>)</span>
     <span class=c># wait for all recipes to finish processing before return</span>
     <span class=nd>@sync</span> <span class=k>begin</span>
-        <span class=k>for</span> <span class=n>recipe</span> <span class=kp>in</span> <span class=n>recipes</span>
+        <span class=k>for</span> <span class=n>recipe</span> <span class=k>in</span> <span class=n>recipes</span>
             <span class=c># fetch and process each recipe asynchronously</span>
             <span class=nd>@async</span> <span class=n>process_recipe</span><span class=p>(</span><span class=n>recipe</span><span class=p>)</span>
         <span class=k>end</span>
@@ -43,13 +70,18 @@ forever on December 31&mdash;provide the perfect use case for <code>@async</code
 </code></pre></div><p>I was sure that this was too easy to work the first time but lo, no problems.
 The only fiddly bit is remembering to enclose all the <code>@async</code> calls in a
 <code>@sync begin ... end</code> block but I&rsquo;d seen enough examples with that pattern to
-know what to do.</p><p>The library I used for HTML parsing was
+know what to do.</p>
+<p>The library I used for HTML parsing was
 <a href=https://github.com/JuliaWeb/Gumbo.jl>Gumbo.jl</a>, which wraps Google&rsquo;s Gumbo.
 This worked great for my purposes, but does not include any functionality for
 extracting desired elements from the result. If you look at my script you can
 see at least three different and rather clumsy ways I tried to roll my own
-selector queries:</p><ol><li><p>A <code>for</code> loop with lots of <code>if</code>/<code>else</code></p><div class=highlight><pre class=chroma><code class=language-julia data-lang=julia><span class=k>for</span> <span class=n>node</span> <span class=kp>in</span> <span class=n>PreOrderDFS</span><span class=p>(</span><span class=n>page</span><span class=o>.</span><span class=n>root</span><span class=p>)</span>
-    <span class=n>node</span> <span class=kp>isa</span> <span class=n>HTMLElement</span><span class=p>{</span><span class=o>:</span><span class=n>a</span><span class=p>}</span> <span class=o>||</span> <span class=k>continue</span>
+selector queries:</p>
+<ol>
+<li>
+<p>A <code>for</code> loop with lots of <code>if</code>/<code>else</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-julia data-lang=julia><span class=k>for</span> <span class=n>node</span> <span class=k>in</span> <span class=n>PreOrderDFS</span><span class=p>(</span><span class=n>page</span><span class=o>.</span><span class=n>root</span><span class=p>)</span>
+    <span class=n>node</span> <span class=k>isa</span> <span class=kt>HTMLElement</span><span class=p>{</span><span class=ss>:a</span><span class=p>}</span> <span class=o>||</span> <span class=k>continue</span>
     <span class=n>class</span> <span class=o>=</span> <span class=n>get</span><span class=p>(</span><span class=n>attrs</span><span class=p>(</span><span class=n>node</span><span class=p>),</span> <span class=s>&#34;class&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>)</span>
     <span class=k>if</span> <span class=n>class</span> <span class=o>==</span> <span class=s>&#34;recipe-link&#34;</span>
         <span class=n>link</span> <span class=o>=</span> <span class=n>attrs</span><span class=p>(</span><span class=n>node</span><span class=p>)[</span><span class=s>&#34;href&#34;</span><span class=p>]</span>
@@ -60,40 +92,72 @@ selector queries:</p><ol><li><p>A <code>for</code> loop with lots of <code>if</c
         <span class=n>println</span><span class=p>(</span><span class=s>&#34;Next page: &#34;</span><span class=p>,</span> <span class=n>attrs</span><span class=p>(</span><span class=n>node</span><span class=p>)[</span><span class=s>&#34;href&#34;</span><span class=p>])</span>
     <span class=k>end</span>
 <span class=k>end</span>
-</code></pre></div></li><li><p><a href=https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter><code>Iterators.filter</code></a></p><div class=highlight><pre class=chroma><code class=language-julia data-lang=julia><span class=n>title</span> <span class=o>=</span> <span class=n>Iterators</span><span class=o>.</span><span class=n>filter</span><span class=p>(</span><span class=n>n</span> <span class=o>-&gt;</span> <span class=n>n</span> <span class=kp>isa</span> <span class=n>HTMLText</span> <span class=o>&amp;&amp;</span> 
-                             <span class=n>n</span><span class=o>.</span><span class=n>parent</span> <span class=kp>isa</span> <span class=n>HTMLElement</span><span class=p>{</span><span class=o>:</span><span class=n>h1</span><span class=p>},</span>
+</code></pre></div></li>
+<li>
+<p><a href=https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter><code>Iterators.filter</code></a></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-julia data-lang=julia><span class=n>title</span> <span class=o>=</span> <span class=n>Iterators</span><span class=o>.</span><span class=n>filter</span><span class=p>(</span><span class=n>n</span> <span class=o>-&gt;</span> <span class=n>n</span> <span class=k>isa</span> <span class=n>HTMLText</span> <span class=o>&amp;&amp;</span> 
+                             <span class=n>n</span><span class=o>.</span><span class=n>parent</span> <span class=k>isa</span> <span class=kt>HTMLElement</span><span class=p>{</span><span class=ss>:h1</span><span class=p>},</span>
                          <span class=n>PreOrderDFS</span><span class=p>(</span><span class=n>recipe</span><span class=o>.</span><span class=n>root</span><span class=p>))</span>
-</code></pre></div></li><li><p>a <a href=https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1>list
+</code></pre></div></li>
+<li>
+<p>a <a href=https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1>list
 comprehension</a>.
-with an <code>if</code> clause</p><div class=highlight><pre class=chroma><code class=language-julia data-lang=julia><span class=n>brewlog_links</span> <span class=o>=</span> 
+with an <code>if</code> clause</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-julia data-lang=julia><span class=n>brewlog_links</span> <span class=o>=</span> 
     <span class=p>[</span><span class=n>attrs</span><span class=p>(</span><span class=n>n</span><span class=p>)[</span><span class=s>&#34;href&#34;</span><span class=p>]</span>
      <span class=k>for</span> <span class=n>n</span>
-     <span class=kp>in</span> <span class=n>PreOrderDFS</span><span class=p>(</span><span class=n>brewlogs</span><span class=o>.</span><span class=n>root</span><span class=p>)</span>
-     <span class=k>if</span> <span class=n>n</span> <span class=kp>isa</span> <span class=n>HTMLElement</span><span class=p>{</span><span class=o>:</span><span class=n>a</span><span class=p>}</span> <span class=o>&amp;&amp;</span> 
-         <span class=n>occursin</span><span class=p>(</span><span class=sr>r&#34;brew-logs/&#34;</span><span class=p>,</span> <span class=n>get</span><span class=p>(</span><span class=n>attrs</span><span class=p>(</span><span class=n>n</span><span class=p>),</span> <span class=s>&#34;href&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>))]</span>
-</code></pre></div></li></ol><p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
+     <span class=k>in</span> <span class=n>PreOrderDFS</span><span class=p>(</span><span class=n>brewlogs</span><span class=o>.</span><span class=n>root</span><span class=p>)</span>
+     <span class=k>if</span> <span class=n>n</span> <span class=k>isa</span> <span class=kt>HTMLElement</span><span class=p>{</span><span class=ss>:a</span><span class=p>}</span> <span class=o>&amp;&amp;</span> 
+         <span class=n>occursin</span><span class=p>(</span><span class=sa>r</span><span class=sr>&#34;brew-logs/&#34;</span><span class=p>,</span> <span class=n>get</span><span class=p>(</span><span class=n>attrs</span><span class=p>(</span><span class=n>n</span><span class=p>),</span> <span class=s>&#34;href&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>))]</span>
+</code></pre></div></li>
+</ol>
+<p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
 If I get a chance I&rsquo;ll go back and re-write it with
 <a href=https://github.com/Algocircle/Cascadia.jl>Cascadia.jl</a>,<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> which I
 didn&rsquo;t see until after I&rsquo;d basically written the script but <em>does</em> provide a
-convenient way to query the parsed HTML.</p><p>Finally, at some point requests to brewtoad.com from HTTP.jl started to return
+convenient way to query the parsed HTML.</p>
+<p>Finally, at some point requests to brewtoad.com from HTTP.jl started to return
 <code>403: Forbidden</code>, even while requests from a browser or even <code>curl</code> worked
 fine. So I had to use run <code>curl</code> for each request instead of using HTTP.jl just
-to finish downloading my own goddamn data.</p><p>If you, too, want to save your recipes and logs from oblivion, here&rsquo;s how:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
+to finish downloading my own goddamn data.</p>
+<p>If you, too, want to save your recipes and logs from oblivion, here&rsquo;s how:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
 
 $ <span class=nb>cd</span> brewtoad-scrape.jl
 
 $ julia --project<span class=o>=</span>. -e <span class=s2>&#34;using Pkg; Pkg.instantiate()&#34;</span>
 
 $ julia --project<span class=o>=</span>. scrape.jl &lt;userid&gt;
-</code></pre></div><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>Probably has something to do with the fact that I&rsquo;ve never
+</code></pre></div><section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Probably has something to do with the fact that I&rsquo;ve never
 given them any money and my sweet sweet content is sufficiently monetizable
 to run a sustainable business. Of course they never <em>asked</em> for any money,
 or made it clear in any way that they were in danger of shutting down. If
 they had I would likely have paid a few bucks a month and I suspect many
-others would too. <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p>Their official suggestion is to &ldquo;append <code>.xml</code> after your recipe URL to
+others would too.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>Their official suggestion is to &ldquo;append <code>.xml</code> after your recipe URL to
 download a <a href=https://en.wikipedia.org/wiki/BeerXML>BeerXML</a> file&rdquo;. There&rsquo;s
 no such export option for the brew logs though, which are at least as
-important to me. <a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3 role=doc-endnote><p>&ldquo;Inspired by, and mostly a direct translation of, the
+important to me.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3 role=doc-endnote>
+<p>&ldquo;Inspired by, and mostly a direct translation of, the
 <a href=https://github.com/andybalholm/cascadia>Cascadia</a> CSS Selector library,
 written in <a href=https://golang.org/>Go</a>, by
-<a href=https://github.com/andybalholm>@andybalhom</a>.&rdquo; <a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div></div><div id=footer></div><div class=clearer></div></div></body></html>
+<a href=https://github.com/andybalholm>@andybalhom</a>.&rdquo;&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+</div>
+<div id=footer>
+</div>
+<div class=clearer></div>
+</div>
+</body>
+</html>
