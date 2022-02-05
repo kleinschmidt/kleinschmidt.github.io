@@ -68,7 +68,7 @@ fully present without trying to change or control things; non-judgemental
 acceptance of the way things are without giving in to nihilism; balancing
 compassion and equanimity towards others---provided a set of concrete things to
 focus on and strive for as I navigated my mom's slow decline and, eventually,
-her death in November.
+[her death in November](https://obituaries.bangordailynews.com/obituary/susan-mcgarry-1083902040).
 
 It was in any objective sense truly a miserable year, but I'm nevertheless
 grateful for the experiences.  The insight of this idea of impermanent that is
