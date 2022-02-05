@@ -3,17 +3,16 @@ date = "2022-02-05"
 title = "A year of letting go"
 +++
 
-2021 was, for me, a year of steady reminders that, eventually, we all have to
-let go of each of the things we love.  I [quit my tenure-track academic
+2021 was, for me, a year of steady reminders that, eventually, we have to let go
+of the things we love.  I [quit my tenure-track academic
 position](/blog/quitlit/) in January, and had to let go of my academic career,
 the foundation of my identity for at least the last decade and a half of my life
-(and if I'm being honest, probably longer than that).  We all collective had
-to let go of the brief and delicious summer months where it looked like our
-Covid vaccines would allow us to get back to living like we had in the before
-times.  I had to let go of the season of racing cyclocross that I had diligently
-trained all year for, after I managed to crash myself out of the very first race
-of the season _while warming up_.  I was off the bike for a month with an MCL
-sprain.
+(and if I'm being honest, probably longer than that).  We all collective had to
+let go of the brief and delicious summer months where it looked like our Covid
+vaccines would allow us to get back to living like we had in the before times.
+I had to let go of the season of racing cyclocross that I had diligently trained
+all year for, after I managed to crash myself out of the very first race of the
+season _while warming up_.  I was off the bike for a month with an MCL sprain.
 
 Harder still, we suddenly had to let go of my cat Freya, who's been a constant
 companion through the last 10 years, seeing me through my PhD, a breakup, a move
@@ -23,15 +22,15 @@ another move.  I still am regularly convinced that I hear her yowling
 murderously out the window, nearly six months after her kidneys suddenly gave
 out.
 
-And, of course, there was my mom's cancer.  The journey from diagnosis (early
-2020, colon cancer) through initial treatment (successful surgery, good
-prognosis) to recurrence and metastasis is probably a familiar one, at least in
-the broad strokes.  But living through it, especially in the awful first year
-and a half of Covid where I wasn't able to visit, meant letting go of the
-optimistic stories that we were telling ourselves.  And that brings me to the
-point of writing about this at all: what is left when you've let go of hope,
-certainty about the future, and a belief that you have some real control over
-the things that matter most to you?
+And, of course, there was my mom's cancer.  <!--more-->
+The journey from diagnosis (early 2020, colon cancer) through initial treatment
+(successful surgery, good prognosis) to recurrence and metastasis is probably a
+familiar one, at least in the broad strokes.  But living through it, especially
+in the awful first year and a half of Covid where I wasn't able to visit, meant
+letting go of the optimistic stories that we were telling ourselves.  And that
+brings me to the point of writing about this at all: what is left when you've
+let go of hope, certainty about the future, and a belief that you have some real
+control over the things that matter most to you?
 
 At first, I was mad.  It felt like a terrible, cosmic injustice that my mom was
 diagnosed with a life threatening illness the same year she (reluctantly)
