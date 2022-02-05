@@ -8,6 +8,29 @@ weight: 2
 At [Beacon](https://beacon.bio), I work on neuroscience tool development, data
 science, and software engineering.
 
+## Open source
+
+I develop and maintain a few open source packages with my collaborators, mostly
+around tooling for statistical modeling in Julia:
+
+- [StatsModels.jl](https://github.com/JuliaStats/StatsModels.jl): specify
+  regression-style models from tabular data with a familiar R-style "formula"
+  syntax that's convenient for users and hackable by package developers.
+  [JuliaCon 2018 talk](https://www.youtube.com/watch?v=HORLJrsghs4), [JuliaCon
+  2020 talk](https://www.youtube.com/watch?v=lsEv0-TMk5k)
+- [RegressionFormulae.jl](https://github.com/kleinschmidt/RegressionFormulae.jl):
+  formula syntax extensions for regression modeling with StatsModels.jl,
+  inspired by some of the extra features built into R's formula language (e.g.,
+  `/` for nesting, `^n` for all interactions up to _n_-way).
+- [StandardizedPredictors.jl](https://github.com/beacon-biosignals/StandardizedPredictors.jl):
+  safely and reproducibly standardize continuous predictors via centering,
+  scaling, and _z_-scoring.  [JuliaCon 2021
+  talk](https://www.youtube.com/watch?v=mAgyr8ZvJNg)
+- [Effects.jl](https://github.com/beacon-biosignals/Effects.jl): compute effects
+  of one or more covariates in a regression model.
+
+For more, see [my Github page](https://github.com/kleinschmidt).
+
 ## Academic work
 
 In my academic work, I was interested in how the brain manages to efficiently
