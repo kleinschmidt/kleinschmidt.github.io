@@ -314,3 +314,7 @@ height:1px;
 overflow:hidden;
 margin-top:-1px; 
 }
+
+hr {
+    margin: 2em 0px;
+}
