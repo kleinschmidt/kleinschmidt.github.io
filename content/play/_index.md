@@ -44,3 +44,6 @@ materials in existence.
 
 Popular dependent measures of me include time-to-whiteboard-use,
 maximum-audible-laughter-distance, and beard-to-hair-ratio.
+
+I dabble at web design (I [made this website](/blog/hello-world/), and [this one
+too](https://www.margaretbray.com/)).
