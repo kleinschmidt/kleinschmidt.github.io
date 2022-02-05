@@ -308,6 +308,10 @@ div.note {
     color: #aaaaaa;
 }
 
+div.post-header {
+    margin-bottom: 1em;
+}
+
 .clearer {
 clear:both;
 height:1px;
