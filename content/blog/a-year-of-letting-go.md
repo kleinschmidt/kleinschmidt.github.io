@@ -7,7 +7,7 @@ title = "A year of letting go"
 of the things we love.  I [quit my tenure-track academic
 position](/blog/quitlit/) in January, and had to let go of my academic career,
 the foundation of my identity for at least the last decade and a half of my life
-(and if I'm being honest, probably longer than that).  We all collective had to
+(and if I'm being honest, probably longer than that).  We all collectively had to
 let go of the brief and delicious summer months where it looked like our Covid
 vaccines would allow us to get back to living like we had in the before times.
 I had to let go of the season of racing cyclocross that I had diligently trained
