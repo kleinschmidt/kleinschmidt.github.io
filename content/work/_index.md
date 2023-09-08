@@ -5,8 +5,13 @@ menu: "main"
 weight: 2
 ---
 
-At [Beacon](https://beacon.bio), I work on neuroscience tool development, data
-science, and software engineering.
+At [Beacon](https://beacon.bio), I lead the team that develops tooling for
+internal users doing quantitative work, from algorithm development to life
+sciences.  I built out our ML platform capabilities, including a dataset
+provenance/versioning system (used by all algorithm/life sciences teams across
+the organization), distributed training/inference capabilities for our Julia ML
+models, and am tech lead on our work developing a Julia runtime for
+[Ray.io](https://ray.io).
 
 ## Open source
 

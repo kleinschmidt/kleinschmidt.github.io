@@ -83,7 +83,7 @@ wheel-reinventing.  So, if you use software, cite it.  If you're using an
 [^julia]: There's a running joke in the Julia language community that most Julia
     code is written by procrastinating PhD students.
 
-```{r}
+```r
 citation('rmarkdown')
 ```
 
