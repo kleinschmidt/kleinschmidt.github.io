@@ -5,7 +5,7 @@ menu: "main"
 weight: 1
 ---
 
-I'm a **algorithm/research software engineer** at [Beacon Biosignals](https://beacon.bio/).
+I'm an **algorithm/research software engineer** at [Beacon Biosignals](https://beacon.bio/).
 
 ## Previously
 

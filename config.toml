@@ -2,7 +2,7 @@ contentDir = "content"
 layoutDir = "layouts"
 publishDir = "public"
 buildDrafts = false
-baseURL = "/"
+# baseURL = "/"
 canonifyURLs = true
 title = "Dave F. Kleinschmidt"
 
@@ -10,8 +10,8 @@ pygmentsCodefences = true
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
-[author]
-        name = "Dave F. Kleinschmidt"
-        github = "kleinschmidt"
-        twitter = "kleinschmidt"
-        email = "dave.f.kleinschmidt@gmail.com"
+[params]
+    [params.author]
+    name = "Dave F. Kleinschmidt"
+    github = "kleinschmidt"
+    email = "dave.f.kleinschmidt@gmail.com"
