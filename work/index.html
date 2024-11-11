@@ -1,418 +1,205 @@
-<!doctype html><html> <head>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-12080659-5')</script>
-<script src=/js/codeblocks.js></script>
-<script type=text/x-mathjax-config>
+<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-12080659-5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-12080659-5")</script><script src=https://www.davekleinschmidt.com/js/codeblocks.js></script><script type=text/x-mathjax-config>
      MathJax.Hub.Config({
          tex2jax: {
              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
              processEscapes: true
          }
      });
-    </script>
-<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<title>Dave Kleinschmidt // Work</title>
-<link rel=stylesheet type=text/css href=/css/style.css>
-<link rel=stylesheet type=text/css href=/css/syntax.css>
-<link href=/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt">
-</script>
-</head>
-<body>
-<div id=page-container>
-<div id=header>
-<h1>DAVE<br>KLEINSCHMIDT</h1>
-</div>
-<div id=nav>
-<a href=/ class=active> Home </a>
-/
-<a href=/work/ class=active> Work </a>
-/
-<a href=/play/> Play </a>
-/
-<a href=/blog/> Blog </a>
-/
-<a target=_blank href=/cv/cv_kleinschmidt.pdf>CV</a>
-</div>
-<div id=content>
-<p>At <a href=https://beacon.bio>Beacon</a>, I lead the team that develops tooling for
+    </script><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><title>Dave Kleinschmidt // Work</title>
+<link rel=stylesheet type=text/css href=https://www.davekleinschmidt.com/css/style.css><link rel=stylesheet type=text/css href=https://www.davekleinschmidt.com/css/syntax.css><link href=https://www.davekleinschmidt.com/index.xml rel=alternate type=application/atom+xml title="Dave F. Kleinschmidt"></script></head><body><div id=page-container><div id=header><h1>DAVE<br>KLEINSCHMIDT</h1></div><div id=nav><a href=https://www.davekleinschmidt.com/ class=active>Home </a>/
+<a href=https://www.davekleinschmidt.com/work/>Work </a>/
+<a href=https://www.davekleinschmidt.com/play/>Play </a>/
+<a href=https://www.davekleinschmidt.com/blog/>Blog </a>/
+<a target=_blank href=https://www.davekleinschmidt.com/resume/resume_kleinschmidt.pdf>Resume</a></div><div id=content><p>At <a href=https://beacon.bio>Beacon</a>, I lead the team that develops tooling for
 internal users doing quantitative work, from algorithm development to life
 sciences. I built out our ML platform capabilities, including a dataset
 provenance/versioning system (used by all algorithm/life sciences teams across
 the organization), distributed training/inference capabilities for our Julia ML
 models, and am tech lead on our work developing a Julia runtime for
-<a href=https://ray.io>Ray.io</a>.</p>
-<h2 id=open-source>Open source</h2>
-<p>I develop and maintain a few open source packages with my collaborators, mostly
-around tooling for statistical modeling in Julia:</p>
-<ul>
-<li><a href=https://github.com/JuliaStats/StatsModels.jl>StatsModels.jl</a>: specify
+<a href=https://ray.io>Ray.io</a>.</p><h2 id=open-source>Open source</h2><p>I develop and maintain a few open source packages with my collaborators, mostly
+around tooling for statistical modeling in Julia:</p><ul><li><a href=https://github.com/JuliaStats/StatsModels.jl>StatsModels.jl</a>: specify
 regression-style models from tabular data with a familiar R-style &ldquo;formula&rdquo;
 syntax that&rsquo;s convenient for users and hackable by package developers.
 <a href="https://www.youtube.com/watch?v=HORLJrsghs4">JuliaCon 2018 talk</a>, <a href="https://www.youtube.com/watch?v=lsEv0-TMk5k">JuliaCon
-2020 talk</a></li>
-<li><a href=https://github.com/kleinschmidt/RegressionFormulae.jl>RegressionFormulae.jl</a>:
+2020 talk</a></li><li><a href=https://github.com/kleinschmidt/RegressionFormulae.jl>RegressionFormulae.jl</a>:
 formula syntax extensions for regression modeling with StatsModels.jl,
 inspired by some of the extra features built into R&rsquo;s formula language (e.g.,
-<code>/</code> for nesting, <code>^n</code> for all interactions up to <em>n</em>-way).</li>
-<li><a href=https://github.com/beacon-biosignals/StandardizedPredictors.jl>StandardizedPredictors.jl</a>:
+<code>/</code> for nesting, <code>^n</code> for all interactions up to <em>n</em>-way).</li><li><a href=https://github.com/beacon-biosignals/StandardizedPredictors.jl>StandardizedPredictors.jl</a>:
 safely and reproducibly standardize continuous predictors via centering,
 scaling, and <em>z</em>-scoring. <a href="https://www.youtube.com/watch?v=mAgyr8ZvJNg">JuliaCon 2021
-talk</a></li>
-<li><a href=https://github.com/beacon-biosignals/Effects.jl>Effects.jl</a>: compute effects
-of one or more covariates in a regression model.</li>
-</ul>
-<p>For more, see <a href=https://github.com/kleinschmidt>my Github page</a>.</p>
-<h2 id=academic-work>Academic work</h2>
-<p>In my academic work, I was interested in how the brain manages to efficiently
+talk</a></li><li><a href=https://github.com/beacon-biosignals/Effects.jl>Effects.jl</a>: compute effects
+of one or more covariates in a regression model.</li></ul><p>For more, see <a href=https://github.com/kleinschmidt>my Github page</a>.</p><h2 id=academic-work>Academic work</h2><p>In my academic work, I was interested in how the brain manages to efficiently
 allocate representational resources in a world where the statistics of sensory
 features changes from situation to situation. I&rsquo;m particularly interested in how
 the <strong>structure</strong> in this sensory non-stationarity makes it possible to adapt to
 such changes more efficiently. <strong>Speech perception</strong> serves as an excellent
 model organism, because the statistics of the speech signal depend both on
 <em>what</em> is being said and <em>who</em> is saying it, both of which introduce highly
-structured variability that listeners are sensitive to.</p>
-<p>My work aims to develop explicit, computational models of perception and
+structured variability that listeners are sensitive to.</p><p>My work aims to develop explicit, computational models of perception and
 adaptation, with a particular emphasis on speech. I think that good theories and
 models draw on insights from—and try to make connections between—neuroscience,
-behavioral data, and broader computational-level cognitive modeling.</p>
-<p>Topics that I&rsquo;ve worked on or am interested in include: cognitive neuroscience
+behavioral data, and broader computational-level cognitive modeling.</p><p>Topics that I&rsquo;ve worked on or am interested in include: cognitive neuroscience
 of learning and perception, perceptual category learning, phonetic
 adaptation/recalibration, acquisition of phonetic categories, and cue
 combination and complex acoustic feature extraction. I&rsquo;m also particularly
 interested in increasing awareness and appreciation of Bayesian methods for
 modeling (although I don&rsquo;t consider myself a capital-B-Bayesian)
-and—especially—data analysis.</p>
-<h2>Papers</h2>
-<div class=note>* indicates equal contributions.</div>
-<ul>
-<li>
-Luthra,
+and—especially—data analysis.</p><h2>Papers</h2><div class=note>* indicates equal contributions.</div><ul><li>Luthra,
 S., Correia,
-J. M., <strong>Kleinschmidt,
-D. F.</strong>, Mesite,
-L. & Myers, 
-
-
+J. M., &lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Mesite,
+L. & Myers,
 E. B.
-
-  
 (in press).
-
 Lexical information guides retuning of neural patterns in perceptual learning for speech.
-<em>
-Journal of Cognitive Neuroscience</em>.
-<a class=source-link href=https://sahilluthrasite.files.wordpress.com/2020/06/lgpl_mvpa_ms_accepted.pdf>[preprint]</a>
-</li>
-<li>
-Wu*,
-M., <strong>Kleinschmidt*,
-D. F.</strong>, Emberson,
+<em>Journal of Cognitive Neuroscience</em>.
+<a class=source-link href=https://sahilluthrasite.files.wordpress.com/2020/06/lgpl_mvpa_ms_accepted.pdf>[preprint]</a></li><li>Wu*,
+M., &lt;strong>Kleinschmidt*,
+D. F.&lt;/strong>, Emberson,
 L. L., Doko,
 D., Edelman,
 S., Jacobs,
-R. & Raizada, 
-
-
+R. & Raizada,
 R. D. S.
-
-  
 (in press).
 Cortical transformation of stimulus-space in order to linearize a linearly inseparable task.
-<em>
-Journal of Cognitive Neuroscience</em>.
-<a class=source-link href=https://psyarxiv.com/ctgy6>[preprint]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>
+<em>Journal of Cognitive Neuroscience</em>.
+<a class=source-link href=https://psyarxiv.com/ctgy6>[preprint]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>
 (2019).
 Structure in talker variability: How much is there and how much can it help?
-<em>
-Language, Cognition and Neuroscience,
+<em>Language, Cognition and Neuroscience,
 34
 (1),
 43-68</em>.
 <a class=doi href=http://doi.org/10.1080/23273798.2018.1500698>DOI:10.1080/23273798.2018.1500698</a>
 <a class=source-link href=https://psyarxiv.com/a4tkn/>[preprint]</a>
-<a class=source-link href=https://osf.io/3wcy5/>[osf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>, Weatherholtz,
-K. & Jaeger, 
-
-
+<a class=source-link href=https://osf.io/3wcy5/>[osf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Weatherholtz,
+K. & Jaeger,
 T. F.
-
-  
 (2018).
-
-
-  Sociolinguistic perception as inference under uncertainty.
-<em>
-Topics in Cognitive Science,
+Sociolinguistic perception as inference under uncertainty.
+<em>Topics in Cognitive Science,
 10
 (4),
 818-834</em>.
-<a class=doi href=http://doi.org/10.1111/tops.12331>DOI:10.1111/tops.12331</a>
-</li>
-<li>
-Pajak,
+<a class=doi href=http://doi.org/10.1111/tops.12331>DOI:10.1111/tops.12331</a></li><li>Pajak,
 B., Fine,
-A. B., <strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+A. B., &lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2016).
-
-
-  Learning additional languages as hierarchical probabilistic inference: Insights from first language processing.
-<em>
-Language Learning,
+Learning additional languages as hierarchical probabilistic inference: Insights from first language processing.
+<em>Language Learning,
 66
 (4),
 900-944</em>.
-<a class=doi href=http://doi.org/10.1111/lang.12168>DOI:10.1111/lang.12168</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+<a class=doi href=http://doi.org/10.1111/lang.12168>DOI:10.1111/lang.12168</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2016).
-
-
-  Re-examining selective adaptation: Fatiguing feature detectors, or distributional learning?
-<em>
-Psychonomic Bulletin & Review,
+Re-examining selective adaptation: Fatiguing feature detectors, or distributional learning?
+<em>Psychonomic Bulletin & Review,
 23
 (3),
 678-691</em>.
-<a class=doi href=http://doi.org/10.3758/s13423-015-0943-z>DOI:10.3758/s13423-015-0943-z</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+<a class=doi href=http://doi.org/10.3758/s13423-015-0943-z>DOI:10.3758/s13423-015-0943-z</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2015).
-
-
-  Robust speech perception: Recognize the familiar, generalize to the similar, and adapt to the novel.
-<em>
-Psychological Review,
+Robust speech perception: Recognize the familiar, generalize to the similar, and adapt to the novel.
+<em>Psychological Review,
 122
 (2)</em>.
-<a class=doi href=http://doi.org/10.1037/a0038695>DOI:10.1037/a0038695</a>
-</li>
-<li>
-Salverda,
-A. P., <strong>Kleinschmidt,
-D. F.</strong> & Tanenhaus, 
-
-
+<a class=doi href=http://doi.org/10.1037/a0038695>DOI:10.1037/a0038695</a></li><li>Salverda,
+A. P., &lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Tanenhaus,
 M. K.
-
-  
 (2014).
-
 Immediate effects of anticipatory coarticulation in spoken-word recognition.
-<em>
-Journal of Memory and Language,
+<em>Journal of Memory and Language,
 71
 (1),
 145-163</em>.
-<a class=doi href=http://doi.org/10.1016/j.jml.2013.11.002>DOI:10.1016/j.jml.2013.11.002</a>
-</li>
-<li>
-Zaki,
-S. R. & <strong>Kleinschmidt,
-D. F.</strong>
+<a class=doi href=http://doi.org/10.1016/j.jml.2013.11.002>DOI:10.1016/j.jml.2013.11.002</a></li><li>Zaki,
+S. R. & &lt;strong>Kleinschmidt,
+D. F.&lt;/strong>
 (2014).
 Procedural memory effects in categorization: Evidence for multiple systems or task complexity?
-<em>
-Memory & cognition,
+<em>Memory & cognition,
 42
 (3),
 508-24</em>.
-<a class=doi href=http://doi.org/10.3758/s13421-013-0375-9>DOI:10.3758/s13421-013-0375-9</a>
-</li>
-<li>
-Croft,
+<a class=doi href=http://doi.org/10.3758/s13421-013-0375-9>DOI:10.3758/s13421-013-0375-9</a></li><li>Croft,
 W., Bhattacharya,
-T., <strong>Kleinschmidt,
-D. F.</strong>, Smith,
-D. E. & Jaeger, 
-
-
+T., &lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Smith,
+D. E. & Jaeger,
 T. F.
-
-  
 (2011).
-
-
-  Greenbergian universals, diachrony, and statistical analyses.
-<em>
-Linguistic Typology,
+Greenbergian universals, diachrony, and statistical analyses.
+<em>Linguistic Typology,
 15
 (2),
 433-453</em>.
-<a class=doi href=http://doi.org/10.1515/LITY.2011.029>DOI:10.1515/LITY.2011.029</a>
-</li>
-</ul>
-<h2>Submitted and in prep</h2>
-<ul>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>
+<a class=doi href=http://doi.org/10.1515/LITY.2011.029>DOI:10.1515/LITY.2011.029</a></li></ul><h2>Submitted and in prep</h2><ul><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>
 (<em>submitted</em>).
 What constrains distributional learning in adults?
 <a class=source-link href=https://psyarxiv.com/6yhbe/>[preprint]</a>
-<a class=source-link href=https://osf.io/3wdp2/>[osf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>, Raizada,
-R. & Jaeger, 
-
-
+<a class=source-link href=https://osf.io/3wdp2/>[osf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Raizada,
+R. & Jaeger,
 T. F.
-
-  (<em>in preparation</em>).
-Neural mechanisms of rapid adaptation to unfamiliar talkers via distributional learning.
-</li>
-</ul>
-<h2>Conference proceedings</h2>
-<ul>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Hemmer, 
-
-
+(<em>in preparation</em>).
+Neural mechanisms of rapid adaptation to unfamiliar talkers via distributional learning.</li></ul><h2>Conference proceedings</h2><ul><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Hemmer,
 P.
-
-  
 (2019).
-
-
-  A Bayesian model of memory in a multi-context environment.
-<em>
-Proceedings of the 41st Annual Conference of the Cognitive Science Society</em>.
+A Bayesian model of memory in a multi-context environment.
+<em>Proceedings of the 41st Annual Conference of the Cognitive Science Society</em>.
 <a class=source-link href=https://osf.io/vuksn/>[osf]</a>
-<a class=source-link href=https://mindmodeling.org/cogsci2019/papers/0355/0355.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>
+<a class=source-link href=https://mindmodeling.org/cogsci2019/papers/0355/0355.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>
 (2018).
 Learning distributions as they come: Particle filter models for online distributional learning of phonetic categories.
-<em>
-Proceedings of the 40th Annual Conference of the Cognitive Science Society</em>.
+<em>Proceedings of the 40th Annual Conference of the Cognitive Science Society</em>.
 <a class=source-link href=https://OSF.IO/DYMC8>[osf]</a>
-<a class=source-link href=http://mindmodeling.org/cogsci2018/papers/0371/0371.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+<a class=source-link href=http://mindmodeling.org/cogsci2018/papers/0371/0371.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2016).
-
-
-  What do you expect from an unfamiliar talker?
-<em>
-Proceedings of the 38th Annual Meeting of the Cognitive Science Society</em>.
+What do you expect from an unfamiliar talker?
+<em>Proceedings of the 38th Annual Meeting of the Cognitive Science Society</em>.
 <a class=source-link href=https://github.com/kleinschmidt/cogsci_2016>[github]</a>
-<a class=source-link href=https://mindmodeling.org/cogsci2016/papers/0407/paper0407.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>, Raizada,
-R. & Jaeger, 
-
-
+<a class=source-link href=https://mindmodeling.org/cogsci2016/papers/0407/paper0407.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Raizada,
+R. & Jaeger,
 T. F.
-
-  
 (2015).
-
-
-  Supervised and unsupervised learning in phonetic adaptation.
-<em>
-Proceedings of the 37th Annual Conference of the Cognitive Science Society</em>.
+Supervised and unsupervised learning in phonetic adaptation.
+<em>Proceedings of the 37th Annual Conference of the Cognitive Science Society</em>.
 <a class=source-link href=https://github.com/kleinschmidt/cogsci_2015>[github]</a>
-<a class=source-link href=https://mindmodeling.org/cogsci2015/papers/0200/paper0200.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+<a class=source-link href=https://mindmodeling.org/cogsci2015/papers/0200/paper0200.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2012).
-
-
-  A continuum of phonetic adaptation: Evaluating an incremental belief-updating model of recalibration and selective adaptation.
-<em>
-Proceedings of the 34th Annual Conference of the Cognitive Science Society,
+A continuum of phonetic adaptation: Evaluating an incremental belief-updating model of recalibration and selective adaptation.
+<em>Proceedings of the 34th Annual Conference of the Cognitive Science Society,
 605-10</em>.
-<a class=source-link href=https://mindmodeling.org/cogsci2012/papers/0115/paper0115.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong>, Fine,
-A. B. & Jaeger, 
-
-
+<a class=source-link href=https://mindmodeling.org/cogsci2012/papers/0115/paper0115.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong>, Fine,
+A. B. & Jaeger,
 T. F.
-
-  
 (2012).
-
-
-  A belief-updating model of adaptation and cue combination in syntactic comprehension.
-<em>
-Proceedings of the 34th Annual Conference of the Cognitive Science Society,
+A belief-updating model of adaptation and cue combination in syntactic comprehension.
+<em>Proceedings of the 34th Annual Conference of the Cognitive Science Society,
 599-604</em>.
-<a class=source-link href=https://mindmodeling.org/cogsci2012/papers/0114/paper0114.pdf>[pdf]</a>
-</li>
-<li>
-<strong>Kleinschmidt,
-D. F.</strong> & Jaeger, 
-
-
+<a class=source-link href=https://mindmodeling.org/cogsci2012/papers/0114/paper0114.pdf>[pdf]</a></li><li>&lt;strong>Kleinschmidt,
+D. F.&lt;/strong> & Jaeger,
 T. F.
-
-  
 (2011).
-
-
-  A Bayesian belief updating model of phonetic recalibration and selective adaptation.
-<em>
-Proceedings of the 2nd ACL Workshop on Cognitive Modeling and Computational Linguistics (CMCL)</em>.
-<a class=source-link href=http://www.aclweb.org/anthology/W11-0602>[pdf]</a>
-</li>
-</ul>
-</div>
-<div id=footer>
-<img src=/imgs/walking_away2.jpg alt>
-</div>
-<div class=clearer></div>
-</div>
-</body>
-</html>
+A Bayesian belief updating model of phonetic recalibration and selective adaptation.
+<em>Proceedings of the 2nd ACL Workshop on Cognitive Modeling and Computational Linguistics (CMCL)</em>.
+<a class=source-link href=http://www.aclweb.org/anthology/W11-0602>[pdf]</a></li></ul></div><div id=footer><img src=https://www.davekleinschmidt.com/imgs/walking_away2.jpg alt></div><div class=clearer></div></div></body></html>

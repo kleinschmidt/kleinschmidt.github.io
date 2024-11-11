@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Dave F. Kleinschmidt</title><link href="/blog/index.xml" rel="self"/><link href="/blog/"/><updated>2022-02-05T00:00:00+00:00</updated><id>/blog/</id><author><name>Dave F. Kleinschmidt</name><email>dave.f.kleinschmidt@gmail.com</email></author><generator>Hugo -- gohugo.io</generator><entry><title type="html">A year of letting go</title><link href="/blog/a-year-of-letting-go/"/><id>/blog/a-year-of-letting-go/</id><published>2022-02-05T00:00:00+00:00</published><updated>2022-02-05T00:00:00+00:00</updated><content type="html"><![CDATA[<p>2021 was, for me, a year of steady reminders that, eventually, we have to let go
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Dave F. Kleinschmidt</title><link href="https://www.davekleinschmidt.com/blog/index.xml" rel="self"/><link href="https://www.davekleinschmidt.com/blog/"/><updated>2022-02-05T00:00:00+00:00</updated><id>https://www.davekleinschmidt.com/blog/</id><author><name>Dave F. Kleinschmidt</name><email>dave.f.kleinschmidt@gmail.com</email></author><generator>Hugo -- gohugo.io</generator><entry><title type="html">A year of letting go</title><link href="https://www.davekleinschmidt.com/blog/a-year-of-letting-go/"/><id>https://www.davekleinschmidt.com/blog/a-year-of-letting-go/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2022-02-05T00:00:00+00:00</published><updated>2022-02-05T00:00:00+00:00</updated><content type="html"><![CDATA[<p>2021 was, for me, a year of steady reminders that, eventually, we have to let go
 of the things we love.  I <a href="/blog/quitlit/">quit my tenure-track academic
 position</a> in January, and had to let go of my academic career,
 the foundation of my identity for at least the last decade and a half of my life
@@ -97,7 +97,7 @@ practical advice for engaging with them as part of a meditative practice.</p>
 <p>Finally finally, my entire family benefited immensely from the advice and
 information in <a href="https://bkbooks.com/collections/booklet-bundles/products/end-of-life-guideline-series-a-compilation-of-barbara-karnes-booklets?variant=36961175011484">this series of
 pamphlets</a>
-on hospice and end-of-life care by Barbara Karnes.</p>]]></content></entry><entry><title type="html">Remote emacs&amp;#43;Julia workflow</title><link href="/blog/remote-julia/"/><id>/blog/remote-julia/</id><published>2021-04-14T16:45:35-04:00</published><updated>2021-04-14T16:45:35-04:00</updated><content type="html"><![CDATA[<p>In my role at <a href="https://beacon.bio">Beacon</a>, I spend most of my working day
+on hospice and end-of-life care by Barbara Karnes.</p>]]></content></entry><entry><title type="html">Remote emacs&amp;#43;Julia workflow</title><link href="https://www.davekleinschmidt.com/blog/remote-julia/"/><id>https://www.davekleinschmidt.com/blog/remote-julia/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2021-04-14T16:45:35-04:00</published><updated>2021-04-14T16:45:35-04:00</updated><content type="html"><![CDATA[<p>In my role at <a href="https://beacon.bio">Beacon</a>, I spend most of my working day
 interacting with Julia on a remote machine, and I wanted to document the
 workflow that I&rsquo;ve settled on.  The very short version is that emacs/TRAMP,
 <a href="">emacs-jupyter</a>, and <a href="">IJulia</a> together provide a pretty smooth&mdash;but not
@@ -152,11 +152,11 @@ for that:</p>
 <p>On the remote host, install jupyter and run <code>jupyter notebook</code>.  If you&rsquo;re
 only going to interact with Julia, I prefer to do this directly in Julia via
 something like</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span>
-<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;IJulia&#34;</span><span class="p">)</span>
-<span class="k">using</span> <span class="n">IJulia</span>
-<span class="n">IJulia</span><span class="o">.</span><span class="n">notebook</span><span class="p">()</span>
-</code></pre></div><p>Make sure you run this in a way that can survive a dropped connection (so in
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Pkg</span>
+</span></span><span class="line"><span class="cl"><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;IJulia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">IJulia</span>
+</span></span><span class="line"><span class="cl"><span class="n">IJulia</span><span class="o">.</span><span class="n">notebook</span><span class="p">()</span>
+</span></span></code></pre></div><p>Make sure you run this in a way that can survive a dropped connection (so in
 <a href="https://www.gnu.org/software/screen/">screen</a>,
 <a href="https://github.com/tmux/tmux/wiki">tmux</a>, etc.), otherwise you&rsquo;ll defeat the
 whole point of this exercise :)</p>
@@ -164,8 +164,8 @@ whole point of this exercise :)</p>
 <li>
 <p>Forward a port on your localhost to the remote host over SSH (assuming you
 don&rsquo;t want to or can&rsquo;t expose the jupyter port on your remote host):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ssh -L 8888:localhost:8888 &lt;hostname&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>In emacs, start a new kernel with <code>M-x jupyter-run-server-repl</code>.  This will
 start the kernel on the remote server and create an <code>emacs-jupyter</code> REPL
@@ -216,7 +216,7 @@ hard time recovering from.  When this happens, I find that it&rsquo;s best to ki
 port-forwarding connection to the server, which causes <code>emacs-jupyter</code> to detect
 that the websocket connection is closed and clean up after itself.  Then, you
 can re-connect the port forwarding SSH connection and everything should pick up
-where it left off.</p>]]></content></entry><entry><title type="html">Quit lit</title><link href="/blog/quitlit/"/><id>/blog/quitlit/</id><published>2021-01-07T16:36:40-05:00</published><updated>2021-01-07T16:36:40-05:00</updated><content type="html"><![CDATA[<p><strong>TL;DR</strong> I&rsquo;m joining <a href="https://beacon.bio">Beacon Biosignals</a> as a research
+where it left off.</p>]]></content></entry><entry><title type="html">Quit lit</title><link href="https://www.davekleinschmidt.com/blog/quitlit/"/><id>https://www.davekleinschmidt.com/blog/quitlit/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2021-01-07T16:36:40-05:00</published><updated>2021-01-07T16:36:40-05:00</updated><content type="html"><![CDATA[<p><strong>TL;DR</strong> I&rsquo;m joining <a href="https://beacon.bio">Beacon Biosignals</a> as a research
 scientist and leaving my tenure-track position.</p>
 <p>2020 was a hard year for all of us in many, many ways, but at least for me it
 clarified some things.  In particular, it helped me see the ways in which I
@@ -226,7 +226,7 @@ pie eating contest where the prize is more pie.  So I started looking for
 opportunities to do meaningful, intellectually engaging work outside of academic
 research, and I think I&rsquo;ve found that with Beacon.  I&rsquo;m really excited to learn
 more about the brain, pick up some hands on experience with some new machine
-learning techniques, and help make folks' lives better in the process.  I&rsquo;m
+learning techniques, and help make folks&rsquo; lives better in the process.  I&rsquo;m
 also, honestly, excited to be able to use <a href="https://julialang.org">Julia</a> for my
 &ldquo;day job&rdquo;, instead of just as a weird hobby project, and more generally to do
 more hands on work than is really possible on the tenure track.</p>
@@ -256,8 +256,8 @@ my own discovery that even if you&rsquo;re <em>good</em> at your academic work, 
 career might not be the best thing for you, and there are plenty of other things
 you can do, even though it feels so psychically dangerous to step off that
 track.  It took a global pandemic and months of lockdown to really make me
-confront that possibility, but even so I&rsquo;m grateful to be able to move on.</p>]]></content></entry><entry><title type="html">(How to) cite your code</title><link href="/blog/how-to-cite-your-code/"/><id>/blog/how-to-cite-your-code/</id><published>2020-06-08T16:19:12-04:00</published><updated>2020-06-08T16:19:12-04:00</updated><content type="html"><![CDATA[<p>I just <a href="https://psyarxiv.com/6yhbe/">submitted a paper</a> where I tried to follow
-my own advice to <a href="/blog/cite-code/">cite the code you use</a>.
+confront that possibility, but even so I&rsquo;m grateful to be able to move on.</p>]]></content></entry><entry><title type="html">(How to) cite your code</title><link href="https://www.davekleinschmidt.com/blog/how-to-cite-your-code/"/><id>https://www.davekleinschmidt.com/blog/how-to-cite-your-code/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2020-06-08T16:19:12-04:00</published><updated>2020-06-08T16:19:12-04:00</updated><content type="html"><![CDATA[<p>I just <a href="https://psyarxiv.com/6yhbe/">submitted a paper</a> where I tried to follow
+my own advice to <a href="https://www.davekleinschmidt.com/blog/cite-code/">cite the code you use</a>.
 This project was done with R, which makes it really easy to automatically
 generate citations for packages.  With just a bit of glue code you can
 automatically generate in-text citations, too.</p>
@@ -269,37 +269,36 @@ packges</a>
 control freak and find it a thrill to wrestle with RMarkdown, pandoc, and
 various latex dialects all on my own, but it&rsquo;s actually quite easy to implement
 this feature yourself:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
-
-<span class="n">packages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
-  <span class="s">&#39;base&#39;</span><span class="p">,</span>
-  <span class="s">&#39;knitr&#39;</span><span class="p">,</span>
-  <span class="s">&#39;rmarkdown&#39;</span><span class="p">,</span>
-  <span class="c1"># ... etc.</span>
-<span class="p">)</span>
-
-<span class="n">knitr</span><span class="o">::</span><span class="nf">write_bib</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s">&#34;packages.bib&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#34;R-&#34;</span><span class="p">)</span>
-
-<span class="c1"># generate in-text citations (skip base which is cited manually)</span>
-<span class="n">citation_strings</span> <span class="o">&lt;-</span> <span class="nf">glue</span><span class="p">(</span><span class="s">&#34;`{pkg}` [@R-{pkg}]&#34;</span><span class="p">,</span> <span class="n">pkg</span><span class="o">=</span><span class="n">packages[</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
-<span class="c1"># join with &#34;, &#34; and &#34;, and &#34; for last</span>
-<span class="n">citation_string</span> <span class="o">&lt;-</span>
-  <span class="nf">str_c</span><span class="p">(</span>
-    <span class="nf">lift</span><span class="p">(</span><span class="n">str_c</span><span class="p">)(</span>
-      <span class="nf">head</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">-1</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;, &#34;</span>
-    <span class="p">),</span>
-    <span class="s">&#34;, and &#34;</span><span class="p">,</span>
-    <span class="nf">tail</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-  <span class="p">)</span>
-
-</code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">I am also indebted to the developers and maintainers of the R
-language [@R-base], as well as the following R packages:
-`r citation_string`.
-</code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">glue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">packages</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#39;base&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#39;knitr&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#39;rmarkdown&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># ... etc.</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">knitr</span><span class="o">::</span><span class="nf">write_bib</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s">&#34;packages.bib&#34;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#34;R-&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># generate in-text citations (skip base which is cited manually)</span>
+</span></span><span class="line"><span class="cl"><span class="n">citation_strings</span> <span class="o">&lt;-</span> <span class="nf">glue</span><span class="p">(</span><span class="s">&#34;`{pkg}` [@R-{pkg}]&#34;</span><span class="p">,</span> <span class="n">pkg</span><span class="o">=</span><span class="n">packages[</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># join with &#34;, &#34; and &#34;, and &#34; for last</span>
+</span></span><span class="line"><span class="cl"><span class="n">citation_string</span> <span class="o">&lt;-</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">str_c</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">lift</span><span class="p">(</span><span class="n">str_c</span><span class="p">)(</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">head</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">-1</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;, &#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;, and &#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">tail</span><span class="p">(</span><span class="n">citation_strings</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>Then in the RMarkdown source you can do something like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">I am also indebted to the developers and maintainers of the R
+</span></span><span class="line"><span class="cl">language [@R-base], as well as the following R packages:
+</span></span><span class="line"><span class="cl">`r citation_string`.
+</span></span></code></pre></div><p>This isn&rsquo;t as fancy as the <code>papaja</code> version which also generates the loaded
 versions as well, but it gets the job done.  You can omit the list of packages
-and <code>knitr::write_bib</code> will do all the packages you have loaded.</p>]]></content></entry><entry><title type="html">Web scraping with Julia</title><link href="/blog/scraping-brewtoad/"/><id>/blog/scraping-brewtoad/</id><published>2018-12-21T11:30:18-05:00</published><updated>2018-12-21T11:30:18-05:00</updated><content type="html"><![CDATA[<p>One of my grad school procrastination projects was learning how to brew beer.  I
+and <code>knitr::write_bib</code> will do all the packages you have loaded.</p>]]></content></entry><entry><title type="html">Web scraping with Julia</title><link href="https://www.davekleinschmidt.com/blog/scraping-brewtoad/"/><id>https://www.davekleinschmidt.com/blog/scraping-brewtoad/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2018-12-21T11:30:18-05:00</published><updated>2018-12-21T11:30:18-05:00</updated><content type="html"><![CDATA[<p>One of my grad school procrastination projects was learning how to brew beer.  I
 started off using a website called Hopville to keep track of the recipes I
 brewed, until they were acquired in 2013 by
 <a href="https://www.brewtoad.com">Brewtoad</a>.  Both sites provided a really convenient
@@ -318,17 +317,17 @@ recipes and brew logs.</p>
 snappy and now positively groaning under the weight of desperate users
 appending <code>.xml</code> to the ends of their recipes one by one before they&rsquo;re gone
 forever on December 31&mdash;provide the perfect use case for <code>@async</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">main</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
-    <span class="n">recipes</span> <span class="o">=</span> <span class="n">recipe_links</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
-    <span class="c"># wait for all recipes to finish processing before return</span>
-    <span class="nd">@sync</span> <span class="k">begin</span>
-        <span class="k">for</span> <span class="n">recipe</span> <span class="k">in</span> <span class="n">recipes</span>
-            <span class="c"># fetch and process each recipe asynchronously</span>
-            <span class="nd">@async</span> <span class="n">process_recipe</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
-        <span class="k">end</span>
-    <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div><p>I was sure that this was too easy to work the first time but lo, no problems.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">function</span> <span class="n">main</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">recipes</span> <span class="o">=</span> <span class="n">recipe_links</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># wait for all recipes to finish processing before return</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@sync</span> <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">recipe</span> <span class="k">in</span> <span class="n">recipes</span>
+</span></span><span class="line"><span class="cl">            <span class="c"># fetch and process each recipe asynchronously</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@async</span> <span class="n">process_recipe</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>I was sure that this was too easy to work the first time but lo, no problems.
 The only fiddly bit is remembering to enclose all the <code>@async</code> calls in a
 <code>@sync begin ... end</code> block but I&rsquo;d seen enough examples with that pattern to
 know what to do.</p>
@@ -341,36 +340,36 @@ selector queries:</p>
 <ol>
 <li>
 <p>A <code>for</code> loop with lots of <code>if</code>/<code>else</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">node</span> <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
-    <span class="n">node</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">||</span> <span class="k">continue</span>
-    <span class="n">class</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="s">&#34;class&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;recipe-link&#34;</span>
-        <span class="n">link</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
-        <span class="n">push!</span><span class="p">(</span><span class="n">recipelinks</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
-        <span class="n">println</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">elseif</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;next_page&#34;</span>
-        <span class="n">push!</span><span class="p">(</span><span class="n">pages</span><span class="p">,</span> <span class="n">baseurl</span> <span class="o">*</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
-        <span class="n">println</span><span class="p">(</span><span class="s">&#34;Next page: &#34;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
-    <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">node</span> <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">node</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">||</span> <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="n">class</span> <span class="o">=</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="s">&#34;class&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;recipe-link&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">link</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">push!</span><span class="p">(</span><span class="n">recipelinks</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">println</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elseif</span> <span class="n">class</span> <span class="o">==</span> <span class="s">&#34;next_page&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">push!</span><span class="p">(</span><span class="n">pages</span><span class="p">,</span> <span class="n">baseurl</span> <span class="o">*</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">println</span><span class="p">(</span><span class="s">&#34;Next page: &#34;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">(</span><span class="n">node</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div></li>
 <li>
 <p><a href="https://docs.julialang.org/en/v1/base/iterators/index.html#Base.Iterators.filter"><code>Iterators.filter</code></a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="k">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
-                             <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:h1</span><span class="p">},</span>
-                         <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">root</span><span class="p">))</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">title</span> <span class="o">=</span> <span class="n">Iterators</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="k">isa</span> <span class="n">HTMLText</span> <span class="o">&amp;&amp;</span> 
+</span></span><span class="line"><span class="cl">                             <span class="n">n</span><span class="o">.</span><span class="n">parent</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:h1</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">recipe</span><span class="o">.</span><span class="n">root</span><span class="p">))</span>
+</span></span></code></pre></div></li>
 <li>
 <p>a <a href="https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1">list
 comprehension</a>.
 with an <code>if</code> clause</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">brewlog_links</span> <span class="o">=</span> 
-    <span class="p">[</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
-     <span class="k">for</span> <span class="n">n</span>
-     <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
-     <span class="k">if</span> <span class="n">n</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
-         <span class="n">occursin</span><span class="p">(</span><span class="sa">r</span><span class="sr">&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">brewlog_links</span> <span class="o">=</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="s">&#34;href&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">     <span class="k">for</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">     <span class="k">in</span> <span class="n">PreOrderDFS</span><span class="p">(</span><span class="n">brewlogs</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="k">if</span> <span class="n">n</span> <span class="k">isa</span> <span class="kt">HTMLElement</span><span class="p">{</span><span class="ss">:a</span><span class="p">}</span> <span class="o">&amp;&amp;</span> 
+</span></span><span class="line"><span class="cl">         <span class="n">occursin</span><span class="p">(</span><span class="sa">r</span><span class="sr">&#34;brew-logs/&#34;</span><span class="p">,</span> <span class="n">get</span><span class="p">(</span><span class="n">attrs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s">&#34;href&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">))]</span>
+</span></span></code></pre></div></li>
 </ol>
 <p>I&rsquo;m not aesthetically thrilled with any of these but they all get the job done.
 If I get a chance I&rsquo;ll go back and re-write it with
@@ -382,17 +381,17 @@ convenient way to query the parsed HTML.</p>
 fine.  So I had to use run <code>curl</code> for each request instead of using HTTP.jl just
 to finish downloading my own goddamn data.</p>
 <p>If you, too, want to save your recipes and logs from oblivion, here&rsquo;s how:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
-
-$ <span class="nb">cd</span> brewtoad-scrape.jl
-
-$ julia --project<span class="o">=</span>. -e <span class="s2">&#34;using Pkg; Pkg.instantiate()&#34;</span>
-
-$ julia --project<span class="o">=</span>. scrape.jl &lt;userid&gt;
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/kleinschmidt/brewtoad-scrape.jl.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> brewtoad-scrape.jl
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ julia --project<span class="o">=</span>. -e <span class="s2">&#34;using Pkg; Pkg.instantiate()&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ julia --project<span class="o">=</span>. scrape.jl &lt;userid&gt;
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Probably has something to do with the fact that I&rsquo;ve never
 given them any money and my sweet sweet content is sufficiently monetizable
 to run a sustainable business.  Of course they never <em>asked</em> for any money,
@@ -400,20 +399,20 @@ or made it clear in any way that they were in danger of shutting down.  If
 they had I would likely have paid a few bucks a month and I suspect many
 others would too.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Their official suggestion is to &ldquo;append <code>.xml</code> after your recipe URL to
 download a <a href="https://en.wikipedia.org/wiki/BeerXML">BeerXML</a> file&rdquo;.  There&rsquo;s
 no such export option for the brew logs though, which are at least as
 important to me.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>&ldquo;Inspired by, and mostly a direct translation of, the
 <a href="https://github.com/andybalholm/cascadia">Cascadia</a> CSS Selector library,
 written in <a href="https://golang.org/">Go</a>, by
 <a href="https://github.com/andybalholm">@andybalhom</a>.&rdquo;&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>]]></content></entry><entry><title type="html">Cite your code!</title><link href="/blog/cite-code/"/><id>/blog/cite-code/</id><published>2018-12-11T15:55:18-05:00</published><updated>2018-12-11T15:55:18-05:00</updated><content type="html"><![CDATA[<p>TL;DR: <strong>cite the software you use in your research!</strong></p>
+</div>]]></content></entry><entry><title type="html">Cite your code!</title><link href="https://www.davekleinschmidt.com/blog/cite-code/"/><id>https://www.davekleinschmidt.com/blog/cite-code/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2018-12-11T15:55:18-05:00</published><updated>2018-12-11T15:55:18-05:00</updated><content type="html"><![CDATA[<p>TL;DR: <strong>cite the software you use in your research!</strong></p>
 <p>In lab meeting the other day someone asked what the major R packages for
 analyzing psycholinguistic data are, and I had a hard time thinking of
 any.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> That made me think about <em>why</em> software is such a small part of
@@ -478,42 +477,41 @@ academics <em>at all</em> for doing the work to take that one-off code over the 
 being useful software we&rsquo;d collectively save ourselves a lot of
 wheel-reinventing.  So, if you use software, cite it.  If you&rsquo;re using an
 <code>R</code> package, you can get a citation with <code>citation</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">citation</span><span class="p">(</span><span class="s">&#39;rmarkdown&#39;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">To cite package ‘rmarkdown’ in publications use:
-
-  JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, 
-  Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston
-  Chang (2018). rmarkdown: Dynamic Documents for R. R package
-  version 1.10. https://CRAN.R-project.org/package=rmarkdown
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {rmarkdown: Dynamic Documents for R},
-    author = {JJ Allaire and Yihui Xie and Jonathan McPherson and 
-      Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley
-      Wickham and Joe Cheng and Winston Chang},
-    year = {2018},
-    note = {R package version 1.10},
-    url = {https://CRAN.R-project.org/package=rmarkdown},
-  }
-
-</code></pre></div><p>Finally, I should be clear that I&rsquo;ve been remiss in citing the software I use.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">citation</span><span class="p">(</span><span class="s">&#39;rmarkdown&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">To cite package ‘rmarkdown’ in publications use:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi, 
+</span></span><span class="line"><span class="cl">  Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng and Winston
+</span></span><span class="line"><span class="cl">  Chang (2018). rmarkdown: Dynamic Documents for R. R package
+</span></span><span class="line"><span class="cl">  version 1.10. https://CRAN.R-project.org/package=rmarkdown
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">A BibTeX entry for LaTeX users is
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  @Manual{,
+</span></span><span class="line"><span class="cl">    title = {rmarkdown: Dynamic Documents for R},
+</span></span><span class="line"><span class="cl">    author = {JJ Allaire and Yihui Xie and Jonathan McPherson and 
+</span></span><span class="line"><span class="cl">      Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley
+</span></span><span class="line"><span class="cl">      Wickham and Joe Cheng and Winston Chang},
+</span></span><span class="line"><span class="cl">    year = {2018},
+</span></span><span class="line"><span class="cl">    note = {R package version 1.10},
+</span></span><span class="line"><span class="cl">    url = {https://CRAN.R-project.org/package=rmarkdown},
+</span></span><span class="line"><span class="cl">  }
+</span></span></code></pre></div><p>Finally, I should be clear that I&rsquo;ve been remiss in citing the software I use.
 I&rsquo;m trying to do better but it&rsquo;s hard to form new citation habits!</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Of course, that could just be my own ignorance.  If I&rsquo;ve missed an
 R package that you find really useful in your psycholingustics etc. research
 please let me know and I&rsquo;ll post an update!&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>There&rsquo;s a running joke in the Julia language community that most Julia
 code is written by procrastinating PhD students.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>]]></content></entry><entry><title type="html">Hello World</title><link href="/blog/hello-world/"/><id>/blog/hello-world/</id><published>2018-10-12T16:16:22-04:00</published><updated>2018-10-12T16:16:22-04:00</updated><content type="html"><![CDATA[<p>Why a blog?  Because why not.</p>
+</div>]]></content></entry><entry><title type="html">Hello World</title><link href="https://www.davekleinschmidt.com/blog/hello-world/"/><id>https://www.davekleinschmidt.com/blog/hello-world/</id>}<author><name>Dave F. Kleinschmidt</name></author><published>2018-10-12T16:16:22-04:00</published><updated>2018-10-12T16:16:22-04:00</updated><content type="html"><![CDATA[<p>Why a blog?  Because why not.</p>
 <p>Like the rest of this site, it&rsquo;s powered by <a href="https://gohugo.io">Hugo</a>, a static
 site generator powered by Go templates.  The content of each page is written in
 <a href="https://daringfireball.net/projects/markdown/syntax">markdown</a>, and rendered
@@ -558,94 +556,94 @@ list of posts and a single post, and write posts as markdown files in
 <code>content/blog/post-title.md</code>.</p>
 <p>The first template is (<code>layouts/blog/single.html</code>), which renders the pages for
 individual posts (like this one):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span> <span class="p">&gt;</span>
-        <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="p">&gt;</span>
-        <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
-</code></pre></div><p>The other template is <code>layouts/blog/list.html</code>, which renders the list of posts
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</span></span></code></pre></div><p>The other template is <code>layouts/blog/list.html</code>, which renders the list of posts
 at <a href="/blog">blog/</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
-    <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
-            <span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="na">.Pages</span><span class="w"> </span><span class="cp">}}</span>
-            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Permalink</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="p">&gt;</span>
-                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span>
-                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span><span class="p">&gt;</span>
-                    <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
-                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-summary&#34;</span><span class="p">&gt;</span>
-                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Summary</span><span class="w"> </span><span class="cp">}}</span>
-                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
-</code></pre></div><p>The <code>nav.html</code> <a href="https://gohugo.io/templates/partials/">partial template</a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;header.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;posts&#34;</span> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="na">.Pages</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-title&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Permalink</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Title</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-date&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="cp">{{</span><span class="w"> </span><span class="na">.PublishDate.Format</span><span class="w"> </span><span class="s">&#34;2 Jan 2006&#34;</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post-summary&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="cp">{{</span><span class="w"> </span><span class="na">.Summary</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;footer.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span>
+</span></span></code></pre></div><p>The <code>nav.html</code> <a href="https://gohugo.io/templates/partials/">partial template</a>
 renders the navigation menu based on the list of pages automatically generated
 by Hugo, so all that&rsquo;s needed to add the &ldquo;blog&rdquo; menu entry is a few lines in the
 YAML metadata block in <code>/content/blog/_index.md</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">---
-title: &#34;Blog&#34;
-menu: &#34;main&#34;
-weight: 4
----
-</code></pre></div><p>The final piece is a bit of convenience: the <code>archetypes/default.md</code> provides a
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Blog&#34;
+</span></span><span class="line"><span class="cl">menu: &#34;main&#34;
+</span></span><span class="line"><span class="cl">weight: 4
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>The final piece is a bit of convenience: the <code>archetypes/default.md</code> provides a
 skeleton markdown file for a new post:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="x">+++
-</span><span class="x">date = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
-</span><span class="x">publishdate = &#34;&#34;
-</span><span class="x">draft = true
-</span><span class="x">title = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="na">.Name</span><span class="w"> </span><span class="s">&#34;-&#34;</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
-</span><span class="x">+++
-</span></code></pre></div><p>which automatically populates some of the metadata to begin drafting:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">➜ hugo new blog/a-wonderful-blog-post.md
-content/blog/a-wonderful-blog-post.md created
-
-➜ cat content/blog/a-wonderful-blog-post.md
-+++
-date = &#34;2018-10-17T21:09:19-04:00&#34;
-publishdate = &#34;&#34;
-draft = true
-title = &#34;A Wonderful Blog Post&#34;
-+++
-</code></pre></div><h2 id="what">What</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-text-template" data-lang="go-text-template"><span class="line"><span class="cl"><span class="x">+++
+</span></span></span><span class="line"><span class="cl"><span class="x">date = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="x">publishdate = &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="x">draft = true
+</span></span></span><span class="line"><span class="cl"><span class="x">title = &#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="na">.Name</span><span class="w"> </span><span class="s">&#34;-&#34;</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="cp">}}</span><span class="x">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="x">+++
+</span></span></span></code></pre></div><p>which automatically populates some of the metadata to begin drafting:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">➜ hugo new blog/a-wonderful-blog-post.md
+</span></span><span class="line"><span class="cl">content/blog/a-wonderful-blog-post.md created
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">➜ cat content/blog/a-wonderful-blog-post.md
+</span></span><span class="line"><span class="cl">+++
+</span></span><span class="line"><span class="cl">date = &#34;2018-10-17T21:09:19-04:00&#34;
+</span></span><span class="line"><span class="cl">publishdate = &#34;&#34;
+</span></span><span class="line"><span class="cl">draft = true
+</span></span><span class="line"><span class="cl">title = &#34;A Wonderful Blog Post&#34;
+</span></span><span class="line"><span class="cl">+++
+</span></span></code></pre></div><h2 id="what">What</h2>
 <p>I&rsquo;m planning to write about research/lab updates, progress on the JuliaStats
 ecosystem (especially the <a href="https://github.com/JuliaStats/StatsModels.jl/pull/71">future of the <code>@formula</code>
 language</a> for specifying
 and fitting statistical models from tabular data!), and more mundane personal
 discoveries, frustrations, and victories while I get my lab going at Rutgers.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>The source for this site is <a href="https://github.com/kleinschmidt/kleinschmidt.github.io">hosted on
 Github</a>, so the
 morbidly curious can turn back time to
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/4424a5510ec06a601e9a7b49563337ef03e10265"><code>4424a551</code></a>
 and see for themselves&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>This process starts around
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/230507b"><code>230507b</code></a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Starting at
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/36508bf"><code>36508bf</code></a>,
 reaching something like a finished state around
 <a href="https://github.com/kleinschmidt/kleinschmidt.github.io/tree/e94589d"><code>e94589d</code></a>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>]]></content></entry></feed>
+</div>]]></content></entry></feed>
