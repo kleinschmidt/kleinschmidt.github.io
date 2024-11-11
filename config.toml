@@ -2,7 +2,7 @@ contentDir = "content"
 layoutDir = "layouts"
 publishDir = "public"
 buildDrafts = false
-# baseURL = "/"
+baseURL = "https://www.davekleinschmidt.com"
 canonifyURLs = true
 title = "Dave F. Kleinschmidt"
 
