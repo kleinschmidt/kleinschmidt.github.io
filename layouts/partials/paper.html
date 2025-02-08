@@ -1,6 +1,6 @@
 {{ $authors := apply .author "partial" "author" "." }}
 {{ $clean := apply $authors "chomp" "." }}
-{{ delimit $clean ", " " & " }}
+{{ delimit $clean ", " " & " | safeHTML }}
 {{ if index . "issued" }}
   {{ index .issued 0 | partial "issued" | chomp }}.
 {{ else if .status }}
