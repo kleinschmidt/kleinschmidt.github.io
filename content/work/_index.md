@@ -34,28 +34,20 @@ around tooling for statistical modeling in Julia:
 - [Effects.jl](https://github.com/beacon-biosignals/Effects.jl): compute effects
   of one or more covariates in a regression model.
 
-For more, see [my Github page](https://github.com/kleinschmidt).
+For more, see [my Github](https://github.com/kleinschmidt).
 
 ## Academic work
 
-In my academic work, I was interested in how the brain manages to efficiently
-allocate representational resources in a world where the statistics of sensory
-features changes from situation to situation. I'm particularly interested in how
-the **structure** in this sensory non-stationarity makes it possible to adapt to
-such changes more efficiently. **Speech perception** serves as an excellent
-model organism, because the statistics of the speech signal depend both on
-*what* is being said and *who* is saying it, both of which introduce highly
-structured variability that listeners are sensitive to.
+My academic work focused on how people make sense of speech sounds given the
+significant variability in meaning-to-sound mappings across different people,
+accents, and dialects.  I used a combination of theoretical, behavioral, and
+cognitive neuroscience methods, with a particular emphasis on Bayesian cognitive
+modeling.  [More...]({{% relref "academic" %}})
 
-My work aims to develop explicit, computational models of perception and
-adaptation, with a particular emphasis on speech. I think that good theories and
-models draw on insights from—and try to make connections between—neuroscience,
-behavioral data, and broader computational-level cognitive modeling.
+My [dissertation](https://github.com/kleinschmidt/diss) was awarded the 2017
+[Glushko Prize for Outstanding Doctoral Dissertations in Cognitive Science by
+the Cognitive Science
+Society](https://cognitivesciencesociety.org/glushko-dissertation-prize/).
 
-Topics that I've worked on or am interested in include: cognitive neuroscience
-of learning and perception, perceptual category learning, phonetic
-adaptation/recalibration, acquisition of phonetic categories, and cue
-combination and complex acoustic feature extraction. I'm also particularly
-interested in increasing awareness and appreciation of Bayesian methods for
-modeling (although I don't consider myself a capital-B-Bayesian)
-and—especially—data analysis.
+My PhD work was supported by a Graduate Research Fellowship from the NSF
+(2010-2014) and F31 National Research Service Award from the NIH (2015-2016).

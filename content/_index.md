@@ -14,3 +14,7 @@ I'm an **algorithm/research software engineer** at [Beacon Biosignals](https://b
 - CV Starr postdoc at the Princeton Neuroscience Institute
 - PhD at the University of Rochester in the Department of Brain and Cognitive
   Sciences.
+
+## Contact
+
+{{< contact >}}

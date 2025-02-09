@@ -234,6 +234,10 @@ li {
     color: inherit;
 }
 
+#contact a strong {
+    color: inherit
+}
+
 strong a {
     background-color: #333333;
 }

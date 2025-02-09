@@ -1,8 +1,7 @@
-<h2>Contact</h2>
 <ul id="contact" >
     {{ range .Site.Data.contact.online }}
     <li>
-        <a target="_blank" href="{{ .url }}">{{ .name | markdownify }} </a>
+        <a target="_blank" class="contact" href="{{ .url }}">{{ .name | markdownify }} →</a>
     </li>
     {{ end }}
 </ul>
